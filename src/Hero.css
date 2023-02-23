@@ -1,0 +1,36 @@
+.hero {
+    background-image: url('//public/Images/hero-original.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .hero-text {
+    text-align: center;
+    color: #fff;
+    max-width: 800px;
+  }
+  
+  .hero-text h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+  }
+  
+  .hero-text p {
+    font-size: 24px;
+    margin-bottom: 40px;
+  }
+  
+  .hero-text button {
+    font-size: 20px;
+    padding: 10px 30px;
+    border: none;
+    background-color: #D61C1C;
+    color: #fff;
+    cursor: pointer;
+  }
+  
