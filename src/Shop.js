@@ -27,17 +27,17 @@ function Shop() {
   return (
     <div>
       <Navbar />
+      <h2 className="section-title">Shop</h2>
       <section className="products">
-        <h2 className="section-title">Shop</h2>
-        <div className="product-container">
-          {products.map((product, index) => (
-            <ProductCard 
-            key={index} 
+
+        {products.map((product) => (
+          <ProductCard
+            key={product.title}
             image={product.image}
-            title={product.title} 
-            price={product.price}  />
-          ))}
-        </div>
+            title={product.title}
+            price={product.price}
+          />
+        ))}
       </section>
     </div>
   );

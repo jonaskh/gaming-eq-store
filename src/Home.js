@@ -4,11 +4,9 @@ import ProductCard from './ProductCard';
 import './Home.css';
 import Testimonial from './Testimonial';
 import Hero from './Hero';
-import { BrowserRouter, BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import Shop from './Shop';
 
 
-function App() {
+function Home() {
   const products = [
     {
       image: 'Product 1.png',
@@ -52,7 +50,7 @@ function App() {
   ];
   
   return (
-    <div className="App">
+    <div className="Home">
       <Navbar />
       <section className="hero">
         <Hero
@@ -91,4 +89,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;
