@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import DropdownMenu from './DropdownMenu';
 import './Navbar.css';
 import Logo from './Logo';
+import { Link } from 'react-router-dom';
 
 function Navbar() {
   const [showShopDropdown, setShowDropdown] = useState(false);
@@ -47,9 +48,9 @@ function Navbar() {
           <Logo color="#D61C1C" />
       </div>
       <ul className="menu">
-        <li><a href="/">Home</a></li>
+        <li><Link to="/">Home</Link></li>
         <li className="dropdown" onClick={handleShopDropdownClick}>
-          <a href="#">Shop</a>
+          <Link to="/shop">Shop</Link>
           {openDropdown === 'shop' && <DropdownMenu options={shopCategories} onSelect={handleShopOptionSelect} />}
         </li>
         <li className="dropdown" onClick={handleAboutDropdownClick}>

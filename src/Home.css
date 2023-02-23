@@ -49,7 +49,7 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin-top: 50px;
+    margin-top: rem;
     margin-bottom: 120px;
   }
 
@@ -62,7 +62,7 @@
   
   .testimonials {
     background-color: #333333;
-    padding: 40px 0;
+    padding: 2rem 0;
     justify-content: center;
     max-width: 33%;
     margin: 0 auto;
