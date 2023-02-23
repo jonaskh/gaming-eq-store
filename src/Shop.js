@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from './Navbar';
 import ProductCard from './ProductCard';
+import Search from './Search';
 
 function Shop() {
+  const [search, setSearch] = useState('');
   const products = [
     {
       image: 'Product 1.png',
@@ -24,13 +26,20 @@ function Shop() {
     },
   ];
 
+  const filteredProducts = products.filter(product => product.title.toLowerCase().includes(search.toLowerCase()));
+
+  const handleSearch = event => {
+    setSearch(event.target.value);
+  };
+
   return (
     <div>
       <Navbar />
       <h2 className="section-title">Shop</h2>
+      <Search value={search} onChange={handleSearch} />
       <section className="products">
 
-        {products.map((product) => (
+        {filteredProducts.map((product) => (
           <ProductCard
             key={product.title}
             image={product.image}
