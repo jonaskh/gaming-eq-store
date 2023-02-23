@@ -60,7 +60,10 @@ function App() {
         />
       </section>
 
+      <h2 className="section-title">Featured Products</h2>
+
       <section className="products">
+
         {products.map((product) => (
           <ProductCard
             key={product.title}
@@ -70,6 +73,8 @@ function App() {
           />
         ))}
       </section>
+
+      <h2 className="section-title">Testimonials</h2>
 
       <section className="testimonials">
         {testimonials.map((testimonial, index) => (
