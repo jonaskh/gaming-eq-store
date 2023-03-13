@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import DropdownMenu from './DropdownMenu';
-import './Navbar.css';
+import '../css/Navbar.css';
 import Logo from './Logo';
 import { Link } from 'react-router-dom';
 

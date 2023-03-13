@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import Navbar from './Navbar';
-import ProductCard from './ProductCard';
-import Search from './Search';
-import APIService from "./APIService";
+import Navbar from '../Components/Navbar';
+import ProductCard from '../Components/ProductCard';
+import Search from '../Components/Search';
+import APIService from "../Services/APIService";
 
 function Shop() {
   const [search, setSearch] = useState('');
@@ -12,7 +12,7 @@ function Shop() {
       APIService.getProducts()
         .then(response => setProducts(response.data))
         .catch(error => console.log(error));
-  });
+  }, []);
 
   const filteredProducts = products.filter(product => product.productName.toLowerCase().includes(search.toLowerCase()));
 

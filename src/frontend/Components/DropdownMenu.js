@@ -1,5 +1,5 @@
 import React from 'react';
-import './DropdownMenu.css';
+import '../css/DropdownMenu.css';
 
 function DropdownMenu(props) {
   const { options, onSelect } = props;
