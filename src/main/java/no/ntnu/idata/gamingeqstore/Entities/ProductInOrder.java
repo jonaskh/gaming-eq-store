@@ -49,7 +49,7 @@ public class ProductInOrder {
      */
 
     public ProductInOrder(ProductInCart product) {
-        this.productId = product.get
+        this.productId = product.getId();
         this.productName = product.getProductName();
         this.productCategory = product.getProductCategory();
         this.price = product.getPrice();

@@ -4,8 +4,9 @@ package no.ntnu.idata.gamingeqstore.Entities;
     @Entity
     @Table(name = "products")
     public class Product {
+
+        private static int counter = 1; //this static field will increase by one every time an object is made, working as an incremented id.
         @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
         @Column(nullable = false)
         private Integer id;
 
@@ -31,6 +32,7 @@ package no.ntnu.idata.gamingeqstore.Entities;
         private int productAmount;
 
         public Product(String productName, String productCategory, int price, String size, String productImage, String productDesc, int productAmount) {
+            this.id = counter++;
             this.productName = productName;
             this.productCategory = productCategory;
             this.price = price;
@@ -75,7 +77,6 @@ package no.ntnu.idata.gamingeqstore.Entities;
             this.price = price;
         }
 
-
         public String getSize() {
             return size;
         }
@@ -99,6 +100,7 @@ package no.ntnu.idata.gamingeqstore.Entities;
         public void setProductDesc(String productDesc) {
             this.productDesc = productDesc;
         }
+
 
 
         public ProductInCart toProductInCart(Product product) {

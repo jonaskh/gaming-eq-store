@@ -16,7 +16,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "orderlist")
-public class OrderList  {
+public class OrderList {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -101,3 +101,4 @@ public class OrderList  {
          */
         CANCELED
     }
+}
