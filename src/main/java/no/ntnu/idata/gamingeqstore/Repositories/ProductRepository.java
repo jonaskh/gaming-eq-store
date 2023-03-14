@@ -2,6 +2,7 @@ package no.ntnu.idata.gamingeqstore.Repositories;
 
 
 import no.ntnu.idata.gamingeqstore.Entities.Product;
+<<<<<<< HEAD
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
@@ -20,3 +21,14 @@ public interface ProductRepository extends CrudRepository<Product, Integer> {
     Product findAllByProductCategory(String category);
 }
 
+=======
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
+
+
+@Repository
+@Component
+public interface ProductRepository extends CrudRepository<Product, Integer> {
+}
+>>>>>>> 3a7bd0e5d51f7fd913a71d84efb9576bedf043fc

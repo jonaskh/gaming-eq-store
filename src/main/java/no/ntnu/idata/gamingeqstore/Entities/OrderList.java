@@ -1,3 +1,4 @@
+
 package no.ntnu.idata.gamingeqstore.Entities;
 
 
@@ -42,11 +43,11 @@ public class OrderList {
 
 
 
-/*    public OrderList() {
+    public OrderList() {
 
         this.orderStatus = OrderStatus.SENT;
         createTime = LocalDateTime.now();
-    }*/
+    }
 
     public OrderList() {
 
@@ -56,12 +57,12 @@ public class OrderList {
         orderItems.add(productInOrder);
     }
 
-    /*
-    Calculates the sum total of the products added to the order.
-     */
+
+    //Calculates the sum total of the products added to the order.
+
     public void setTotalOrderPrice() {
         this.totalOrderPrice = user.getCart().getProducts().stream().map(item ->
-                        new BigDecimal(item.getPrice()).multiply(new BigDecimal(item.getProductAmount())))
+                new BigDecimal(item.getPrice()).multiply(new BigDecimal(item.getProductAmount())))
                 .reduce(BigDecimal::add).orElse(new BigDecimal((0)));
     }
 
@@ -84,21 +85,15 @@ public class OrderList {
     }
 
 
-    /*
-    Order is set to sent by default when created, but admin can go in and cancel the order.
-     */
+
+    //Order is set to sent by default when created, but admin can go in and cancel the order.
+
 
     public enum OrderStatus {
-        /*
-        Status: Sent
-        Default status for order
-         */
+
         SENT,
 
-        /*
-        Status: Canceled
-        Admin can cancel an order
-         */
         CANCELED
     }
 }
+

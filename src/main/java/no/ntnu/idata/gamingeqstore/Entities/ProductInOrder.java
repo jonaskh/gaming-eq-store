@@ -1,3 +1,4 @@
+
 package no.ntnu.idata.gamingeqstore.Entities;
 
 
@@ -33,9 +34,6 @@ public class ProductInOrder {
     private int price;
 
     @Column(nullable = false)
-    private String size;
-
-    @Column(nullable = false)
     private String productImage;
 
     @Column(nullable = false)
@@ -44,16 +42,12 @@ public class ProductInOrder {
     @Column(nullable = false, name = "quantity")
     private int productAmount;
 
-    /*
-    --------------------------------------CONSTRUCTORS-------------------------------------------------------------------
-     */
 
     public ProductInOrder(ProductInCart product) {
         this.productId = product.getId();
         this.productName = product.getProductName();
         this.productCategory = product.getProductCategory();
         this.price = product.getPrice();
-        this.size = product.getSize();
         this.productImage = product.getProductImage();
         this.productDesc = product.getProductDesc();
         this.productAmount = product.getProductAmount();
@@ -71,3 +65,4 @@ public class ProductInOrder {
         this.orderList = orderList;
     }
 }
+

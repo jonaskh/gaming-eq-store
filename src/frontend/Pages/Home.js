@@ -1,35 +1,20 @@
-import React from 'react';
-import Navbar from './Navbar';
-import ProductCard from './ProductCard';
-import './Home.css';
-import Testimonial from './Testimonial';
-import Hero from './Hero';
+import React, {useEffect, useState} from 'react';
+import Navbar from '../Components/Navbar';
+import ProductCard from '../Components/ProductCard';
+import '../css/Home.css';
+import Testimonial from '../Components/Testimonial';
+import Hero from '../Components/Hero';
+import APIService from "../Services/APIService";
 
 
 function Home() {
-  const products = [
-    {
-      image: 'Product 1.png',
-      title: 'Headset for office and gaming',
-      price: 850,
-      onClick: () => alert('Clicked Product 1'),
+    const [products, setProducts] = useState([]);
 
-    },
-    {
-      image: 'Product 2.png',
-      title: 'Gaming mouse',
-      price: 700,
-      onClick: () => alert('Clicked Product 2'),
-
-    },
-    {
-      image: 'Product 3.png',
-      title: 'Hot gaming headset',
-      price: 1200,
-      onClick: () => alert('Clicked Product 3'),
-
-    },
-  ];
+    useEffect(() => {
+        APIService.getRandomProducts('/products/random').then((response) => {
+            setProducts(response.data);
+        });
+    }, []);
 
   const testimonials = [
     {
@@ -48,7 +33,7 @@ function Home() {
       text: "As a mother of two young gamers, I'm always looking for the best gaming gear for my kids. Cyberpunk Gaming Gear has been a great resource for me as they offer high-quality products at great prices. I know that my kids will be safe and comfortable while gaming with their new gear, and I'm so grateful to have found such a dependable company!",
     },
   ];
-  
+
   return (
     <div className="Home">
       <Navbar />
@@ -66,9 +51,9 @@ function Home() {
 
         {products.map((product) => (
           <ProductCard
-            key={product.title}
-            image={product.image}
-            title={product.title}
+            key={product.id}
+            image={product.productImage}
+            title={product.productName}
             price={product.price}
           />
         ))}

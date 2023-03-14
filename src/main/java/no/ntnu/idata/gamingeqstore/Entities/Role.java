@@ -1,9 +1,11 @@
+
 package no.ntnu.idata.gamingeqstore.Entities;
 
 import jakarta.persistence.*;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
+/*
 @Entity
 @Table(name = "roles")
 public class Role {
@@ -33,10 +35,32 @@ public class Role {
 
     public void setId(Integer id) {
         this.id = id;
+*/
+
+@Entity
+@Table(name = "users_roles")
+public class Role {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "role_id")
+    private Integer id;
+
+    private static int counter_id = 1;
+
+    @Column(name = "role_name")
+    private String name;
+
+    public Role(String roleName) {
+        this.name = roleName;
+        this.id = counter_id++;
+    }
+
+    public Role() {
+
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public void setName(String name) {
@@ -48,12 +72,16 @@ public class Role {
     }
 
     public Set<User> getUsers() {
-        return users;
+        return this.users;
     }
 
     public void setUsers(Set<User> users) {
         this.users = users;
     }
+
+    @ManyToMany(mappedBy = "roles")
+    private Set<User> users = new LinkedHashSet<>();
+
 
 
     @Override
@@ -62,3 +90,4 @@ public class Role {
     }
 
 }
+

@@ -1,3 +1,4 @@
+
 package no.ntnu.idata.gamingeqstore.Entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -65,3 +66,5 @@ public class Cart {
     }
 
 }
+
+

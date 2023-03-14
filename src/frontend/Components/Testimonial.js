@@ -1,5 +1,5 @@
 import React from 'react';
-import './Testimonial.css';
+import '../css/Testimonial.css';
 
 function Testimonial(props) {
   const { name, age, text } = props;

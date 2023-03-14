@@ -1,3 +1,4 @@
+
 package no.ntnu.idata.gamingeqstore.Entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -34,9 +35,6 @@ import jakarta.persistence.*;
         private int price;
 
         @Column(nullable = false)
-        private String size;
-
-        @Column(nullable = false)
         private String productImage;
 
         @Column(nullable = false)
@@ -45,16 +43,12 @@ import jakarta.persistence.*;
         @Column(nullable = false, name = "quantity")
         private int productAmount;
 
-    /*
-    --------------------------------------CONSTRUCTORS-------------------------------------------------------------------
-     */
 
         public ProductInCart(Product product) {
             this.productId = product.getId();
             this.productName = product.getProductName();
             this.productCategory = product.getProductCategory();
             this.price = product.getPrice();
-            this.size = product.getSize();
             this.productImage = product.getProductImage();
             this.productDesc = product.getProductDesc();
             this.productAmount = product.getProductAmount();
@@ -63,10 +57,6 @@ import jakarta.persistence.*;
         public ProductInCart() {
 
         }
-
-    /*
-    --------------------------------------GETTERS AND SETTERS------------------------------------------------------------
-     */
 
         public Integer getId() {
             return id;
@@ -121,14 +111,6 @@ import jakarta.persistence.*;
             this.price = price;
         }
 
-        public String getSize() {
-            return size;
-        }
-
-        public void setSize(String size) {
-            this.size = size;
-        }
-
         public String getProductImage() {
             return productImage;
         }
@@ -153,10 +135,6 @@ import jakarta.persistence.*;
             this.productAmount = productAmount;
         }
 
-    /*
-    --------------------------------------METHODS----------------------------------------------------------------------
-     */
-
         public void incrementAmount() {
             this.productAmount++;
         }
@@ -176,7 +154,11 @@ import jakarta.persistence.*;
                     ", productIcon='" + productImage + '\'' +
                     ", categoryType=" + productCategory +
                     ", productPrice=" + price +
-                    ", size=" + size +
                     '}';
         }
     }
+
+
+
+
+

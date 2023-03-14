@@ -19,9 +19,6 @@ package no.ntnu.idata.gamingeqstore.Entities;
         @Column(length = 10, nullable = false, name = "price")
         private int price;
 
-        @Column(length = 10, nullable = false, name = "size")
-        private String size;
-
         @Column(length = 1000, nullable = false, name = "product_image")
         private String productImage;
 
@@ -31,12 +28,12 @@ package no.ntnu.idata.gamingeqstore.Entities;
         @Column(length = 10, nullable = false, name = "productAmount")
         private int productAmount;
 
-        public Product(String productName, String productCategory, int price, String size, String productImage, String productDesc, int productAmount) {
+
+        public Product(String productName, String productCategory, int price, String productImage, String productDesc, int productAmount) {
             this.id = counter++;
             this.productName = productName;
             this.productCategory = productCategory;
             this.price = price;
-            this.size = size;
             this.productImage = productImage;
             this.productDesc = productDesc;
             this.productAmount = productAmount;
@@ -77,14 +74,6 @@ package no.ntnu.idata.gamingeqstore.Entities;
             this.price = price;
         }
 
-        public String getSize() {
-            return size;
-        }
-
-        public void setSize(String size) {
-            this.size = size;
-        }
-
         public String getProductImage() {
             return productImage;
         }
@@ -101,12 +90,12 @@ package no.ntnu.idata.gamingeqstore.Entities;
             this.productDesc = productDesc;
         }
 
-
-
         public ProductInCart toProductInCart(Product product) {
 
             return new ProductInCart(product);
         }
+
+
 
         @Override
         public String toString() {
@@ -116,7 +105,6 @@ package no.ntnu.idata.gamingeqstore.Entities;
                     ", productCategory='" + productCategory + '\'' +
                     ", price=" + price +
                     ", productAmount=" + productAmount +
-                    ", size='" + size + '\'' +
                     ", productImage='" + productImage + '\'' +
                     ", productDesc='" + productDesc + '\'' +
                     '}';

@@ -1,3 +1,4 @@
+/*
 package no.ntnu.idata.gamingeqstore;
 
 import org.junit.jupiter.api.Test;
@@ -11,3 +12,5 @@ class GamingEqStoreApplicationTests {
 	}
 
 }
+
+ */

@@ -1,5 +1,5 @@
 import React from 'react';
-import './Logo.css';
+import '../css/Logo.css';
 
 function Logo(props) {
   const { color } = props;
