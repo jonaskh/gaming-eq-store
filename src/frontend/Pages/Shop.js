@@ -5,6 +5,7 @@ import Search from '../Components/Search';
 import APIService from "../Services/APIService";
 
 function Shop() {
+    // Updates the page when setSearch is
   const [search, setSearch] = useState('');
   const [products, setProducts] = useState([]);
 

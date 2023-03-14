@@ -8,10 +8,12 @@ import APIService from "../Services/APIService";
 
 
 function Home() {
+    // Sets the state of the application when setProducts is called.
     const [products, setProducts] = useState([]);
 
+    // Waits for db query to return data, then updates the page.
     useEffect(() => {
-        APIService.getRandomProducts('/products/random').then((response) => {
+        APIService.getRandomProducts().then((response) => {
             setProducts(response.data);
         });
     }, []);
