@@ -13,7 +13,8 @@ import java.util.Optional;
 
 @Service
 public class ProductService {
-    @Autowired private ProductRepository productRepository;
+    @Autowired
+    private ProductRepository productRepository;
 
     public List<Product> listAll() {
         return(List<Product>) productRepository.findAll();

@@ -1,0 +1,63 @@
+ nav {
+    background-color: #1a1a1a;
+  }
+  
+  nav ul li {
+    display: inline-block;
+    padding: 10px;
+  }
+  
+  nav ul li a {
+    color: #ffffff;
+  }
+  
+  .hero {
+    background-image: url("https://example.com/hero-image.jpg");
+    background-size: cover;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 6rem;
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .btn {
+    background-color: #ffffff;
+    color: #333333;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 20px;
+  }
+  
+  .testimonials {
+    background-color: #333333;
+    padding: 2rem 0;
+    justify-content: center;
+    max-width: 33%;
+    margin: 0 auto;
+  }
+
+  .hero {
+    background-image: url('//public/Images/hero-original.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  
+  
