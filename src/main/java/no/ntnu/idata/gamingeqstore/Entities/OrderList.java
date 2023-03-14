@@ -43,11 +43,6 @@ public class OrderList {
 
 
 
-    public OrderList() {
-
-        this.orderStatus = OrderStatus.SENT;
-        createTime = LocalDateTime.now();
-    }
 
     public OrderList() {
 

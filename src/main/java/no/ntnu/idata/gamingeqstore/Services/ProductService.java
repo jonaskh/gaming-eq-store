@@ -20,19 +20,6 @@ public class ProductService {
         return(List<Product>) productRepository.findAll();
     }
 
-    public List<Product> listAllByName(String name){
-        return (List<Product>) this.productRepository.findAllByProductName(name).get();
-    }
-
-    public List<Product> listAllByCategory(String category){
-        return (List<Product>) this.productRepository.findAllByProductCategory(category);
-    }
-
-    public Product findProductByName(String name) {
-        return this.productRepository.findAllByProductName(name).orElse(null);
-    }
-
-
     public void save(Product product) {
         productRepository.save(product);
     }

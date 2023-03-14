@@ -90,10 +90,10 @@ package no.ntnu.idata.gamingeqstore.Entities;
             this.productDesc = productDesc;
         }
 
-        public ProductInCart toProductInCart(Product product) {
-
-            return new ProductInCart(product);
-        }
+//        public ProductInCart toProductInCart(Product product) {
+//
+//            return new ProductInCart(product);
+//        }
 
 
 
