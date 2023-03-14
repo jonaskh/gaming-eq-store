@@ -1,5 +1,6 @@
 import React from 'react';
 import '../css/Hero.css';
+import {Link} from "react-router-dom";
 
 function Hero(props) {
   const { title, subtitle, buttonText } = props;
@@ -9,7 +10,7 @@ function Hero(props) {
       <div className="hero-text">
         <h1>{title}</h1>
         <p>{subtitle}</p>
-        <button>{buttonText}</button>
+          <Link to="/shop"><button>{buttonText}</button></Link>
       </div>
     </div>
   );
