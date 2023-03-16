@@ -29,8 +29,9 @@
     font-size: 20px;
     padding: 10px 30px;
     border: none;
-    background-color: #D61C1C;
-    color: #fff;
+    background-color: #ffbd03;
+    color: #333333;
     cursor: pointer;
+      font-weight: bolder;
   }
   

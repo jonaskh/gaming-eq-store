@@ -45,7 +45,7 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div className="logo-container">
-          <Logo color="#D61C1C" />
+          <Logo color="#ffbd03" />
       </div>
       <ul className="menu">
         <li><Link to="/">Home</Link></li>
@@ -54,10 +54,10 @@ function Navbar() {
           {openDropdown === 'shop' && <DropdownMenu options={shopCategories} onSelect={handleShopOptionSelect} />}
         </li>
         <li className="dropdown" onClick={handleAboutDropdownClick}>
-            <a href="#">Cart</a>
+            <a href="/cart">Cart</a>
             {openDropdown === 'about' && <DropdownMenu options={aboutOptions} onSelect={handleAboutOptionSelect} />}
         </li>
-        <li><a href="#">Sign in</a></li>
+        <li><a href="/login">Sign in</a></li>
       </ul>
     </nav>
   );
