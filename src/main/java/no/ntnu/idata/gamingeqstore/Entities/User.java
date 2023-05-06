@@ -1,20 +1,17 @@
-
 package no.ntnu.idata.gamingeqstore.Entities;
 
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.Entity;
 
-import java.util.*;
 import jakarta.persistence.*;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 @Entity
-@Table(name="users")
+@Table(name = "users")
 public class User {
 
-    private static int counter_id = 1;
-
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column(nullable = false, length = 50, unique = true)
@@ -33,10 +30,6 @@ public class User {
     @JsonIgnore
     private Set<OrderList> orders = new LinkedHashSet<>();
 
-    /*
-    User relation to the role table that determines the roles of the user.
-     */
-
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "users_roles",
             joinColumns = @JoinColumn(name = "user_id"),
@@ -44,16 +37,14 @@ public class User {
     )
     private Set<Role> roles = new LinkedHashSet<>();
 
-
-
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "cart_id", referencedColumnName = "id")
     private Cart cart = new Cart();
 
-    public User() { }
+    public User() {
+    }
 
     public User(String email, String password, Integer zipcode, String address) {
-        this.id = counter_id++;
         this.email = email;
         this.password = password;
         this.zipcode = zipcode;
@@ -84,10 +75,6 @@ public class User {
         return id;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
     public String getEmail() {
         return email;
     }
@@ -104,7 +91,6 @@ public class User {
         this.password = password;
     }
 
-
     public Set<Role> getRoles() {
         return roles;
     }
@@ -115,9 +101,8 @@ public class User {
 
     public void addRole(Role role) {
         this.roles.add(role);
+        role.getUsers().add(this);
     }
-
-
 
     public Integer getCartID() {
         return cart.getCartID();
@@ -131,6 +116,3 @@ public class User {
         return cart;
     }
 }
-
-
-

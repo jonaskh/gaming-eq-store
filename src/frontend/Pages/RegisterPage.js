@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import Navbar from '../Components/Navbar';
-import '../css/LoginPage.css'; // import the CSS file
-import { Link, useNavigate } from 'react-router-dom';
+import '../css/RegisterPage.css';
+import { useNavigate } from 'react-router-dom';
 
-const LoginPage = () => {
+const RegisterPage = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [zipcode, setZipcode] = useState('');
+    const [address, setAddress] = useState('');
     const navigate = useNavigate();
 
     const handleEmailChange = event => {
@@ -16,27 +18,34 @@ const LoginPage = () => {
         setPassword(event.target.value);
     };
 
+    const handleZipcodeChange = event => {
+        setZipcode(event.target.value);
+    };
+
+    const handleAddressChange = event => {
+        setAddress(event.target.value);
+    };
+
     const handleSubmit = async event => {
         event.preventDefault();
         try {
-            const response = await fetch('http://localhost:8080/api/authenticate', {
+            const response = await fetch('http://localhost:8080/api/register', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ email, password }),
+                body: JSON.stringify({ email, password, zipcode, address }),
             });
 
             if (!response.ok) {
-                throw new Error('Authentication failed');
+                throw new Error('Registration failed');
             }
 
-            const data = await response.json();
-            localStorage.setItem('jwt', data.jwt);
-            navigate('/SettingsPage'); // Replace '/protected' with the path to your protected area
+            alert('Registration successful! You can now log in.');
+            navigate('/login');
         } catch (error) {
             console.error('Error:', error);
-            alert('Login failed. Please check your credentials and try again.');
+            alert('Registration failed. Please check your input and try again.');
         }
     };
 
@@ -44,8 +53,8 @@ const LoginPage = () => {
         <div>
             <Navbar />
             <div className="center-container">
-                <div className="login-form">
-                    <h2>Login</h2>
+                <div className="register-form">
+                    <h2>Register</h2>
                     <form onSubmit={handleSubmit}>
                         <div>
                             <label htmlFor="email">Email:</label>
@@ -67,15 +76,32 @@ const LoginPage = () => {
                                 className="form-input"
                             />
                         </div>
-                        <button type="submit">Log in</button>
+                        <div>
+                            <label htmlFor="zipcode">Zip Code:</label>
+                            <input
+                                type="text"
+                                id="zipcode"
+                                value={zipcode}
+                                onChange={handleZipcodeChange}
+                                className="form-input"
+                            />
+                        </div>
+                        <div>
+                            <label htmlFor="address">Address:</label>
+                            <input
+                                type="text"
+                                id="address"
+                                value={address}
+                                onChange={handleAddressChange}
+                                className="form-input"
+                            />
+                        </div>
+                        <button type="submit">Register</button>
                     </form>
-                    <p>
-                        Don't have an account? <Link to="/register">Register here</Link>
-                    </p>
                 </div>
             </div>
         </div>
     );
 };
 
-export default LoginPage;
+export default RegisterPage;
