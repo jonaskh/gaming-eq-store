@@ -58,6 +58,7 @@ function Navbar() {
             {openDropdown === 'about' && <DropdownMenu options={aboutOptions} onSelect={handleAboutOptionSelect} />}
         </li>
         <li><a href="/login">Sign in</a></li>
+        <li><a href="/settings">Profile</a></li>
       </ul>
     </nav>
   );

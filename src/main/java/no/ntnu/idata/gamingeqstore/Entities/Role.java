@@ -19,7 +19,7 @@ public class Role implements GrantedAuthority {
     private String name;
 
     @ManyToMany(mappedBy = "roles")
-    @JsonIgnore // Add this annotation to prevent infinite recursion
+    @JsonIgnore
     private Set<User> users = new HashSet<>();
 
     public Role() {

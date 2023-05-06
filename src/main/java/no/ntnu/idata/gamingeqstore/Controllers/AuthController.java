@@ -2,6 +2,7 @@ package no.ntnu.idata.gamingeqstore.Controllers;
 
 import no.ntnu.idata.gamingeqstore.Entities.Role;
 import no.ntnu.idata.gamingeqstore.Entities.User;
+import no.ntnu.idata.gamingeqstore.Security.AuthenticationRequest;
 import no.ntnu.idata.gamingeqstore.Services.RoleService;
 import no.ntnu.idata.gamingeqstore.Services.UserService;
 import no.ntnu.idata.gamingeqstore.Security.JwtUtil;
@@ -38,10 +39,10 @@ public class AuthController {
     private static final Logger logger = Logger.getLogger(AuthController.class.getName());
 
     @PostMapping("/authenticate")
-    public ResponseEntity<?> createAuthenticationToken(@RequestBody User user) {
+    public ResponseEntity<?> createAuthenticationToken(@RequestBody AuthenticationRequest authenticationRequest) {
         try {
             Authentication authentication = authenticationManager.authenticate(
-                    new UsernamePasswordAuthenticationToken(user.getEmail(), user.getPassword())
+                    new UsernamePasswordAuthenticationToken(authenticationRequest.getEmail(), authenticationRequest.getPassword())
             );
 
             SecurityContextHolder.getContext().setAuthentication(authentication);
@@ -57,10 +58,8 @@ public class AuthController {
     @PostMapping("/register")
     public ResponseEntity<?> registerUser(@RequestBody User user) {
         try {
-            // Assign a default role to the user
-            Role defaultRole = roleService.findByName("USER"); // Replace "USER" with the name of your default role
+            Role defaultRole = roleService.findByName("USER");
             user.addRole(defaultRole);
-
             User newUser = userService.saveUser(user);
             return ResponseEntity.ok(newUser);
         } catch (Exception e) {

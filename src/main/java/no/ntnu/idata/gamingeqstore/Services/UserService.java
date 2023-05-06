@@ -30,20 +30,14 @@ public class UserService {
 // ...
 
     public User saveUser(User user) {
-        // Set the default role if no roles are assigned to the user
         if (user.getRoles().isEmpty()) {
-            Role defaultRole = roleService.findByName("USER"); // Replace "USER" with the name of your default role
+            Role defaultRole = roleService.findByName("USER");
             user.addRole(defaultRole);
         }
-
-        // Encrypt the password
         String encodedPassword = passwordEncoder.encode(user.getPassword());
         user.setPassword(encodedPassword);
-
-        // Save the user
         return userRepository.save(user);
     }
 
 
-    // Add other relevant service methods as needed
 }

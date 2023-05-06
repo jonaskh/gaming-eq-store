@@ -26,17 +26,19 @@ public class JwtUtil {
     private Long expiration;
 
     public String generateToken(Authentication authentication) {
-        User user = (User) authentication.getPrincipal();
+        org.springframework.security.core.userdetails.User springUser =
+                (org.springframework.security.core.userdetails.User) authentication.getPrincipal();
         Map<String, Object> claims = new HashMap<>();
 
-        String authorities = user.getRoles().stream()
+        String authorities = springUser.getAuthorities().stream()
                 .map(GrantedAuthority::getAuthority)
                 .collect(Collectors.joining(","));
 
         claims.put("roles", authorities);
 
-        return createToken(claims, user.getEmail());
+        return createToken(claims, springUser.getUsername());
     }
+
 
     public String createToken(Map<String, Object> claims, String subject) {
         return Jwts.builder()
