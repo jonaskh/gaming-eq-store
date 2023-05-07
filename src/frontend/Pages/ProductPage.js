@@ -1,13 +1,15 @@
 import React, {useEffect, useState} from 'react';
 import '../css/ProductPage.css';
-import APIService from "../Services/APIService"; // import the CSS file
+import APIService from "../Services/APIService";
+import {useLocation} from "react-router-dom"; // import the CSS file
 
 const ProductPage = () => {
 
     const [product, setProduct] = useState([]);
+    const location = useLocation();
 
-    useEffect((productID) => {
-        APIService.getSelectedProduct(1)
+    useEffect(() => {
+        APIService.getSelectedProduct(location.state.id)
             .then(response => {
                 //console.log(response.data) for testing purposes
                 setProduct(response.data)})

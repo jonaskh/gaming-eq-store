@@ -10,7 +10,7 @@ function ProductCard(props) {
         console.log("title:" + title)
         console.log("price:" + price)
         console.log("id:" + id)
-        navigate(`/products/${id}`);
+        navigate(`/product`, {state:{id}})
     };
 
     return (
