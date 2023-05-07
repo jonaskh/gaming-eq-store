@@ -22,7 +22,7 @@ Group 3
       - #818589 Gunmetal gray
       - #808080 Gray
     - Which colors are suggested by the theme of the site?
-      - Red, purple, green and black
+      - Red, purple, green, yellow, blue and black
     - Main color
       - Red
     - Accent color
@@ -60,14 +60,14 @@ Group 3
     - Will we use icons and for what?
       - We will use icons for drop down menus++
     - Colored or black-and-white/greyscale icons?
-      - Icons will be red (white?), buttons will be red
+      - Icons will be red?? (white?), buttons will be yellow
 6. Typography:
     - Should it by a Serif or Sans-Serif font?
       - Sans-serif for font.
     - Bold or thin font?
       - Both will be used. 
     - Rounded or sharp edges?
-      - Sharp edges
+      - Rounded edges
 7. Border rounding:
     - How rounded should be the edges, according to the theme?
       - We will mainly use sharp borders

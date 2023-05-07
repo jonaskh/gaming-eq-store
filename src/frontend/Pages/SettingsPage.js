@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../Components/Navbar';
+import jwt_decode from 'jwt-decode';
+
+
 
 
 const SettingsPage = () => {
@@ -13,7 +16,9 @@ const SettingsPage = () => {
         if (!isAuthenticated) {
             navigate('/login');
         } else {
-            const email = 'user@example.com';
+            const token = localStorage.getItem('jwt');
+            const decodedToken = jwt_decode(token);
+            const email = decodedToken.sub;
             setUserEmail(email);
         }
     }, [navigate]);
@@ -27,11 +32,11 @@ const SettingsPage = () => {
         <div>
             <Navbar />
             <div>
-            <h2>Settings</h2>
-            {userEmail && <p>Email: {userEmail}</p>}
-            <button onClick={handleLogout}>Logout</button>
+                <h2>Settings</h2>
+                {userEmail && <p>Email: {userEmail}</p>}
+                <button onClick={handleLogout}>Logout</button>
+            </div>
         </div>
-    </div>
     );
 };
 

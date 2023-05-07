@@ -69,7 +69,7 @@ const LoginPage = () => {
                         </div>
                         <button type="submit">Log in</button>
                     </form>
-                    <p>
+                    <p id={"registerText"}>
                         Don't have an account? <Link to="/register">Register here</Link>
                     </p>
                 </div>
