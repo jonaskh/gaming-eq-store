@@ -10,7 +10,9 @@ function Shop() {
 
   useEffect(() => {
       APIService.getProducts()
-        .then(response => setProducts(response.data))
+        .then(response =>
+        {setProducts(response.data)
+        console.log(response.data)})
         .catch(error => console.log(error));
   }, []);
 
@@ -29,6 +31,7 @@ function Shop() {
           {filteredProducts.map((product) => (
               <ProductCard
                   key={product.id}
+                  id={product.id}
                   image={product.productImage}
                   title={product.productName}
                   price={product.price}

@@ -5,10 +5,12 @@ import no.ntnu.idata.gamingeqstore.Repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
@@ -38,5 +40,12 @@ public class ProductController {
                 .collect(Collectors.toList());
         Collections.shuffle(productList);
         return productList.stream().limit(3).collect(Collectors.toList());
+    }
+
+    @GetMapping("/products/{productID}")
+    public Optional<Product> getSelectedProduct(@PathVariable("productID") Integer productID){
+
+        Optional<Product> product = productRepository.findById(productID);
+        return product;
     }
 }

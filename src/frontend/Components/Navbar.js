@@ -54,7 +54,7 @@ function Navbar() {
           {openDropdown === 'shop' && <DropdownMenu options={shopCategories} onSelect={handleShopOptionSelect} />}
         </li>
         <li className="dropdown" onClick={handleAboutDropdownClick}>
-            <a href="/cart">Cart</a>
+            <a href="/product">Cart</a>
             {openDropdown === 'about' && <DropdownMenu options={aboutOptions} onSelect={handleAboutOptionSelect} />}
         </li>
         <li><a href="/login">Sign in</a></li>

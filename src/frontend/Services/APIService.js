@@ -13,6 +13,10 @@ class APIService {
     getRandomProducts() {
         return axios.get(RANDOM_PRODUCT_REST_API_URL);
     }
+
+    getSelectedProduct = (productID) => {
+        return axios.get(PRODUCT_REST_API_URL + "/" + productID)
+    }
 }
 
 export default new APIService();

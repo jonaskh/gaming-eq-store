@@ -4,6 +4,7 @@ import Home from "./Pages/Home";
 import LoginPage from "./Pages/LoginPage";
 import RegisterPage from "./Pages/RegisterPage";
 import SettingsPage from "./Pages/SettingsPage";
+import ProductPage from "./Pages/ProductPage";
 
   function App() {
     return (
@@ -14,6 +15,7 @@ import SettingsPage from "./Pages/SettingsPage";
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/settings" element={<SettingsPage />} />
+          <Route path="/product" element={<ProductPage />} />
         </Routes>
       </BrowserRouter>
     );
