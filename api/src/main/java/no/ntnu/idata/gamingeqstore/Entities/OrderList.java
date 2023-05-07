@@ -3,15 +3,10 @@ package no.ntnu.idata.gamingeqstore.Entities;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.hibernate.annotations.CreationTimestamp;
-import org.springframework.data.jpa.convert.threeten.Jsr310JpaConverters;
-
 
 
 import jakarta.persistence.*;
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
-import java.util.Date;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
