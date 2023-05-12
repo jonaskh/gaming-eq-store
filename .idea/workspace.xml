@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="58710b36-4c39-4b23-91b6-69e16c51e6f1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/no/ntnu/idata/gamingeqstore/Security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/no/ntnu/idata/gamingeqstore/Security/SecurityConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,7 +170,7 @@
       <workItem from="1683557699088" duration="2185000" />
       <workItem from="1683718251214" duration="1497000" />
       <workItem from="1683884731906" duration="343000" />
-      <workItem from="1683886133142" duration="10309000" />
+      <workItem from="1683886133142" duration="12088000" />
     </task>
     <servers />
   </component>
