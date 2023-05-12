@@ -5,80 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="58710b36-4c39-4b23-91b6-69e16c51e6f1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/api/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/api/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/api/mvnw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/api/mvnw.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/Images/hero-original.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/public/Images/hero-original.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/Product 1.png" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/public/Product 1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/Product 2.png" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/public/Product 2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/Product 3.png" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/public/Product 3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/Product 4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/public/Product 4.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/Product 5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/public/Product 5.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/Product 6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/public/Product 6.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/Components/DropdownMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/src/Components/DropdownMenu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/Components/Hero.js" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/src/Components/Hero.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/Components/Logo.js" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/src/Components/Logo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/Components/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/src/Components/Navbar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/Components/ProductCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/src/Components/ProductCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/Components/Search.js" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/src/Components/Search.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/Components/Testimonial.js" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/src/Components/Testimonial.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/Pages/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/src/Pages/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/Pages/LoginPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/src/Pages/LoginPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/Pages/ProductPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/src/Pages/ProductPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/Pages/RegisterPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/src/Pages/RegisterPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/Pages/SettingsPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/src/Pages/SettingsPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/Pages/Shop.js" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/src/Pages/Shop.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/Pages/ShoppingCart.js" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/src/Pages/ShoppingCart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/Pages/poyo.png" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/src/Pages/poyo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/Services/APIService.js" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/src/Services/APIService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/css/DropdownMenu.css" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/src/css/DropdownMenu.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/css/Hero.css" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/src/css/Hero.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/css/Home.css" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/src/css/Home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/css/LoginPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/src/css/LoginPage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/css/Logo.css" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/src/css/Logo.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/css/Navbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/src/css/Navbar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/css/ProductCard.css" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/src/css/ProductCard.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/css/ProductPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/src/css/ProductPage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/css/RegisterPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/src/css/RegisterPage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/css/Testimonial.css" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/src/css/Testimonial.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/src/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/no/ntnu/idata/gamingeqstore/Controllers/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/no/ntnu/idata/gamingeqstore/Controllers/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/no/ntnu/idata/gamingeqstore/Controllers/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/no/ntnu/idata/gamingeqstore/Controllers/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/no/ntnu/idata/gamingeqstore/Entities/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/no/ntnu/idata/gamingeqstore/Entities/Cart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/no/ntnu/idata/gamingeqstore/Entities/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/no/ntnu/idata/gamingeqstore/Entities/Comment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/no/ntnu/idata/gamingeqstore/Entities/OrderList.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/no/ntnu/idata/gamingeqstore/Entities/OrderList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/no/ntnu/idata/gamingeqstore/Entities/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/no/ntnu/idata/gamingeqstore/Entities/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/no/ntnu/idata/gamingeqstore/Entities/ProductInCart.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/no/ntnu/idata/gamingeqstore/Entities/ProductInCart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/no/ntnu/idata/gamingeqstore/Entities/ProductInOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/no/ntnu/idata/gamingeqstore/Entities/ProductInOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/no/ntnu/idata/gamingeqstore/Entities/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/no/ntnu/idata/gamingeqstore/Entities/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/no/ntnu/idata/gamingeqstore/Entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/no/ntnu/idata/gamingeqstore/Entities/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/no/ntnu/idata/gamingeqstore/Exceptions/ProductNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/no/ntnu/idata/gamingeqstore/Exceptions/ProductNotFoundException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/no/ntnu/idata/gamingeqstore/GamingEqStoreApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/no/ntnu/idata/gamingeqstore/GamingEqStoreApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/no/ntnu/idata/gamingeqstore/ProductLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/no/ntnu/idata/gamingeqstore/ProductLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/no/ntnu/idata/gamingeqstore/Repositories/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/no/ntnu/idata/gamingeqstore/Repositories/ProductRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/no/ntnu/idata/gamingeqstore/Repositories/RoleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/no/ntnu/idata/gamingeqstore/Repositories/RoleRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/no/ntnu/idata/gamingeqstore/Repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/no/ntnu/idata/gamingeqstore/Repositories/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/no/ntnu/idata/gamingeqstore/Security/AuthenticationRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/no/ntnu/idata/gamingeqstore/Security/AuthenticationRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/no/ntnu/idata/gamingeqstore/Security/JwtRequestFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/no/ntnu/idata/gamingeqstore/Security/JwtRequestFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/no/ntnu/idata/gamingeqstore/Security/JwtUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/no/ntnu/idata/gamingeqstore/Security/JwtUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/no/ntnu/idata/gamingeqstore/Security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/no/ntnu/idata/gamingeqstore/Security/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/no/ntnu/idata/gamingeqstore/Services/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/no/ntnu/idata/gamingeqstore/Services/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/no/ntnu/idata/gamingeqstore/Services/RoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/no/ntnu/idata/gamingeqstore/Services/RoleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/no/ntnu/idata/gamingeqstore/Services/UserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/no/ntnu/idata/gamingeqstore/Services/UserDetailsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/no/ntnu/idata/gamingeqstore/Services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/no/ntnu/idata/gamingeqstore/Services/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/no/ntnu/idata/gamingeqstore/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/no/ntnu/idata/gamingeqstore/WebConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/no/ntnu/idata/gamingeqstore/EntityTests/AddProductTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/test/java/no/ntnu/idata/gamingeqstore/EntityTests/AddProductTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/no/ntnu/idata/gamingeqstore/GamingEqStoreApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/test/java/no/ntnu/idata/gamingeqstore/GamingEqStoreApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/no/ntnu/idata/gamingeqstore/TestConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/test/java/no/ntnu/idata/gamingeqstore/TestConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/api/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,21 +34,11 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/api/src/main/resources/application.properties" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="JpbToolWindowState">
-    <option name="myId2FirstActivated">
-      <map>
-        <entry key="com.haulmont.jpb.jpaInspector" value="true" />
-        <entry key="com.haulmont.jpb.jpaPalette" value="true" />
-        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
-      </map>
-    </option>
-    <option name="myId2Visible">
-      <map>
-        <entry key="com.haulmont.jpb.jpaInspector" value="false" />
-        <entry key="com.haulmont.jpb.jpaPalette" value="false" />
-        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
-      </map>
-    </option>
+    <option name="isToolWindowVisible" value="false" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -128,14 +50,23 @@
         <option name="useMavenConfig" value="true" />
       </MavenGeneralSettings>
     </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="workspaceImportEnabled" value="true" />
+      </MavenImportingSettings>
+    </option>
   </component>
   <component name="ProjectId" id="2N2yaGUTxcU66hFnpAWhr8WfRPr" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
@@ -144,10 +75,20 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "18",
-    "last_opened_file_path": "C:/Users/Sbk98/OneDrive/Skrivebord/Gruppe 3 gaming-eq/gaming-eq-store/webapp",
+    "last_opened_file_path": "/Users/daniellundquist/Documents/gaming-eq-store",
     "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "spring.configuration.checksum": "5819ad453194b7d6ca43abe04a382f3a"
+    "spring.configuration.checksum": "5819ad453194b7d6ca43abe04a382f3a",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql",
+      "h2"
+    ]
   }
 }]]></component>
   <component name="RecentsManager">
@@ -158,6 +99,7 @@
       <recent name="C:\Users\Sbk98\OneDrive\Skrivebord\Gruppe 3 gaming-eq\gaming-eq-store\api" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/api" />
       <recent name="C:\Users\Sbk98\OneDrive\Skrivebord\Gruppe 3 gaming-eq\gaming-eq-store\api" />
       <recent name="C:\Users\Sbk98\OneDrive\Skrivebord\Gruppe 3 gaming-eq\gaming-eq-store\webapp\src" />
       <recent name="C:\Users\Sbk98\OneDrive\Skrivebord\Gruppe 3 gaming-eq\gaming-eq-store\webapp" />
@@ -226,6 +168,13 @@
       <workItem from="1681976851089" duration="1279000" />
       <workItem from="1683144410939" duration="3479000" />
       <workItem from="1683458914118" duration="20275000" />
+      <workItem from="1683530615466" duration="1796000" />
+      <workItem from="1683532836350" duration="598000" />
+      <workItem from="1683544219379" duration="19000" />
+      <workItem from="1683557699088" duration="2185000" />
+      <workItem from="1683718251214" duration="1497000" />
+      <workItem from="1683884731906" duration="343000" />
+      <workItem from="1683886133142" duration="6277000" />
     </task>
     <servers />
   </component>
@@ -242,5 +191,8 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>
