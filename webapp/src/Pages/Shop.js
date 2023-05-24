@@ -4,13 +4,15 @@ import ProductCard from '../Components/ProductCard';
 import Search from '../Components/Search';
 import APIService from "../Services/APIService";
 import '../css/Shop.css'; // New line to import Shop CSS
+import CategoryBox from "../Components/CategoryBox";
+
 
 function Shop() {
     const [search, setSearch] = useState('');
     const [products, setProducts] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState('All');
 
-    const shopCategories = ['All', 'Gaming', 'Office', 'Headset', 'Mouse', 'Keyboard', 'Console', 'Controllers'];
+    const shopCategories = ['All', 'Gaming', 'Office', 'Headset', 'Mouse', 'Keyboard', 'Console', 'Controller'];
 
     const placeholderText = selectedCategory === 'All' ? 'Search products' : `Search ${selectedCategory.toLowerCase()}`;
 
@@ -44,13 +46,12 @@ function Shop() {
                 <Search value={search} onChange={handleSearch} placeholder={placeholderText}/>
                 <div className="categories-container">
                     {shopCategories.map(category => (
-                        <div
+                        <CategoryBox
                             key={category}
-                            className={`category-box ${selectedCategory === category ? 'selected' : ''}`}
-                            onClick={() => handleCategoryClick(category)}
-                        >
-                            {category}
-                        </div>
+                            category={category}
+                            isSelected={selectedCategory === category}
+                            onClick={handleCategoryClick}
+                        />
                     ))}
                 </div>
                 <section className="products">
