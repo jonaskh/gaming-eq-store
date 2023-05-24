@@ -58,7 +58,7 @@ services:
 
 networks:
   dockerwebsite_app-network:
-    driver: bridge
+    name: dockerwebsite_app-network
 
 volumes:
   dbdata:
