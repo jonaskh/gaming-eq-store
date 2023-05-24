@@ -58,7 +58,7 @@ const ProductPage = () => {
                 Other products
             </div>
 
-            <section className="products" onClick={handleProductsClick}>
+            <section className="products">
 
                 {randomProducts.map((product) => (
                     <ProductCard
@@ -67,6 +67,7 @@ const ProductPage = () => {
                         image={product.productImage}
                         title={product.productName}
                         price={product.price}
+                        onClick={handleProductsClick}
                     />
                 ))}
             </section>
