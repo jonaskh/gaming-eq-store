@@ -11,7 +11,7 @@ function Home() {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        APIService.getRandomProducts('/products/random').then((response) => {
+        APIService.getRandomProducts().then((response) => {
             setProducts(response.data);
         });
     }, []);

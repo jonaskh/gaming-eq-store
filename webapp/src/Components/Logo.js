@@ -5,7 +5,7 @@ function Logo(props) {
   const { color } = props;
 
   return (
-    <a href="/Users/Public" className="logo-link">
+    <a href="/" className="logo-link">
       <div className="logo" style={{ backgroundColor: color }}>
         <span>CGG</span>
       </div>
