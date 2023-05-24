@@ -19,7 +19,7 @@ const LoginPage = () => {
     const handleSubmit = async event => {
         event.preventDefault();
         try {
-            const response = await fetch('http://backend:8080/authenticate', {
+            const response = await fetch('http://backend:8080/api/authenticate', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
