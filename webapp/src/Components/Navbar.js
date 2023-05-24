@@ -5,39 +5,22 @@ import Logo from './Logo';
 import { Link } from 'react-router-dom';
 
 function Navbar() {
-  const [showShopDropdown, setShowDropdown] = useState(false);
-  const [selectedShopOption, setSelectedOption] = useState(null);
-
   const [showAboutDropdown, setShowAboutDropdown] = useState(false);
   const [selectedAboutOption, setSelectedAboutOption] = useState(null);
 
   const [openDropdown, setOpenDropdown] = useState(null);
 
-
-
-  const handleShopDropdownClick = () => {
-    setOpenDropdown(openDropdown === 'shop' ? null : 'shop');
-    setShowDropdown(false);
-  };
-
   const handleAboutDropdownClick = () => {
     setOpenDropdown(openDropdown === 'about' ? null : 'about');
     setShowAboutDropdown(false);
   };
-  
 
-  const handleShopOptionSelect = (option) => {
-    setSelectedOption(option);
-    setShowDropdown(false);
-  };
 
   const handleAboutOptionSelect = (option) => {
     setSelectedAboutOption(option);
     setShowAboutDropdown(false);
   };
   
-
-  const shopCategories = ['Gaming', 'Office', 'Headset', 'Mouse', 'Keyboard', 'Console', 'Controllers'];
 
   const aboutOptions = ['Go to cart'];
 
@@ -49,9 +32,8 @@ function Navbar() {
       </div>
       <ul className="menu">
         <li><Link to="/">Home</Link></li>
-        <li className="dropdown" onClick={handleShopDropdownClick}>
+        <li>
           <Link to="/shop">Shop</Link>
-          {openDropdown === 'shop' && <DropdownMenu options={shopCategories} onSelect={handleShopOptionSelect} />}
         </li>
         <li className="dropdown" onClick={handleAboutDropdownClick}>
             <a href="/cart">Cart</a>
