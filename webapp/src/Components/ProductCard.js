@@ -18,7 +18,7 @@ function ProductCard(props) {
             <img src={`${process.env.PUBLIC_URL}/${image}`} alt={title} />
             <div className="productCard-details">
                 <h3>{title}</h3>
-                <p>NOK {price}</p>
+                <p>{price} kr</p>
             </div>
         </div>
     );

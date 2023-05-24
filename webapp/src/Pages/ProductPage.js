@@ -48,7 +48,7 @@ const ProductPage = () => {
                     <div className="product-info">
                         <div className="product-price">
                             <span className="price-amount">{product.price}</span>
-                            <span className="price-currency">NOK</span>
+                            <span className="price-currency">kr</span>
                         </div>
                     </div>
                     <button className="product-button">Add to Cart</button>

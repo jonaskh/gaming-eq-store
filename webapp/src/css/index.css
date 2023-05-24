@@ -20,7 +20,6 @@ html, body {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin-top: rem;
     margin-bottom: 120px;
   }
 
