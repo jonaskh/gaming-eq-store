@@ -8,8 +8,6 @@ services:
       dockerfile: Dockerfile
     ports:
       - 3000:80
-    volumes:
-      - ./webapp/build:/usr/share/nginx/html
     networks:
       - dockerwebsite_app-network
 
