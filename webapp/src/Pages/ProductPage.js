@@ -14,7 +14,7 @@ const ProductPage = () => {
                 //console.log(response.data) for testing purposes
                 setProduct(response.data)})
             .catch(error => console.log(error));
-    })
+    }, [])
 
     return (
         <div className="product-container">
