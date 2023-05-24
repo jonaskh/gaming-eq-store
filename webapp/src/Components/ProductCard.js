@@ -16,7 +16,7 @@ function ProductCard(props) {
     return (
         <div className="product-card" onClick={handleClick}>
             <img src={`${process.env.PUBLIC_URL}/${image}`} alt={title} />
-            <div className="product-details">
+            <div className="productCard-details">
                 <h3>{title}</h3>
                 <p>NOK {price}</p>
             </div>
