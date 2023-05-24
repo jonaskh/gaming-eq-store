@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   frontend:
-    container_name: dockerwebsite_frontend_1
+    container_name: frontend
     build:
       context: ./webapp
       dockerfile: Dockerfile
@@ -14,7 +14,7 @@ services:
       - dockerwebsite_app-network
 
   backend:
-    container_name: dockerwebsite_backend_1
+    container_name: backend
     build:
       context: ./api
       dockerfile: Dockerfile
@@ -30,7 +30,7 @@ services:
       - dockerwebsite_app-network
 
   database:
-    container_name: dockerwebsite_database_1
+    container_name: database
     image: postgres:14.1-alpine
     ports:
       - 5432:5432
@@ -44,7 +44,7 @@ services:
       - dockerwebsite_app-network
 
   nginx:
-    container_name: dockerwebsite_nginx_1
+    container_name: nginx
     image: nginx:latest
     ports:
       - 80:80
