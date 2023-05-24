@@ -29,7 +29,7 @@ const RegisterPage = () => {
     const handleSubmit = async event => {
         event.preventDefault();
         try {
-            const response = await fetch('http://192.168.176.2:8080/register', {
+            const response = await fetch('http://backend:8080/register', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
