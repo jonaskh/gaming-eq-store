@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.logging.Logger;
 
 @RestController
-@CrossOrigin(origins = "http://backend:3000")
+@CrossOrigin(origins = "http://192.168.176.2:3000")
 public class AuthController {
 
     @Autowired

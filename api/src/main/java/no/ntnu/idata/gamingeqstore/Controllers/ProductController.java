@@ -11,7 +11,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
-@CrossOrigin(origins = "http://backend:3000")
+@CrossOrigin(origins = "http://192.168.176.2:3000")
 @RestController
 public class ProductController {
 
