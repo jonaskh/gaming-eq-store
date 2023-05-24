@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/gaming-eq-store/api/gaming-eq-store.iml" filepath="$PROJECT_DIR$/gaming-eq-store/api/gaming-eq-store.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/gaming-store.iml" filepath="$PROJECT_DIR$/.idea/gaming-store.iml" />
     </modules>
   </component>
