@@ -5,7 +5,7 @@ services:
     container_name: dockerwebsite_frontend_1
     build: ./webapp
     ports:
-      - 3000:80  # Map port 80 of the frontend container to port 3000 on the host
+      - 3000:3000  # Map port 80 of the frontend container to port 3000 on the host
     networks:
       - dockerwebsite_app-network
 

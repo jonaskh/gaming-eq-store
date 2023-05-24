@@ -11,9 +11,8 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
-@CrossOrigin(origins = "http://backend:3000")
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
-@RequestMapping("/api")
 public class ProductController {
 
     @Autowired

@@ -29,7 +29,7 @@ const RegisterPage = () => {
     const handleSubmit = async event => {
         event.preventDefault();
         try {
-            const response = await fetch('http://backend:8080/api/register', {
+            const response = await fetch('http://localhost:8080/register', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
