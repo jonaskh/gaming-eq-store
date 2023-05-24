@@ -7,7 +7,9 @@ services:
       context: ./webapp
       dockerfile: Dockerfile
     ports:
-      - 3000:80  # Map port 80 of the frontend container to port 3000 on the host
+      - 3000:80
+    volumes:
+      - ./webapp/build:/usr/share/nginx/html
     networks:
       - dockerwebsite_app-network
 
@@ -45,7 +47,7 @@ services:
     container_name: dockerwebsite_nginx_1
     image: nginx:latest
     ports:
-      - 80:80  # Map port 80 of the nginx container to port 80 on the host
+      - 80:80
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
     depends_on:
