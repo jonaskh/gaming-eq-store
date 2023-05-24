@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BACKEND_URL = "http://localhost:8080";
+const BACKEND_URL = "http://backend:8080";
 const PRODUCT_REST_API_URL = BACKEND_URL + "/products";
 const RANDOM_PRODUCT_REST_API_URL = BACKEND_URL + "/products/random";
 const LOGIN_API = BACKEND_URL + "/authenticate";
