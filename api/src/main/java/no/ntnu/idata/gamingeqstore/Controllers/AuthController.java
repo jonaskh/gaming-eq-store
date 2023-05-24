@@ -35,7 +35,7 @@ public class AuthController {
 
     private static final Logger logger = Logger.getLogger(AuthController.class.getName());
 
-    @PostMapping("/authenticate")
+    @PostMapping("/api/authenticate")
     public ResponseEntity<?> createAuthenticationToken(@RequestBody AuthenticationRequest authenticationRequest) {
         try {
             Authentication authentication = authenticationManager.authenticate(
@@ -52,7 +52,7 @@ public class AuthController {
         }
     }
 
-    @PostMapping("/register")
+    @PostMapping("/api/register")
     public ResponseEntity<?> registerUser(@RequestBody User user) {
         try {
             Role defaultRole = roleService.findByName("USER");
