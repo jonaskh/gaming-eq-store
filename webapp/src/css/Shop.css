@@ -1,0 +1,39 @@
+.shop-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.section-title {
+    color: #fff;
+    font-size: 2rem;
+    margin: 20px 0;
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.categories-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.category-box {
+    flex: 0 0 calc(100% / 7);
+    text-align: center;
+    border: 2px solid transparent;
+    padding: 10px;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+.category-box.selected {
+    border-color: yellow;
+}
