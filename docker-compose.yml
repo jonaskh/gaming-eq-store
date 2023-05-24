@@ -2,13 +2,15 @@ version: "3.8"
 
 services:
   frontend:
+    container_name: dockerwebsite_frontend_1
     build: ./webapp
     ports:
       - 3000:80  # Map port 80 of the frontend container to port 3000 on the host
     networks:
-      - app-network
+      - dockerwebsite_app-network
 
   backend:
+    container_name: dockerwebsite_backend_1
     build: ./api
     ports:
       - 8080:8080
@@ -19,9 +21,10 @@ services:
     depends_on:
       - database
     networks:
-      - app-network
+      - dockerwebsite_app-network
 
   database:
+    container_name: dockerwebsite_database_1
     image: postgres:14.1-alpine
     ports:
       - 5432:5432
@@ -32,21 +35,22 @@ services:
       - POSTGRES_PASSWORD=postgres
       - POSTGRES_DB=postgres
     networks:
-      - app-network
+      - dockerwebsite_app-network
 
   nginx:
+    container_name: dockerwebsite_nginx_1
     image: nginx:latest
     ports:
       - 80:80  # Map port 80 of the nginx container to port 80 on the host
     volumes:
-      - ./nginx/nginx.conf:/etc/nginx/nginx.conf  # Mount the nginx.conf file
+      - ./api/nginx/nginx.conf:/etc/nginx/nginx.conf  # Mount the nginx.conf file
     depends_on:
       - frontend
     networks:
-      - app-network
+      - dockerwebsite_app-network
 
 networks:
-  app-network:
+  dockerwebsite_app-network:
     driver: bridge
 
 volumes:
