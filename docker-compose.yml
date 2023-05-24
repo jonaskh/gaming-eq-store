@@ -8,6 +8,8 @@ services:
       dockerfile: Dockerfile
     ports:
       - 3000:80
+    depends_on:
+      - backend
     networks:
       - dockerwebsite_app-network
 
