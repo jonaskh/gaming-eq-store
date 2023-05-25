@@ -41,13 +41,14 @@ import jakarta.persistence.*;
         private int productAmount;
 
 
-        public CartProduct(Product product) {
+        public CartProduct(Product product, Cart cart) {
             this.productId = product.getProduct_id();
             this.productName = product.getProductName();
             this.price = product.getPrice();
             this.productImage = product.getProductImage();
             this.productDesc = product.getProductDesc();
             this.productAmount = product.getProductAmount();
+            this.cart = cart;
         }
 
         public CartProduct() {

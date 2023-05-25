@@ -3,6 +3,7 @@ import Navbar from '../Components/Navbar';
 import '../css/RegisterPage.css';
 import { useNavigate } from 'react-router-dom';
 import Footer from "../Components/Footer";
+import APIService from "../Services/APIService";
 
 const RegisterPage = () => {
     const [email, setEmail] = useState('');
@@ -44,6 +45,7 @@ const RegisterPage = () => {
 
             alert('Registration successful! You can now log in.');
             navigate('/login');
+            APIService.addCartToUser(email).then();
         } catch (error) {
             console.error('Error:', error);
             alert('Registration failed. Please check your input and try again.');

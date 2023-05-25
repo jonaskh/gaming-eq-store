@@ -4,19 +4,30 @@ import APIService from "../Services/APIService";
 import {useLocation} from "react-router-dom";
 import Navbar from "../Components/Navbar";
 import ProductCard from "../Components/ProductCard";
-import Footer from "../Components/Footer"; // import the CSS file
+import Footer from "../Components/Footer";
+import jwt_decode from "jwt-decode"; // import the CSS file
 
 const ProductPage = () => {
 
     const [product, setProduct] = useState([]);
     const location = useLocation();
+    const [email, setEmail] = useState("");
 
     useEffect(() => {
+        const token = localStorage.getItem('jwt');
+        try {
+            const decodedToken = jwt_decode(token);
+            setEmail(decodedToken.sub);
+
+        } catch(err) {
+            console.log("ERROR! Very useful ERROR message!!!");
+        }
         APIService.getSelectedProduct(location.state.id)
             .then(response => {
                 //console.log(response.data) //for testing purposes
                 setProduct(response.data)})
             .catch(error => console.log(error));
+
     }, [location.state.id])
 
     const [randomProducts, setRandomProducts] = useState([]);
@@ -31,7 +42,7 @@ const ProductPage = () => {
      * Relaods the page when a product is clicked.
      */
     const handleProductsClick = () => {
-      window.location.reload();
+        window.location.reload();
     };
 
     return (
@@ -50,7 +61,7 @@ const ProductPage = () => {
                                 <span className="price-currency">kr</span>
                             </div>
                         </div>
-                        <button className="product-button">Add to Cart</button>
+                        <button className="product-button" onClick={() => APIService.addProductToCart(email, product.product_id)}>Add to Cart</button>
                     </div>
                     <div>
                         <h2>Product info</h2>
