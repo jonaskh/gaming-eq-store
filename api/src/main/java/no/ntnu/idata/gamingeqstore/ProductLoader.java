@@ -38,18 +38,16 @@ public class ProductLoader implements CommandLineRunner {
         Product p6 = new Product("Office mouse", 399, "Product 7.png", "This mouse will ensure pin-point precision for both office and gaming use", 1);
         Product p7 = new Product("PulseFire", 499, "Product 8.png", "Never miss again with the PulseFire mouse!", 1);
         Product p8 = new Product("Cheap Office mouse", 199, "Product 10.png", "A cheaper alternative while still providing excellent accuracy", 1);
-        Product p9 = new Product("4x AA batteries", 80, "Product 11.jpg", "The 4x AA batteries are perfect for your controller!", 1);
 
         productService.addCategory(p, "Headsets");
-        productService.addCategory(p1, "Mice");
+        productService.addCategory(p1, "Mouse");
         productService.addCategory(p2, "Headsets");
         productService.addCategory(p3, "Headsets");
         productService.addCategory(p4, "Headsets");
         productService.addCategory(p5, "Headsets");
-        productService.addCategory(p6, "Mice");
-        productService.addCategory(p7, "Mice");
-        productService.addCategory(p8, "Mice");
-        productService.addCategory(p9, "Accessories");
+        productService.addCategory(p6, "Mouse");
+        productService.addCategory(p7, "Mouse");
+        productService.addCategory(p8, "Mouse");
         productService.addCategory(p, "Office");
         productService.addCategory(p, "Gaming");
         productService.addCategory(p1, "Gaming");
@@ -61,7 +59,6 @@ public class ProductLoader implements CommandLineRunner {
         productService.addCategory(p6, "Office");
         productService.addCategory(p7, "Gaming");
         productService.addCategory(p8, "Office");
-        productService.addCategory(p9, "Accessories");
 
         products.add(p);
         products.add(p1);
@@ -76,7 +73,6 @@ public class ProductLoader implements CommandLineRunner {
         products.add(p7);
 
         products.add(p8);
-        products.add(p9);
 
 
         // Insert the products into the database

@@ -12,24 +12,31 @@ function Shop() {
     const [products, setProducts] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState('All');
 
-    const shopCategories = ['All', 'Gaming', 'Office', 'Headset', 'Mouse', 'Keyboard', 'Console', 'Controller'];
+    const shopCategories = ['All', 'Gaming', 'Office', 'Headsets', 'Mouse', 'Keyboards', 'Consoles', 'Controllers'];
 
     const placeholderText = selectedCategory === 'All' ? 'Search products' : `Search ${selectedCategory.toLowerCase()}`;
 
-
     useEffect(() => {
-        APIService.getProducts()
-            .then(response => {
-                setProducts(response.data);
-                console.log(response.data);
-            })
-            .catch(error => console.log(error));
-    }, []);
+        if(selectedCategory === 'All') {
+            APIService.getProducts()
+                .then(response => {
+                    setProducts(response.data);
+                    console.log(response.data);
+                })
+                .catch(error => console.log(error));
+        } else {
+            APIService.getProductsByCategory(selectedCategory)
+                .then(response => {
+                    setProducts(response.data);
+                    console.log(response.data);
+                })
+                .catch(error => console.log(error));
+        }
+    }, [selectedCategory]);
+
 
     const filteredProducts = products.filter(product =>
-        product.productName.toLowerCase().includes(search.toLowerCase()) &&
-        (selectedCategory === 'All' || product.productCategory.toLowerCase() === selectedCategory.toLowerCase())
-    );
+        product.productName.toLowerCase().includes(search.toLowerCase()));
 
     const handleSearch = event => {
         setSearch(event.target.value);
@@ -57,8 +64,8 @@ function Shop() {
                 <section className="products">
                     {filteredProducts.map((product) => (
                         <ProductCard
-                            key={product.id}
-                            id={product.id}
+                            key={product.product_id}
+                            id={product.product_id}
                             image={product.productImage}
                             title={product.productName}
                             price={product.price}
