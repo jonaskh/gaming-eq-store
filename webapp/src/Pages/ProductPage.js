@@ -36,41 +36,46 @@ const ProductPage = () => {
     return (
         <>
             <Navbar />
-            <div className="product-container">
-                <div className="product-image">
-                    <img src={`${process.env.PUBLIC_URL}/${product.productImage}`} alt={product.productName} />
-                </div>
-                <div className="product-details">
-                    <h1>{product.productName}</h1>
-                    <p className="product-description">
-                        {product.productDesc}
-                    </p>
-                    <div className="product-info">
-                        <div className="product-price">
-                            <span className="price-amount">{product.price}</span>
-                            <span className="price-currency">kr</span>
-                        </div>
+            <div className="product-page">
+                <div className="product-container">
+                    <div className="product-image">
+                        <h1>{product.productName}</h1>
+                        <img src={`${process.env.PUBLIC_URL}/${product.productImage}`} alt={product.productName} />
                     </div>
-                    <button className="product-button">Add to Cart</button>
+                    <div className="product-details">
+                        <div className="product-info">
+                            <div className="product-price">
+                                <span className="price-amount">{product.price}</span>
+                                <span className="price-currency">kr</span>
+                            </div>
+                        </div>
+                        <button className="product-button">Add to Cart</button>
+                    </div>
+                    <div>
+                        <h2>Product info</h2>
+                        <p className="product-description">
+                            {product.productDesc}
+                        </p>
+                    </div>
                 </div>
-            </div>
-            <div className="more-products">
-                Other products
-            </div>
 
-            <section className="products">
+                <h1 className="more-products">
+                    Other products
+                </h1>
+                <section className="products">
 
-                {randomProducts.map((product) => (
-                    <ProductCard
-                        key={product.id}
-                        id={product.id}
-                        image={product.productImage}
-                        title={product.productName}
-                        price={product.price}
-                        onClick={handleProductsClick}
-                    />
-                ))}
-            </section>
+                    {randomProducts.map((product) => (
+                        <ProductCard
+                            key={product.id}
+                            id={product.id}
+                            image={product.productImage}
+                            title={product.productName}
+                            price={product.price}
+                            onClick={handleProductsClick}
+                        />
+                    ))}
+                </section>
+            </div>
         </>
     );
 };
