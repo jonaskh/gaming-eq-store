@@ -5,6 +5,7 @@ import LoginPage from "./Pages/LoginPage";
 import RegisterPage from "./Pages/RegisterPage";
 import SettingsPage from "./Pages/SettingsPage";
 import ProductPage from "./Pages/ProductPage";
+import ShoppingCart from "./Pages/ShoppingCart";
 
   function App() {
     return (
@@ -16,6 +17,7 @@ import ProductPage from "./Pages/ProductPage";
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/settings" element={<SettingsPage />} />
           <Route path="/product" element={<ProductPage />} />
+          <Route path="/cart" element={<ShoppingCart />} />
         </Routes>
       </BrowserRouter>
     );

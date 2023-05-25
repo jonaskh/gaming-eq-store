@@ -1,0 +1,8 @@
+.cart-container {
+    width: 1000px;
+}
+
+.cart-section {
+    display: flex;
+    flex-wrap: wrap;
+}

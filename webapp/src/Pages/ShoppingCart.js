@@ -1,70 +1,50 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import Navbar from '../Components/Navbar';
 import Footer from "../Components/Footer";
+import APIService from "../Services/APIService";
+import CartItem from "../Components/CartItem";
+import "../css/Cart.css"
 
 
-const ShoppingItem = ({ name, price, handleAddToCart }) => {
+function ShoppingCart() {
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        APIService.getProducts()
+            .then(response => {
+                setProducts(response.data);
+                console.log(response.data);
+            })
+            .catch(error => console.log(error));
+
+    }, []);
+
     return (
         <div>
-            <h2>{name}</h2>
-            <p>{price} USD</p>
-            <button onClick={handleAddToCart}>Add to Cart</button>
-        </div>
-    );
-};
-
-const ShoppingCart = ({ cartItems, handleRemoveFromCart }) => {
-    return (
-        <div>
-            <h2>Shopping Cart</h2>
-            {cartItems.length === 0 && <p>Your cart is empty.</p>}
-            {cartItems.map(item => (
-                <div key={item.id}>
-                    <h3>{item.name}</h3>
-                    <p>{item.price} USD</p>
-                    <button onClick={() => handleRemoveFromCart(item)}>Remove</button>
+            <Navbar/>
+            <div className="cart-section">
+                <div className="cart-container">
+                    <h2 className="section-title">Your Cart</h2>
+                    <section className="items">
+                        {products.map((product) => (
+                            <CartItem
+                                key={product.product_id}
+                                image={product.productImage}
+                                title={product.productName}
+                                price={product.price}
+                                itemQuantity={product.productAmount}
+                            />
+                        ))}
+                    </section>
                 </div>
-            ))}
-            <p>Total: {cartItems.reduce((acc, item) => acc + item.price, 0)} USD</p>
-        </div>
-    );
-};
 
-const Shop = () => {
-    const [cartItems, setCartItems] = useState([]);
+                <h2>You fucker</h2>
 
-    const handleAddToCart = item => {
-        setCartItems([...cartItems, item]);
-    };
-
-    const handleRemoveFromCart = item => {
-        setCartItems(cartItems.filter(i => i.id !== item.id));
-    };
-
-    const items = [
-        { id: 1, name: 'Product A', price: 10 },
-        { id: 2, name: 'Product B', price: 20 },
-        { id: 3, name: 'Product C', price: 30 },
-    ];
-
-    return (
-        <div>
-            <Navbar />
-            <h1>Shop</h1>
-            <div>
-                {items.map(item => (
-                    <ShoppingItem
-                        key={item.id}
-                        name={item.name}
-                        price={item.price}
-                        handleAddToCart={() => handleAddToCart(item)}
-                    />
-                ))}
             </div>
-            <ShoppingCart cartItems={cartItems} handleRemoveFromCart={handleRemoveFromCart} />
+
             <Footer/>
         </div>
     );
-};
+}
 
 export default ShoppingCart;
