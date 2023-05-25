@@ -14,6 +14,10 @@ public class Product {
     @Column(nullable = false)
     private Integer product_id;
 
+    @ManyToOne
+    @JoinColumn(name = "product_id")
+    private Cart cart;
+
     // Establishing the many-to-many relationship with Category
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "product_categories",

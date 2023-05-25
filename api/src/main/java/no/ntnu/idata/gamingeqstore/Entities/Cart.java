@@ -24,7 +24,6 @@ public class Cart {
 
     @OneToMany(cascade = CascadeType.ALL,
             fetch = FetchType.EAGER, mappedBy = "cart")
-    @Column(name = "product_id_in_cart")
     @JsonIgnore
     private Set<CartProduct> productsInCart = new HashSet<>();
 
