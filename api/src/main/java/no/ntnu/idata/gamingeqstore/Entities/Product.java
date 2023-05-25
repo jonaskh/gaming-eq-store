@@ -12,42 +12,36 @@ public class Product {
     private static int counter = 1; //this static field will increase by one every time an object is made, working as an incremented id.
     @Id
     @Column(nullable = false)
-    private Integer product_id;
+    protected Integer product_id;
 
-    @ManyToOne
-    @JoinColumn(name = "product_id")
-    private Cart cart;
 
     // Establishing the many-to-many relationship with Category
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "product_categories",
             joinColumns = @JoinColumn(name = "product_id"),
             inverseJoinColumns = @JoinColumn(name = "category_id"))
-    private Set<ProductCategory> categories = new HashSet<>();
+    protected Set<ProductCategory> categories = new HashSet<>();
 
     @Column(length = 45, nullable = false, name = "product_name")
-    private String productName;
+    protected String productName;
 
     @Column(length = 10, nullable = false, name = "price")
-    private int price;
+    protected int price;
 
     @Column(length = 1000, nullable = false, name = "product_image")
-    private String productImage;
+    protected String productImage;
 
     @Column(length = 1000, nullable = false, name = "product_desc")
-    private String productDesc;
-
-    @Column(length = 10, nullable = false, name = "productAmount")
-    private int productAmount;
+    protected String productDesc;
 
 
-    public Product(String productName, int price, String productImage, String productDesc, int productAmount) {
+
+    public Product(String productName, int price, String productImage, String productDesc) {
         this.product_id = counter++;
         this.productName = productName;
         this.price = price;
         this.productImage = productImage;
         this.productDesc = productDesc;
-        this.productAmount = productAmount;
     }
 
     public Product() {
@@ -107,20 +101,12 @@ public class Product {
                 "id=" + product_id +
                 ", productName='" + productName + '\'' +
                 ", price=" + price +
-                ", productAmount=" + productAmount +
                 ", productImage='" + productImage + '\'' +
                 ", productDesc='" + productDesc + '\'' +
                 "categories: " + categories +
                 '}';
     }
 
-    public int getProductAmount() {
-        return productAmount;
-    }
-
-    public void setProductAmount(int productAmount) {
-        this.productAmount = productAmount;
-    }
 
     public void addCategory(ProductCategory category) {
         categories.add(category);

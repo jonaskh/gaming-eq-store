@@ -50,11 +50,11 @@ public class OrderList {
 
     //Calculates the sum total of the products added to the order.
 
-    public void setTotalOrderPrice() {
-        this.totalOrderPrice = user.getCart().getProducts().stream().map(item ->
-                new BigDecimal(item.getPrice()).multiply(new BigDecimal(item.getProductAmount())))
-                .reduce(BigDecimal::add).orElse(new BigDecimal((0)));
-    }
+//    public void setTotalOrderPrice() {
+//        this.totalOrderPrice = user.getCart().getProducts().stream().map(item ->
+//                new BigDecimal(item.getPrice()).multiply(new BigDecimal(item.getProductAmount())))
+//                .reduce(BigDecimal::add).orElse(new BigDecimal((0)));
+//    }
 
 
     public User getUser() {

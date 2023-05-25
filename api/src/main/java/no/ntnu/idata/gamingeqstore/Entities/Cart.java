@@ -4,7 +4,9 @@ package no.ntnu.idata.gamingeqstore.Entities;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -23,9 +25,10 @@ public class Cart {
     private User user;
 
     @OneToMany(cascade = CascadeType.ALL,
-            fetch = FetchType.EAGER, mappedBy = "cart")
+            fetch = FetchType.EAGER)
+    @JoinColumn(name = "cart")
     @JsonIgnore
-    private Set<CartProduct> productsInCart = new HashSet<>();
+    private List<CartProduct> productsInCart = new ArrayList<>();
 
 
     public Cart(User user) {
@@ -35,7 +38,7 @@ public class Cart {
     public Cart() {
     }
 
-    public Cart(int cartID, User user, Set<CartProduct> productsInCart) {
+    public Cart(int cartID, User user, List<CartProduct> productsInCart) {
         this.cartID = cartID;
         this.user = user;
         this.productsInCart = productsInCart;
@@ -56,12 +59,12 @@ public class Cart {
 
 
     @JsonIgnore
-    public Set<CartProduct> getProducts() {
+    public List<CartProduct> getProducts() {
         return productsInCart;
     }
 
-    public void addProductToCart(CartProduct cartProduct) {
-        this.productsInCart.add(cartProduct);
+    public void addProductToCart(CartProduct product) {
+        this.productsInCart.add(product);
     }
 
     public void removeProduct(CartProduct product) {

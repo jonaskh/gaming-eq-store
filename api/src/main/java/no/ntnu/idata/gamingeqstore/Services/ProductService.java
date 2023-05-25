@@ -62,34 +62,34 @@ public class ProductService {
         return productRepository.count();
     }
 
-    @Transactional
-    public void increaseAmount(int productId, int amount) throws ProductNotFoundException {
-        Optional<Product> optionalProduct = productRepository.findById(productId);
-        if (optionalProduct.isPresent()) {
-            Product product = optionalProduct.get();
-
-            int update = product.getProductAmount() + amount;
-            product.setProductAmount(update);
-            productRepository.save(product);
-        }
-    }
+//    @Transactional
+//    public void increaseAmount(int productId, int amount) throws ProductNotFoundException {
+//        Optional<Product> optionalProduct = productRepository.findById(productId);
+//        if (optionalProduct.isPresent()) {
+//            Product product = optionalProduct.get();
+//
+//            int update = product.getProductAmount() + amount;
+//            product.setProductAmount(update);
+//            productRepository.save(product);
+//        }
+//    }
 
     public Optional<Product> findByName(String name) {
         return productRepository.findByProductName(name);
     }
 
-    @Transactional
-    public void decreaseAmount(int productId, int amount) throws ProductNotFoundException {
-        Optional<Product> optionalProduct = productRepository.findById(productId);
-        if (optionalProduct.isPresent()) {
-            Product product = optionalProduct.get();
-            if (product.getProductAmount() <= 0) throw new ProductNotFoundException("Product out of stock");
-
-            int update = product.getProductAmount() - amount;
-            product.setProductAmount(update);
-            productRepository.save(product);
-        }
-    }
+//    @Transactional
+//    public void decreaseAmount(int productId, int amount) throws ProductNotFoundException {
+//        Optional<Product> optionalProduct = productRepository.findById(productId);
+//        if (optionalProduct.isPresent()) {
+//            Product product = optionalProduct.get();
+//            if (product.getProductAmount() <= 0) throw new ProductNotFoundException("Product out of stock");
+//
+//            int update = product.getProductAmount() - amount;
+//            product.setProductAmount(update);
+//            productRepository.save(product);
+//        }
+//    }
 
     @Transactional
     public void saveAll(List<Product> products) {
