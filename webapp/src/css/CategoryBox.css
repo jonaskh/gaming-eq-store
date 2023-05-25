@@ -8,13 +8,13 @@
     transition: border-color 0.3s ease;
     overflow: hidden;
     font-size: 32px;
-    background-color: transparent;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.3);
+
 }
 
 .category-box:hover {
     transform: scale(1.05);
 }
-
 
 .category-box.selected {
     border-color: yellow;
@@ -26,12 +26,15 @@
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;
     filter: blur(1px);
-    opacity: 0.6;
+    opacity: 1;
     transition: opacity 0.3s ease;
 }
 
 .category-box:hover .category-background-image {
     opacity: 1;
+}
+
+.category-text {
+    position: relative;
 }
