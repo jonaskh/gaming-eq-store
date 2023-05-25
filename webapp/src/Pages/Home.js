@@ -37,7 +37,7 @@ function Home() {
   return (
     <div className="Home">
       <Navbar />
-      <section className="hero">
+      <section className="hero-section">
         <Hero
           title="Welcome to Cyberpunk Gaming Gear"
           subtitle="Get the best gaming gear for your e-sports needs."
