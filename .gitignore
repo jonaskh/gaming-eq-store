@@ -1,7 +1,7 @@
 HELP.md
 api/target/
 !api/.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
+!.mvn/wrapper/maven-wrapper.jar
 !**/src/test/**/target/
 
 ### STS ###
@@ -14,7 +14,9 @@ api/target/
 .sts4-cache
 
 ### IntelliJ IDEA ###
+
 .idea
+
 *.iws
 *.iml
 *.ipr
@@ -32,3 +34,4 @@ build/
 ### VS Code ###
 .vscode/
 webapp/node_modules/
+

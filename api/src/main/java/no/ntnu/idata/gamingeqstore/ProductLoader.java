@@ -27,24 +27,6 @@ public class ProductLoader implements CommandLineRunner {
         // Create an array of products to insert into the database
         categoryService.addCategories();
 
-//        ProductCategory cat1 = new ProductCategory("Mice");
-//        ProductCategory cat2 = new ProductCategory("Headsets");
-//        ProductCategory cat3 = new ProductCategory("Keyboards");
-//        ProductCategory cat4 = new ProductCategory("Accessories");
-//        ProductCategory cat5 = new ProductCategory("Office");
-//        ProductCategory cat6 = new ProductCategory("Gaming");
-//        ProductCategory cat7 = new ProductCategory("Consoles");
-//        ProductCategory cat8 = new ProductCategory("Controllers");
-//
-//        categoryService.save(cat1);
-//        categoryService.save(cat2);
-//        categoryService.save(cat3);
-//        categoryService.save(cat4);
-//        categoryService.save(cat5);
-//        categoryService.save(cat6);
-//        categoryService.save(cat7);
-//        categoryService.save(cat8);
-
         List<Product> products = new ArrayList<>();
 
         Product p = new Product("Headset for office and gaming", 850, "Product 1.png", "Headset for office and gaming description", 1);

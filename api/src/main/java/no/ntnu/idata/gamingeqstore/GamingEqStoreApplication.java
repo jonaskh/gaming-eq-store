@@ -31,23 +31,6 @@ public class GamingEqStoreApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		roleService.initializeRoles();
-//		Product product = new Product("Gaming Mouse", 199, "Product 1.png","A mouse", 1);
-//		ProductCategory cat1 = new ProductCategory("Mice");
-//		ProductCategory cat2 = new ProductCategory("Keyboard");
-//		categoryService.save(cat1);
-//		categoryService.save(cat2);
-//
-//		productService.addCategory(product, cat1.getCategoryName());
-//		productService.addCategory(product, cat2.getCategoryName());
-//		productService.save(product);
-//
-//		System.out.println("before: " + productService.findByName("Gaming Mouse"));
-//
-//		System.out.println(productService.findProductsByCategory("Keyboard"));
-//		productService.findByName("Gaming Mouse").get().addCategory(cat1);
-//		System.out.println("after : " + productService.findByName("Gaming Mouse"));
-
-
 
 	}
 }

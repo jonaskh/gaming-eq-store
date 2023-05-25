@@ -2,24 +2,29 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../Components/Navbar';
 import jwt_decode from 'jwt-decode';
-
-
+import '../css/SettingsPage.css';
 
 
 const SettingsPage = () => {
     const navigate = useNavigate();
     const [userEmail, setUserEmail] = useState('');
+    const [error, setError] = useState(null);
 
     useEffect(() => {
-        const isAuthenticated = !!localStorage.getItem('jwt');
+        const token = localStorage.getItem('jwt');
 
-        if (!isAuthenticated) {
+        if (!token) {
             navigate('/login');
         } else {
-            const token = localStorage.getItem('jwt');
-            const decodedToken = jwt_decode(token);
-            const email = decodedToken.sub;
-            setUserEmail(email);
+            try {
+                const decodedToken = jwt_decode(token);
+                const email = decodedToken.sub;
+                setUserEmail(email);
+            } catch(err) {
+                setError('Invalid token');
+                localStorage.removeItem('jwt');
+                navigate('/login');
+            }
         }
     }, [navigate]);
 
@@ -28,13 +33,17 @@ const SettingsPage = () => {
         navigate('/login');
     };
 
+    if (error) {
+        return <div className="error">{error}</div>
+    }
+
     return (
-        <div>
+        <div className="settings-container">
             <Navbar />
-            <div>
+            <div className="settings-content">
                 <h2>Settings</h2>
                 {userEmail && <p>Email: {userEmail}</p>}
-                <button onClick={handleLogout}>Logout</button>
+                <button onClick={handleLogout} className="logout-button">Logout</button>
             </div>
         </div>
     );
