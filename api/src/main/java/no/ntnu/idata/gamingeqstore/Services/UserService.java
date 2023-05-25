@@ -39,5 +39,15 @@ public class UserService {
         return userRepository.save(user);
     }
 
+    public User saveAdmin(User user) {
+        if (user.getRoles().isEmpty()) {
+            Role adminRole = roleService.findByName("ADMIN");
+            user.addRole(adminRole);
+        }
+        String encodedPassword = passwordEncoder.encode(user.getPassword());
+        user.setPassword(encodedPassword);
+        return userRepository.save(user);
+    }
+
 
 }
