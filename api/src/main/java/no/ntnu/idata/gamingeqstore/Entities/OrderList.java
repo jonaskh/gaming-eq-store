@@ -26,7 +26,7 @@ public class OrderList {
     // Relation to order item
     @Column(name = "order_items_id")
     @OneToMany(mappedBy = "orderList", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private Set<ProductInOrder> orderItems = new LinkedHashSet<>();
+    private Set<OrderProduct> orderItems = new LinkedHashSet<>();
 
     @Column(nullable = true, name = "total_order_price")
     private BigDecimal totalOrderPrice;
@@ -43,8 +43,8 @@ public class OrderList {
 
     }
 
-    public void addOrderItem(ProductInOrder productInOrder) {
-        orderItems.add(productInOrder);
+    public void addOrderItem(OrderProduct orderProduct) {
+        orderItems.add(orderProduct);
     }
 
 

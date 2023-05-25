@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
     @Entity
     @Table(name = "product_in_cart")
-    public class ProductInCart {
+    public class CartProduct {
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         @Column(name = "product_in_cart_ID")
@@ -20,10 +20,7 @@ import jakarta.persistence.*;
         @Column(nullable = false)
         private String productName;
 
-        @Column(nullable = false)
-        private String productCategory;
-
-        @Column(nullable = false, name = "product_id")
+        @Column(nullable = false, name = "product_id3")
         private int productId;
 
         @ManyToOne(fetch = FetchType.LAZY)
@@ -44,17 +41,16 @@ import jakarta.persistence.*;
         private int productAmount;
 
 
-        public ProductInCart(Product product) {
-            this.productId = product.getId();
+        public CartProduct(Product product) {
+            this.productId = product.getProduct_id();
             this.productName = product.getProductName();
-            this.productCategory = product.getProductCategory();
             this.price = product.getPrice();
             this.productImage = product.getProductImage();
             this.productDesc = product.getProductDesc();
             this.productAmount = product.getProductAmount();
         }
 
-        public ProductInCart() {
+        public CartProduct() {
 
         }
 
@@ -85,14 +81,6 @@ import jakarta.persistence.*;
 
         public void setProductName(String productName) {
             this.productName = productName;
-        }
-
-        public String getProductCategory() {
-            return productCategory;
-        }
-
-        public void setProductCategory(String productCategory) {
-            this.productCategory = productCategory;
         }
 
         public int getProductId() {
@@ -152,7 +140,6 @@ import jakarta.persistence.*;
                     ", productName='" + productName + '\'' +
                     ", productDescription='" + productDesc + '\'' +
                     ", productIcon='" + productImage + '\'' +
-                    ", categoryType=" + productCategory +
                     ", productPrice=" + price +
                     '}';
         }

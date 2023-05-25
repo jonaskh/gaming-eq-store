@@ -9,7 +9,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "product_in_order")
-public class ProductInOrder {
+public class OrderProduct {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,10 +19,7 @@ public class ProductInOrder {
     @Column(nullable = false)
     private String productName;
 
-    @Column(nullable = false)
-    private String productCategory;
-
-    @Column(nullable = false, name = "product_id")
+    @Column(nullable = false, name = "product_id2")
     private int productId;
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
@@ -43,17 +40,16 @@ public class ProductInOrder {
     private int productAmount;
 
 
-    public ProductInOrder(ProductInCart product) {
+    public OrderProduct(CartProduct product) {
         this.productId = product.getId();
         this.productName = product.getProductName();
-        this.productCategory = product.getProductCategory();
         this.price = product.getPrice();
         this.productImage = product.getProductImage();
         this.productDesc = product.getProductDesc();
         this.productAmount = product.getProductAmount();
     }
 
-    public ProductInOrder() {
+    public OrderProduct() {
 
     }
 

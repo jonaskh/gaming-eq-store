@@ -14,7 +14,7 @@
 	<name>gaming-eq-store</name>
 	<description>Base project for Gaming Equipment Store in WebTek.</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>17</java.version>
 	</properties>
 
 	<dependencies>

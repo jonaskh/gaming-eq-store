@@ -1,94 +1,95 @@
 package no.ntnu.idata.gamingeqstore.Entities;
 
-    import jakarta.persistence.*;
-    @Entity
-    @Table(name = "products")
-    public class Product {
+import jakarta.persistence.*;
 
-        private static int counter = 1; //this static field will increase by one every time an object is made, working as an incremented id.
-        @Id
-        @Column(nullable = false)
-        private Integer id;
+import java.util.HashSet;
+import java.util.Set;
 
-        @Column(length = 45, nullable = false, name = "product_name")
-        private String productName;
+@Entity
+@Table(name = "products")
+public class Product {
 
-        @Column(length = 45, nullable = false, name = "product_category")
-        private String productCategory;
+    private static int counter = 1; //this static field will increase by one every time an object is made, working as an incremented id.
+    @Id
+    @Column(nullable = false)
+    private Integer product_id;
 
-        @Column(length = 10, nullable = false, name = "price")
-        private int price;
+    // Establishing the many-to-many relationship with Category
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "product_categories",
+            joinColumns = @JoinColumn(name = "product_id"),
+            inverseJoinColumns = @JoinColumn(name = "category_id"))
+    private Set<ProductCategory> categories = new HashSet<>();
 
-        @Column(length = 1000, nullable = false, name = "product_image")
-        private String productImage;
+    @Column(length = 45, nullable = false, name = "product_name")
+    private String productName;
 
-        @Column(length = 1000, nullable = false, name = "product_desc")
-        private String productDesc;
+    @Column(length = 10, nullable = false, name = "price")
+    private int price;
 
-        @Column(length = 10, nullable = false, name = "productAmount")
-        private int productAmount;
+    @Column(length = 1000, nullable = false, name = "product_image")
+    private String productImage;
+
+    @Column(length = 1000, nullable = false, name = "product_desc")
+    private String productDesc;
+
+    @Column(length = 10, nullable = false, name = "productAmount")
+    private int productAmount;
 
 
-        public Product(String productName, String productCategory, int price, String productImage, String productDesc, int productAmount) {
-            this.id = counter++;
-            this.productName = productName;
-            this.productCategory = productCategory;
-            this.price = price;
-            this.productImage = productImage;
-            this.productDesc = productDesc;
-            this.productAmount = productAmount;
-        }
+    public Product(String productName, int price, String productImage, String productDesc, int productAmount) {
+        this.product_id = counter++;
+        this.productName = productName;
+        this.price = price;
+        this.productImage = productImage;
+        this.productDesc = productDesc;
+        this.productAmount = productAmount;
+    }
 
-        public Product() {
-        }
+    public Product() {
+    }
 
-        public Integer getId() {
-            return id;
-        }
+    public Integer getProduct_id() {
+        return product_id;
+    }
 
-        public void setId(Integer id) {
-            this.id = id;
-        }
+    public void setProduct_id(Integer id) {
+        this.product_id = id;
+    }
 
-        public String getProductName() {
-            return productName;
-        }
+    public String getProductName() {
+        return productName;
+    }
 
-        public void setProductName(String productName) {
-            this.productName = productName;
-        }
+    public void setProductName(String productName) {
+        this.productName = productName;
+    }
 
-        public String getProductCategory() {
-            return productCategory;
-        }
 
-        public void setProductCategory(String productCategory) {
-            this.productCategory = productCategory;
-        }
 
-        public int getPrice() {
-            return price;
-        }
+    public int getPrice() {
+        return price;
+    }
 
-        public void setPrice(int price) {
-            this.price = price;
-        }
+    public void setPrice(int price) {
+        this.price = price;
+    }
 
-        public String getProductImage() {
-            return productImage;
-        }
+    public String getProductImage() {
+        return productImage;
+    }
 
-        public void setProductImage(String productImage) {
-            this.productImage = productImage;
-        }
+    public void setProductImage(String productImage) {
+        this.productImage = productImage;
+    }
 
-        public String getProductDesc() {
-            return productDesc;
-        }
+    public String getProductDesc() {
+        return productDesc;
+    }
 
-        public void setProductDesc(String productDesc) {
-            this.productDesc = productDesc;
-        }
+    public void setProductDesc(String productDesc) {
+        this.productDesc = productDesc;
+    }
 
 //        public ProductInCart toProductInCart(Product product) {
 //
@@ -96,26 +97,34 @@ package no.ntnu.idata.gamingeqstore.Entities;
 //        }
 
 
-
-        @Override
-        public String toString() {
-            return "User{" +
-                    "id=" + id +
-                    ", productName='" + productName + '\'' +
-                    ", productCategory='" + productCategory + '\'' +
-                    ", price=" + price +
-                    ", productAmount=" + productAmount +
-                    ", productImage='" + productImage + '\'' +
-                    ", productDesc='" + productDesc + '\'' +
-                    '}';
-        }
-
-        public int getProductAmount() {
-            return productAmount;
-        }
-
-        public void setProductAmount(int productAmount) {
-            this.productAmount = productAmount;
-        }
-
+    @Override
+    public String toString() {
+        return "Product{" +
+                "id=" + product_id +
+                ", productName='" + productName + '\'' +
+                ", price=" + price +
+                ", productAmount=" + productAmount +
+                ", productImage='" + productImage + '\'' +
+                ", productDesc='" + productDesc + '\'' +
+                "categories: " + categories +
+                '}';
     }
+
+    public int getProductAmount() {
+        return productAmount;
+    }
+
+    public void setProductAmount(int productAmount) {
+        this.productAmount = productAmount;
+    }
+
+    public void addCategory(ProductCategory category) {
+        categories.add(category);
+    }
+
+    public void printCategories() {
+        for (ProductCategory cat : categories) {
+            System.out.println(cat);
+        }
+    }
+}
