@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="58710b36-4c39-4b23-91b6-69e16c51e6f1" name="Changes" comment="" />
+    <list default="true" id="58710b36-4c39-4b23-91b6-69e16c51e6f1" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/no/ntnu/idata/gamingeqstore/Controllers/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/no/ntnu/idata/gamingeqstore/Controllers/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/no/ntnu/idata/gamingeqstore/Controllers/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/no/ntnu/idata/gamingeqstore/Controllers/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/no/ntnu/idata/gamingeqstore/Security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/no/ntnu/idata/gamingeqstore/Security/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/no/ntnu/idata/gamingeqstore/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/no/ntnu/idata/gamingeqstore/WebConfig.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,14 +45,8 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="mavenHome" value="Use Maven wrapper" />
         <option name="useMavenConfig" value="true" />
       </MavenGeneralSettings>
-    </option>
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="workspaceImportEnabled" value="true" />
-      </MavenImportingSettings>
     </option>
   </component>
   <component name="ProjectId" id="2N2yaGUTxcU66hFnpAWhr8WfRPr" />
@@ -74,6 +74,9 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;5819ad453194b7d6ca43abe04a382f3a&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
@@ -127,12 +130,20 @@
       <method v="2" />
     </configuration>
     <configuration name="GamingEqStoreApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <option name="ALTERNATIVE_JRE_PATH" value="19" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <module name="gaming-eq-store" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="no.ntnu.idata.gamingeqstore.GamingEqStoreApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="JUnit.AddProductTest" />
+      <item itemvalue="Node.js.App.js" />
+      <item itemvalue="Node.js.Home.js" />
+      <item itemvalue="Spring Boot.GamingEqStoreApplication" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.AddProductTest" />
@@ -172,6 +183,8 @@
       <workItem from="1683990740477" duration="116000" />
       <workItem from="1683990997502" duration="32000" />
       <workItem from="1684895845904" duration="7770000" />
+      <workItem from="1684994664118" duration="763000" />
+      <workItem from="1684995437065" duration="5572000" />
     </task>
     <servers />
   </component>

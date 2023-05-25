@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BACKEND_URL = "http://backend:8080/api";
+const BACKEND_URL = "http://group09.web-tek.ninja:8080/api";
 const PRODUCT_REST_API_URL = BACKEND_URL + "/products";
 const RANDOM_PRODUCT_REST_API_URL = BACKEND_URL + "/products/random";
 

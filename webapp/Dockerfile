@@ -3,7 +3,7 @@ FROM node:18-alpine as build-stage
 WORKDIR /webapp
 COPY package*.json ./
 RUN npm install
-COPY . .
+COPY . ./
 RUN npm run build
 
 # Production stage
