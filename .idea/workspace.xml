@@ -6,10 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="58710b36-4c39-4b23-91b6-69e16c51e6f1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/no/ntnu/idata/gamingeqstore/Controllers/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/no/ntnu/idata/gamingeqstore/Controllers/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/no/ntnu/idata/gamingeqstore/Controllers/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/no/ntnu/idata/gamingeqstore/Controllers/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/no/ntnu/idata/gamingeqstore/Security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/no/ntnu/idata/gamingeqstore/Security/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/no/ntnu/idata/gamingeqstore/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/no/ntnu/idata/gamingeqstore/WebConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,7 +180,7 @@
       <workItem from="1683990997502" duration="32000" />
       <workItem from="1684895845904" duration="7770000" />
       <workItem from="1684994664118" duration="763000" />
-      <workItem from="1684995437065" duration="5572000" />
+      <workItem from="1684995437065" duration="6516000" />
     </task>
     <servers />
   </component>
