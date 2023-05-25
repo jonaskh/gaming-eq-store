@@ -5,6 +5,7 @@ import Search from '../Components/Search';
 import APIService from "../Services/APIService";
 import '../css/Shop.css'; // New line to import Shop CSS
 import CategoryBox from "../Components/CategoryBox";
+import Footer from "../Components/Footer";
 
 
 function Shop() {
@@ -73,6 +74,7 @@ function Shop() {
                     ))}
                 </section>
             </div>
+            <Footer/>
         </div>
     );
 }

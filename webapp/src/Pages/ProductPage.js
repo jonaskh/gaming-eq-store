@@ -3,7 +3,8 @@ import '../css/ProductPage.css';
 import APIService from "../Services/APIService";
 import {useLocation} from "react-router-dom";
 import Navbar from "../Components/Navbar";
-import ProductCard from "../Components/ProductCard"; // import the CSS file
+import ProductCard from "../Components/ProductCard";
+import Footer from "../Components/Footer"; // import the CSS file
 
 const ProductPage = () => {
 
@@ -75,6 +76,7 @@ const ProductPage = () => {
                         />
                     ))}
                 </section>
+                <Footer/>
             </div>
         </>
     );

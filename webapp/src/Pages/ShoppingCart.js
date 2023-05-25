@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Navbar from '../Components/Navbar';
+import Footer from "../Components/Footer";
 
 
 const ShoppingItem = ({ name, price, handleAddToCart }) => {
@@ -61,8 +62,9 @@ const Shop = () => {
                 ))}
             </div>
             <ShoppingCart cartItems={cartItems} handleRemoveFromCart={handleRemoveFromCart} />
+            <Footer/>
         </div>
     );
 };
 
-export default Shop;
+export default ShoppingCart;

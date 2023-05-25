@@ -5,6 +5,7 @@ import '../css/Home.css';
 import Testimonial from '../Components/Testimonial';
 import Hero from '../Components/Hero';
 import APIService from "../Services/APIService";
+import Footer from "../Components/Footer";
 
 
 function Home() {
@@ -67,10 +68,7 @@ function Home() {
           <Testimonial key={index} name={testimonial.name} age={testimonial.age} text={testimonial.text} />
         ))}
       </section>
-
-      <footer>
-        <p>© 2023 All Rights Reserved</p>
-      </footer>
+        <Footer/>
     </div>
   );
 }

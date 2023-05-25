@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Navbar from '../Components/Navbar';
 import jwt_decode from 'jwt-decode';
 import '../css/SettingsPage.css';
+import Footer from "../Components/Footer";
 
 
 const SettingsPage = () => {
@@ -45,6 +46,7 @@ const SettingsPage = () => {
                 {userEmail && <p>Email: {userEmail}</p>}
                 <button onClick={handleLogout} className="logout-button">Logout</button>
             </div>
+            <Footer/>
         </div>
     );
 };
