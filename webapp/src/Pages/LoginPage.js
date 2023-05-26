@@ -20,7 +20,7 @@ const LoginPage = () => {
     const handleSubmit = async event => {
         event.preventDefault();
         try {
-            const response = await fetch('http://localhost:8080/api/authenticate', {
+            const response = await fetch('http://group09.web-tek.ninja:8080/api/authenticate', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -72,6 +72,9 @@ const LoginPage = () => {
                     </form>
                     <p id={"registerText"}>
                         Don't have an account? <Link to="/register">Register here</Link>
+                    </p>
+                    <p id={"registerText"}>
+                        Admin? <Link to="/registerAdmin">Register here</Link>
                     </p>
                 </div>
             </div>

@@ -2,13 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../Components/Navbar';
 import jwt_decode from 'jwt-decode';
-import '../css/SettingsPage.css';
-import Footer from "../Components/Footer";
+import '../css/AdminPanel.css';
 
-
-const SettingsPage = () => {
+const AdminPanelPage = () => {
     const navigate = useNavigate();
-    const [userEmail, setUserEmail] = useState('');
     const [userRoles, setUserRoles] = useState([]);
     const [error, setError] = useState(null);
 
@@ -20,11 +17,9 @@ const SettingsPage = () => {
         } else {
             try {
                 const decodedToken = jwt_decode(token);
-                const email = decodedToken.sub;
                 const roles = decodedToken.roles.split(',');
                 setUserRoles(roles);
-                setUserEmail(email);
-            } catch(err) {
+            } catch (err) {
                 setError('Invalid token');
                 localStorage.removeItem('jwt');
                 navigate('/login');
@@ -38,23 +33,20 @@ const SettingsPage = () => {
     };
 
     if (error) {
-        return <div className="error">{error}</div>
+        return <div className="error">{error}</div>;
+    }
+    const isAdmin = userRoles.includes('ADMIN');
+    if (!isAdmin) {
+        navigate('/login');
+        return null; 
     }
 
     return (
-        <div className="settings-container">
+        <div className="admin-panel-container">
             <Navbar />
-            <div className="settings-content">
-                <h2>Settings</h2>
-                {userEmail && <p>Email: {userEmail}</p>}
-                {userRoles.length > 0 && (
-                    <div>
-                        <p>Roles: {userRoles.join(', ')}</p>
-                        {userRoles.includes('ADMIN') && (
-                            <Link to="/admin-panel">Admin Panel</Link>
-                        )}
-                    </div>
-                )}
+            <div className="admin-panel-content">
+                <h2>Admin Panel</h2>
+                <p>Legg til noe kult her</p>
                 <button onClick={handleLogout} className="logout-button">
                     Logout
                 </button>
@@ -63,4 +55,4 @@ const SettingsPage = () => {
     );
 };
 
-export default SettingsPage;
+export default AdminPanelPage;

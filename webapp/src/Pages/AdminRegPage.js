@@ -2,14 +2,13 @@ import React, { useState } from 'react';
 import Navbar from '../Components/Navbar';
 import '../css/RegisterPage.css';
 import { useNavigate } from 'react-router-dom';
-import Footer from "../Components/Footer";
-import APIService from "../Services/APIService";
 
-const RegisterPage = () => {
+const AdminRegPage = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [zipcode, setZipcode] = useState('');
     const [address, setAddress] = useState('');
+    const [verificationCode, setVerificationCode] = useState('');
     const navigate = useNavigate();
 
     const handleEmailChange = event => {
@@ -28,10 +27,18 @@ const RegisterPage = () => {
         setAddress(event.target.value);
     };
 
+    const handleVerificationCodeChange = event => {
+        setVerificationCode(event.target.value);
+    };
+
     const handleSubmit = async event => {
         event.preventDefault();
         try {
-            const response = await fetch('http://group09.web-tek.ninja:8080/api/register', {
+            if (verificationCode !== 'admin') {
+                throw new Error('Invalid verification code');
+            }
+
+            const response = await fetch('http://group09.web-tek.ninja:8080/api/registerAdmin', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -98,13 +105,22 @@ const RegisterPage = () => {
                                 className="form-input"
                             />
                         </div>
+                        <div>
+                            <label htmlFor="verificationCode">Verification Code:</label>
+                            <input
+                                type="password"
+                                id="verificationCode"
+                                value={verificationCode}
+                                onChange={handleVerificationCodeChange}
+                                className="form-input"
+                            />
+                        </div>
                         <button type="submit">Register</button>
                     </form>
                 </div>
             </div>
-            <Footer/>
         </div>
     );
 };
 
-export default RegisterPage;
+export default AdminRegPage;
