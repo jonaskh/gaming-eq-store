@@ -3,6 +3,7 @@ api/target/
 !api/.mvn/wrapper/maven-wrapper.jar
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/test/**/target/
+api/.env
 
 ### STS ###
 .apt_generated
