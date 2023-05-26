@@ -70,6 +70,14 @@ public class UserService {
     }
 
     public void saveCartProduct(CartProduct cartProduct) {
+        List<CartProduct> cartProducts = cartProductRepository.findByCartId(cartProduct.getCart().getCartID());
+        for (CartProduct product: cartProducts) {
+            if (cartProduct.getProductId() == product.getProductId()) {
+                product.setProductAmount(product.getProductAmount() + 1);
+                cartProductRepository.save(product);
+                return;
+            }
+        }
         cartProductRepository.save(cartProduct);
     }
 }
