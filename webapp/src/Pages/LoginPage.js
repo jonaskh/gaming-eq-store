@@ -73,6 +73,9 @@ const LoginPage = () => {
                     <p id={"registerText"}>
                         Don't have an account? <Link to="/register">Register here</Link>
                     </p>
+                    <p id={"registerText"}>
+                        Admin? <Link to="/registerAdmin">Register here</Link>
+                    </p>
                 </div>
             </div>
             <Footer/>

@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import Navbar from '../Components/Navbar';
 import jwt_decode from 'jwt-decode';
 import '../css/SettingsPage.css';
 import Footer from "../Components/Footer";
 
-
 const SettingsPage = () => {
     const navigate = useNavigate();
     const [userEmail, setUserEmail] = useState('');
+    const [userRoles, setUserRoles] = useState([]);
     const [error, setError] = useState(null);
 
     useEffect(() => {
@@ -20,8 +20,10 @@ const SettingsPage = () => {
             try {
                 const decodedToken = jwt_decode(token);
                 const email = decodedToken.sub;
+                const roles = decodedToken.roles.split(',');
                 setUserEmail(email);
-            } catch(err) {
+                setUserRoles(roles);
+            } catch (err) {
                 setError('Invalid token');
                 localStorage.removeItem('jwt');
                 navigate('/login');
@@ -35,7 +37,7 @@ const SettingsPage = () => {
     };
 
     if (error) {
-        return <div className="error">{error}</div>
+        return <div className="error">{error}</div>;
     }
 
     return (
@@ -44,7 +46,17 @@ const SettingsPage = () => {
             <div className="settings-content">
                 <h2>Settings</h2>
                 {userEmail && <p>Email: {userEmail}</p>}
-                <button onClick={handleLogout} className="logout-button">Logout</button>
+                {userRoles.length > 0 && (
+                    <div>
+                        <p>Roles: {userRoles.join(', ')}</p>
+                        {userRoles.includes('ADMIN') && (
+                            <Link to="/admin-panel">Admin Panel</Link>
+                        )}
+                    </div>
+                )}
+                <button onClick={handleLogout} className="logout-button">
+                    Logout
+                </button>
             </div>
             <Footer/>
         </div>
