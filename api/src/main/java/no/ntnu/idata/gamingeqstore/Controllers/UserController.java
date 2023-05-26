@@ -73,4 +73,20 @@ public class UserController {
         cartProduct.setProductAmount(productAmount);
         userService.saveCartProduct(cartProduct);
     }
+
+    @GetMapping("/users/cart/cost/{email}")
+    public double getTotalCost(@PathVariable("email") String email){
+        double totalCost = 0;
+        Optional<User> user = userService.findByEmail(email);
+        if (!user.isPresent()) {
+            System.err.println("No user by that email");
+        }
+
+        List<CartProduct> items = cartProductRepository.findByCartId(user.get().getCartID());
+        for (CartProduct item: items) {
+            totalCost += (item.getPrice() * item.getProductAmount());
+        }
+
+        return totalCost;
+    }
 }

@@ -12,6 +12,7 @@ function ShoppingCart() {
     const navigate = useNavigate();
     const [products, setProducts] = useState([]);
     const [error, setError] = useState(null);
+    const [totalCost, setTotalCost] = useState(0);
 
     useEffect(() => {
         const token = localStorage.getItem('jwt');
@@ -28,7 +29,12 @@ function ShoppingCart() {
                         console.log(response.data);
                     })
                     .catch(error => console.log(error));
-            } catch(err) {
+                APIService.getTotalCost(email)
+                    .then(response => {
+                        setTotalCost(response.data);
+                    })
+                    .catch(error => console.log(error));
+            } catch (err) {
                 setError('Invalid token');
                 localStorage.removeItem('jwt');
                 navigate('/login');
@@ -39,6 +45,17 @@ function ShoppingCart() {
     if (error) {
         return <div className="error">{error}</div>
     }
+    const handleQuantityChange = (id, newQuantity) => {
+        const updatedProducts = products.map((product) =>
+            product.id === id ? {...product, productAmount: newQuantity} : product
+        );
+        setProducts(updatedProducts);
+
+        const updatedTotalCost = updatedProducts.reduce((acc, curr) =>
+            acc + curr.price * curr.productAmount, 0
+        );
+        setTotalCost(updatedTotalCost);
+    };
 
 
     return (
@@ -56,12 +73,17 @@ function ShoppingCart() {
                                 title={product.productName}
                                 price={product.price}
                                 itemQuantity={product.productAmount}
+                                onQuantityChange={handleQuantityChange}
+
                             />
                         ))}
                     </section>
                 </div>
 
                 <h2>You fucker</h2>
+                <div className="cart-info">
+                    Grand total: {totalCost}
+                </div>
 
             </div>
 

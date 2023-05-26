@@ -4,12 +4,13 @@ import '../css/CartItem.css';
 import APIService from "../Services/APIService";
 
 const CartItem = (props) => {
-    const { id, image, title, price, itemQuantity } = props;
+    const { id, image, title, price, itemQuantity, onQuantityChange } = props;
     const [quantity, setQuantity] = useState(itemQuantity);
 
     const updateQuantity = (event) => {
         setQuantity(event.target.value);
         APIService.setProductAmount(id, event.target.value-1).then();
+        onQuantityChange(id, event.target.value); // Pass the changes to parent component
     };
 
     return (
