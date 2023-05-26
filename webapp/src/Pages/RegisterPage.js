@@ -45,7 +45,6 @@ const RegisterPage = () => {
 
             alert('Registration successful! You can now log in.');
             navigate('/login');
-            APIService.addCartToUser(email).then();
         } catch (error) {
             console.error('Error:', error);
             alert('Registration failed. Please check your input and try again.');
