@@ -7,6 +7,7 @@ import SettingsPage from "./Pages/SettingsPage";
 import ProductPage from "./Pages/ProductPage";
 import ShoppingCart from "./Pages/ShoppingCart";
 import AdminRegPage from "./Pages/AdminRegPage";
+import AdminPanelPage from "./Pages/AdminPanelPage";
 
   function App() {
     return (
@@ -20,6 +21,8 @@ import AdminRegPage from "./Pages/AdminRegPage";
           <Route path="/product" element={<ProductPage />} />
           <Route path="/cart" element={<ShoppingCart />} />
           <Route path="/registerAdmin" element={<AdminRegPage />} />
+          <Route path="/admin-panel" element={<AdminPanelPage />} />
+
         </Routes>
       </BrowserRouter>
     );
