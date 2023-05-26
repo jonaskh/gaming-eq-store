@@ -9,7 +9,9 @@ function Navbar() {
 
     return (
         <nav className="navbar">
+            <li> <Link to="/">Cyberpunk Gaming Gear</Link>
             <div className="navBarTitle">Cyberpunk Gaming Gear</div>
+            </li>
             <ul className="menu">
                 <li><Link to="/">Home</Link></li>
                 <li>
