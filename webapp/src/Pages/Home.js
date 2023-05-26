@@ -41,7 +41,7 @@ function Home() {
       <section className="hero-section">
         <Hero
           title="Welcome to Cyberpunk Gaming Gear"
-          subtitle="Get the best gaming gear for your e-sports needs."
+          subtitle="Upgrade your game with cutting-edge gear from Cyberpunk Gaming Gear!"
           buttonText="Shop now"
         />
       </section>
