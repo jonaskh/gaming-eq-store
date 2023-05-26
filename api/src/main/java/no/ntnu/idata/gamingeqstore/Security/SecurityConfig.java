@@ -69,7 +69,7 @@ public class SecurityConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOrigins("http://group09.web-tek.ninja:3000", "http://group09.web-tek.ninja:8080")
+                        .allowedOrigins("http://group09.web-tek.ninja", "http://group09.web-tek.ninja:8080")
                         .allowedMethods("GET", "POST", "PUT", "DELETE")
                         .allowedHeaders("*")
                         .allowCredentials(true)
@@ -81,7 +81,7 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(Arrays.asList("http://group09.web-tek.ninja:3000", "http://group09.web-tek.ninja:8080"));
+        configuration.setAllowedOrigins(Arrays.asList("http://group09.web-tek.ninja", "http://group09.web-tek.ninja:8080"));
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE"));
         configuration.setAllowedHeaders(Arrays.asList("*"));
         configuration.setAllowCredentials(true);

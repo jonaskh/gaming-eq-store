@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.logging.Logger;
 
 @RestController
-@CrossOrigin(origins = "http://group09.web-tek.ninja:3000")
+@CrossOrigin(origins = "http://group09.web-tek.ninja")
 public class AuthController {
 
     @Autowired
