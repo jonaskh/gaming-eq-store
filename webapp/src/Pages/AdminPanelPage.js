@@ -55,8 +55,12 @@ const AdminPanelPage = () => {
         return null; 
     }
 
+    const handleReloadClick = () => {
+        window.location.reload();
+    };
+
     const handleDeleteProduct = (productId) => {
-        APIService.deleteSelectedProduct(productId);
+        APIService.deleteSelectedProduct(productId).then(() => {handleReloadClick()});
         setShowDeleteConfirmation(false);
     };
 
