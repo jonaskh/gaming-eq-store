@@ -9,9 +9,13 @@ const CartItem = (props) => {
 
     const updateQuantity = (event) => {
         setQuantity(event.target.value);
-        APIService.setProductAmount(id, event.target.value-1).then();
+        APIService.setProductAmount(id, quantity).then();
         onQuantityChange(id, event.target.value); // Pass the changes to parent component
     };
+
+    const deleteItem = () => {
+        APIService.deleteCartItem(id);
+    }
 
     return (
         <div className='cart-item'>
@@ -27,6 +31,7 @@ const CartItem = (props) => {
                     className='item-quantity'
                 />
                 <p className='item-total'>{(price * quantity).toFixed(2)} kr</p>
+                <button onClick={deleteItem}>Delete</button>
             </div>
         </div>
     );

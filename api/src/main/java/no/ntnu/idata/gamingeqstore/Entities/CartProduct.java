@@ -11,16 +11,16 @@ import jakarta.persistence.*;
         @Column(name = "product_in_cart_ID")
         private Integer id;
 
-        @ManyToOne(fetch = FetchType.LAZY,
-                cascade = CascadeType.REMOVE)
+        @ManyToOne(fetch = FetchType.LAZY)
         @JoinColumn(name = "cart_id", referencedColumnName = "id")
         @JsonIgnore
         private Cart cart;
 
+
         @Column(nullable = false)
         private String productName;
 
-        @Column(nullable = false, name = "product_id3")
+        @Column(nullable = false, name = "product_id")
         private int productId;
 
         @ManyToOne(fetch = FetchType.LAZY)
@@ -39,7 +39,6 @@ import jakarta.persistence.*;
 
         @Column(nullable = false, name = "quantity")
         private int productAmount;
-
 
         public CartProduct(Product product, Cart cart) {
             this.productId = product.getProduct_id();

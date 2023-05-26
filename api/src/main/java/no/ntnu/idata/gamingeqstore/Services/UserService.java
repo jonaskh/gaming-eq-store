@@ -80,4 +80,8 @@ public class UserService {
         }
         cartProductRepository.save(cartProduct);
     }
+
+    public void deleteCartProduct(Integer cartProductId) {
+        cartProductRepository.deleteById(cartProductId);
+    }
 }

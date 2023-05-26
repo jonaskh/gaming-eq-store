@@ -10,6 +10,7 @@ import no.ntnu.idata.gamingeqstore.Services.ProductService;
 import no.ntnu.idata.gamingeqstore.Services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -34,14 +35,14 @@ public class UserController {
 
 
     @GetMapping("/users/cart/{email}")
-    public List<CartProduct> getCartItemsByUserEmail(@PathVariable("email") String email){
+    public List<CartProduct> getCartItemsByUserEmail(@PathVariable("email") String email) {
 
         List<CartProduct> cart = userService.findCartItemsByEmail(email);
         return cart;
     }
 
     @GetMapping("/save/cart/{email}")
-    public void saveCartToUser(@PathVariable("email") String email){
+    public void saveCartToUser(@PathVariable("email") String email) {
         Optional<User> user = userService.findByEmail(email);
         if (!user.isPresent()) {
             System.err.println("No user by that email");
@@ -51,7 +52,7 @@ public class UserController {
     }
 
     @GetMapping("/users/cart/{email}/{productId}")
-    public void saveCartItem(@PathVariable("email") String email, @PathVariable("productId") Integer productId){
+    public void saveCartItem(@PathVariable("email") String email, @PathVariable("productId") Integer productId) {
         Optional<User> user = userService.findByEmail(email);
         if (!user.isPresent()) {
             System.err.println("No user by that email");
@@ -68,14 +69,15 @@ public class UserController {
     }
 
     @GetMapping("/cart/amount/{productInCart}/{productAmount}")
-    public void updateCartItemAmount(@PathVariable("productInCart") Integer id, @PathVariable("productAmount") Integer productAmount){
+    public void updateCartItemAmount(@PathVariable("productInCart") Integer id, @PathVariable("productAmount") Integer productAmount) {
         CartProduct cartProduct = cartProductRepository.findById(id).get();
         cartProduct.setProductAmount(productAmount);
         userService.saveCartProduct(cartProduct);
+
     }
 
     @GetMapping("/users/cart/cost/{email}")
-    public double getTotalCost(@PathVariable("email") String email){
+    public double getTotalCost(@PathVariable("email") String email) {
         double totalCost = 0;
         Optional<User> user = userService.findByEmail(email);
         if (!user.isPresent()) {
@@ -83,10 +85,15 @@ public class UserController {
         }
 
         List<CartProduct> items = cartProductRepository.findByCartId(user.get().getCartID());
-        for (CartProduct item: items) {
+        for (CartProduct item : items) {
             totalCost += (item.getPrice() * item.getProductAmount());
         }
 
         return totalCost;
+    }
+
+    @DeleteMapping("/delete/cart/item/{itemId}")
+    public void deleteCartItem(@PathVariable("itemId") Integer itemId) {
+        userService.deleteCartProduct(itemId);
     }
 }

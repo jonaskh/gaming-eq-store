@@ -13,4 +13,7 @@ import java.util.Optional;
 public interface CartProductRepository extends CrudRepository<CartProduct, Integer> {
     @Query("SELECT p FROM CartProduct p WHERE p.cart.cartID = :cartId")
     List<CartProduct> findByCartId(@Param("cartId") Integer cartId);
+
+    @Override
+    void delete(CartProduct entity);
 }
