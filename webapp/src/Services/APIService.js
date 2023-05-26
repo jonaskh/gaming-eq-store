@@ -21,6 +21,10 @@ class APIService {
     getSelectedProduct = (productID) => {
         return axios.get(PRODUCT_REST_API_URL + "/" + productID)
     }
+
+    deleteSelectedProduct = (productID) => {
+        return axios.delete(PRODUCT_REST_API_URL + "/delete/" + productID)
+    }
 }
 
 export default new APIService();

@@ -36,3 +36,63 @@
     color: black;
     border: 2px solid #f44336;
 }
+
+.product-card {
+    position: relative;
+}
+
+.delete-wrapper {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.delete-button {
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999; /* Ensure the overlay is displayed on top of other content */
+}
+
+.delete-confirmation {
+    background-color: black;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.delete-buttons {
+    margin-top: 20px;
+}
+
+.confirm-delete {
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.cancel-delete {
+    background-color: gray;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+}
+

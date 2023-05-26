@@ -1,12 +1,11 @@
 package no.ntnu.idata.gamingeqstore.Controllers;
 
 import no.ntnu.idata.gamingeqstore.Entities.Product;
+import no.ntnu.idata.gamingeqstore.Exceptions.ProductNotFoundException;
 import no.ntnu.idata.gamingeqstore.Repositories.ProductRepository;
+import no.ntnu.idata.gamingeqstore.Services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Collections;
 import java.util.List;
@@ -20,6 +19,9 @@ public class ProductController {
 
     @Autowired
     private ProductRepository productRepository;
+
+    @Autowired
+    private ProductService productService;
 
 
     @GetMapping("/products")
@@ -63,5 +65,10 @@ public class ProductController {
 
         Optional<Product> product = productRepository.findById(productID);
         return product;
+    }
+
+    @DeleteMapping ("/products/delete/{productID}")
+    public void deleteSelectedProduct(@PathVariable("productID") Integer productID) throws ProductNotFoundException {
+        productService.delete(productID);
     }
 }
