@@ -29,14 +29,14 @@ public class UserController {
     private ProductService productService;
 
 
-    @GetMapping("/users/cart/{email}")
+    @GetMapping("/api/users/cart/{email}")
     public List<CartProduct> getCartItemsByUserEmail(@PathVariable("email") String email){
 
         List<CartProduct> cart = userService.findCartItemsByEmail(email);
         return cart;
     }
 
-    @GetMapping("/save/cart/{email}")
+    @GetMapping("/api/save/cart/{email}")
     public void saveCartToUser(@PathVariable("email") String email){
         Optional<User> user = userService.findByEmail(email);
         if (!user.isPresent()) {
@@ -46,7 +46,7 @@ public class UserController {
         cartRepository.save(cart);
     }
 
-    @GetMapping("/users/cart/{email}/{productId}")
+    @GetMapping("/api/users/cart/{email}/{productId}")
     public void saveCartItem(@PathVariable("email") String email, @PathVariable("productId") Integer productId){
         Optional<User> user = userService.findByEmail(email);
         if (!user.isPresent()) {

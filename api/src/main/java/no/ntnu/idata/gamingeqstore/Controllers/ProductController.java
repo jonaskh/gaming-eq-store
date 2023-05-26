@@ -26,7 +26,7 @@ public class ProductController {
     private ProductService productService;
 
 
-    @GetMapping("/products")
+    @GetMapping("/api/products")
     public List<Product> getAllProducts() {
 
         Iterable<Product> products = productRepository.findAll();
@@ -36,7 +36,7 @@ public class ProductController {
         return productList;
     }
 
-    @GetMapping("/products/random")
+    @GetMapping("/api/products/random")
     public List<Product> getRandomProducts() {
         Iterable<Product> products = productRepository.findAll();
         List<Product> productList = StreamSupport
@@ -51,7 +51,7 @@ public class ProductController {
      * @param productID The ID of the currently shown product on the productPage
      * @return List of 3 random products.
      */
-    @GetMapping("/products/random/{productID}")
+    @GetMapping("/api/products/random/{productID}")
     public List<Product> getMoreRandomProducts(@PathVariable("productID") Integer productID) {
         Iterable<Product> products = productRepository.findAll();
         List<Product> productList = StreamSupport
@@ -62,14 +62,14 @@ public class ProductController {
         return productList.stream().limit(3).collect(Collectors.toList());
     }
 
-    @GetMapping("/products/{productID}")
+    @GetMapping("/api/products/{productID}")
     public Optional<Product> getSelectedProduct(@PathVariable("productID") Integer productID){
 
         Optional<Product> product = productRepository.findById(productID);
         return product;
     }
 
-    @GetMapping("/products/category/{category}")
+    @GetMapping("/api/products/category/{category}")
     public List<Product> getProductsByCategory(@PathVariable("category") String category){
 
         List<Product> products = productService.findProductsByCategory(category);
