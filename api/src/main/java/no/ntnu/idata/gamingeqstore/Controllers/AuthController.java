@@ -1,5 +1,7 @@
 package no.ntnu.idata.gamingeqstore.Controllers;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
 import no.ntnu.idata.gamingeqstore.Entities.Role;
 import no.ntnu.idata.gamingeqstore.Entities.User;
 import no.ntnu.idata.gamingeqstore.Security.AuthenticationRequest;
@@ -36,6 +38,7 @@ public class AuthController {
 
     private static final Logger logger = Logger.getLogger(AuthController.class.getName());
 
+    @Operation (summary = "create jwt token and validate",description = "generates a jwt token from the user")
     @PostMapping("/authenticate")
     public ResponseEntity<?> createAuthenticationToken(@RequestBody AuthenticationRequest authenticationRequest) {
         try {
@@ -53,6 +56,7 @@ public class AuthController {
         }
     }
 
+    @Operation(summary = "Register a new user to the database", description = "Creates a new user from the given input and then saves to the database")
     @PostMapping("/register")
     public ResponseEntity<?> registerUser(@RequestBody User user) {
         try {
