@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Navbar from '../Components/Navbar';
 import jwt_decode from 'jwt-decode';
 import '../css/SettingsPage.css';
