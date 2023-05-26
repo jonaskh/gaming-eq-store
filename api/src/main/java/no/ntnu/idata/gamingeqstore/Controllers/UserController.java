@@ -4,6 +4,7 @@ import no.ntnu.idata.gamingeqstore.Entities.Cart;
 import no.ntnu.idata.gamingeqstore.Entities.CartProduct;
 import no.ntnu.idata.gamingeqstore.Entities.Product;
 import no.ntnu.idata.gamingeqstore.Entities.User;
+import no.ntnu.idata.gamingeqstore.Repositories.CartProductRepository;
 import no.ntnu.idata.gamingeqstore.Repositories.CartRepository;
 import no.ntnu.idata.gamingeqstore.Services.ProductService;
 import no.ntnu.idata.gamingeqstore.Services.UserService;
@@ -27,6 +28,9 @@ public class UserController {
 
     @Autowired
     private ProductService productService;
+
+    @Autowired
+    private CartProductRepository cartProductRepository;
 
 
     @GetMapping("/users/cart/{email}")
@@ -60,6 +64,13 @@ public class UserController {
 
         Product product = productService.get(productId);
         CartProduct cartProduct = new CartProduct(product, cart.get());
+        userService.saveCartProduct(cartProduct);
+    }
+
+    @GetMapping("/cart/amount/{productInCart}/{productAmount}")
+    public void updateCartItemAmount(@PathVariable("productInCart") Integer id, @PathVariable("productAmount") Integer productAmount){
+        CartProduct cartProduct = cartProductRepository.findById(id).get();
+        cartProduct.setProductAmount(productAmount);
         userService.saveCartProduct(cartProduct);
     }
 }

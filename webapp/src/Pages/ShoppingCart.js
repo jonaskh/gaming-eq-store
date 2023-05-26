@@ -50,7 +50,8 @@ function ShoppingCart() {
                     <section className="items">
                         {products.map((product) => (
                             <CartItem
-                                key={product.product_id}
+                                key={product.id}
+                                id={product.id}
                                 image={product.productImage}
                                 title={product.productName}
                                 price={product.price}

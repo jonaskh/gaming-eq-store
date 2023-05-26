@@ -1,13 +1,15 @@
 // Importing necessary modules
 import React, { useState } from 'react';
 import '../css/CartItem.css';
+import APIService from "../Services/APIService";
 
 const CartItem = (props) => {
-    const { image, title, price, itemQuantity } = props;
+    const { id, image, title, price, itemQuantity } = props;
     const [quantity, setQuantity] = useState(itemQuantity);
 
     const updateQuantity = (event) => {
         setQuantity(event.target.value);
+        APIService.setProductAmount(id, event.target.value-1).then();
     };
 
     return (

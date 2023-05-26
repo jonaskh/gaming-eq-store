@@ -6,6 +6,7 @@ const RANDOM_PRODUCT_REST_API_URL = BACKEND_URL + "/products/random";
 const PRODUCTS_BY_CATEGORY_REST_API_URL = PRODUCT_REST_API_URL + "/category/";
 const CART_BY_EMAIL_REST_API_URL = BACKEND_URL + "/users/cart/";
 const SAVE_CART_TO_USER = BACKEND_URL + "/save/cart/"
+const UPDATE_CART_ITEM_AMOUNT = BACKEND_URL + "/cart/amount/"
 
 class APIService {
 
@@ -39,6 +40,10 @@ class APIService {
 
     addProductToCart(email, product) {
         return axios.get(CART_BY_EMAIL_REST_API_URL + email + "/" + product);
+    }
+
+    setProductAmount(productInCart, amount) {
+        return axios.get(UPDATE_CART_ITEM_AMOUNT + productInCart + "/" + amount);
     }
 }
 
