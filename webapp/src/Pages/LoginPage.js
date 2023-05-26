@@ -34,7 +34,7 @@ const LoginPage = () => {
 
             const data = await response.json();
             localStorage.setItem('jwt', data.jwt);
-            navigate('/settings'); // Replace '/protected' with the path to your protected area
+            navigate('/'); 
         } catch (error) {
             console.error('Error:', error);
             alert('Login failed. Please check your credentials and try again.');
