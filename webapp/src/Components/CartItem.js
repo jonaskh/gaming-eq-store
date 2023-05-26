@@ -14,8 +14,17 @@ const CartItem = (props) => {
     };
 
     const deleteItem = () => {
-        APIService.deleteCartItem(id);
+        APIService.deleteCartItem(id).then(
+            () => {handleProductsClick()}
+        );
     }
+
+    /**
+     * Relaods the page when a product is clicked.
+     */
+    const handleProductsClick = () => {
+        window.location.reload();
+    };
 
     return (
         <div className='cart-item'>
