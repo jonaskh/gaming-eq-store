@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -32,6 +33,7 @@ public class UserController {
 
     @Autowired
     private CartProductRepository cartProductRepository;
+
 
 
     @GetMapping("/users/cart/{email}")
@@ -95,5 +97,17 @@ public class UserController {
     @DeleteMapping("/delete/cart/item/{itemId}")
     public void deleteCartItem(@PathVariable("itemId") Integer itemId) {
         userService.deleteCartProduct(itemId);
+    }
+
+    @PutMapping("/order/create/{email}")
+    public void saveOrderFromCart(@PathVariable("email") String email) {
+        Optional<User> user = userService.findByEmail(email);
+
+        if (user.isPresent()) {
+            Cart cart =  user.get().getCart();
+            userService.saveOrderFromCart(cart);
+        }
+
+
     }
 }

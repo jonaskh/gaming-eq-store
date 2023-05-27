@@ -31,11 +31,17 @@ public class OrderList {
     @Column(nullable = true, name = "total_order_price")
     private BigDecimal totalOrderPrice;
 
-    @Column(nullable = false, name = "order_status")
+    @Column(nullable = true, name = "order_status")
     private OrderStatus orderStatus;
 
 
-
+    public OrderList(Cart cart) {
+        this.user = cart.getUser();
+        for (CartProduct cartProduct: cart.getProducts()) {
+            OrderProduct orderProduct = new OrderProduct(this, cartProduct);
+            orderItems.add(orderProduct);
+        }
+    }
 
 
 

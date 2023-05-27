@@ -13,9 +13,9 @@ function ShoppingCart() {
     const [products, setProducts] = useState([]);
     const [error, setError] = useState(null);
     const [totalCost, setTotalCost] = useState(0);
+    const token = localStorage.getItem('jwt');
 
     useEffect(() => {
-        const token = localStorage.getItem('jwt');
 
         if (!token) {
             navigate('/login');
@@ -57,6 +57,17 @@ function ShoppingCart() {
         setTotalCost(updatedTotalCost);
     };
 
+    const handleCheckout = () => {
+        try {
+            const decodedToken = jwt_decode(token);
+            const email = decodedToken.sub;
+            APIService.addOrderFromCartItems(email).then();
+        } catch (err) {
+            setError('Invalid token');
+            localStorage.removeItem('jwt');
+        }
+    }
+
 
     return (
         <div>
@@ -84,6 +95,7 @@ function ShoppingCart() {
                 <div className="cart-info">
                     Grand total: {totalCost}
                 </div>
+                <button onClick={handleCheckout}>Checkout</button>
 
             </div>
 

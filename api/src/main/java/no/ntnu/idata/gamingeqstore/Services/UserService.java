@@ -3,10 +3,12 @@ package no.ntnu.idata.gamingeqstore.Services;
 
 import no.ntnu.idata.gamingeqstore.Entities.Cart;
 import no.ntnu.idata.gamingeqstore.Entities.CartProduct;
+import no.ntnu.idata.gamingeqstore.Entities.OrderList;
 import no.ntnu.idata.gamingeqstore.Entities.Role;
 import no.ntnu.idata.gamingeqstore.Entities.User;
 import no.ntnu.idata.gamingeqstore.Repositories.CartProductRepository;
 import no.ntnu.idata.gamingeqstore.Repositories.CartRepository;
+import no.ntnu.idata.gamingeqstore.Repositories.OrderListRepository;
 import no.ntnu.idata.gamingeqstore.Repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -28,6 +30,9 @@ public class UserService {
 
     @Autowired
     private CartProductRepository cartProductRepository;
+
+    @Autowired
+    private OrderListRepository orderListRepository;
 
     private RoleService roleService;
 
@@ -93,5 +98,10 @@ public class UserService {
 
     public void deleteCartProduct(Integer cartProductId) {
         cartProductRepository.deleteById(cartProductId);
+    }
+
+    public void saveOrderFromCart(Cart cart) {
+        OrderList orderList = new OrderList(cart);
+        orderListRepository.save(orderList);
     }
 }

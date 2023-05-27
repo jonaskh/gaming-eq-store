@@ -40,7 +40,8 @@ public class OrderProduct {
     private int productAmount;
 
 
-    public OrderProduct(CartProduct product) {
+    public OrderProduct(OrderList order, CartProduct product) {
+        this.orderList = order;
         this.productId = product.getId();
         this.productName = product.getProductName();
         this.price = product.getPrice();

@@ -9,6 +9,7 @@ const SAVE_CART_TO_USER = BACKEND_URL + "/save/cart/"
 const UPDATE_CART_ITEM_AMOUNT = BACKEND_URL + "/cart/amount/"
 const GET_TOTAL_COST_REST_API_URL = BACKEND_URL + "/users/cart/cost/"
 const DELETE_CART_ITEM_REST_API_URL = BACKEND_URL + "/delete/cart/item/";
+const CREATE_ORDER_REST_API_URL = BACKEND_URL + "/order/create/"
 
 class APIService {
 
@@ -58,6 +59,10 @@ class APIService {
 
     deleteSelectedProduct = (productID) => {
         return axios.delete(PRODUCT_REST_API_URL + "/delete/" + productID)
+    }
+
+    addOrderFromCartItems(email) {
+        return axios.put(CREATE_ORDER_REST_API_URL + email);
     }
 }
 
