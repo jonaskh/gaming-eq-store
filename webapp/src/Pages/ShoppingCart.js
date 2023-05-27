@@ -61,7 +61,12 @@ function ShoppingCart() {
         try {
             const decodedToken = jwt_decode(token);
             const email = decodedToken.sub;
-            APIService.addOrderFromCartItems(email).then();
+            APIService.addOrderFromCartItems(email).then(response => {
+                APIService.deleteAllItemsInCart(email).then(e => {
+                        window.location.reload();
+                    }
+                )}
+            );
         } catch (err) {
             setError('Invalid token');
             localStorage.removeItem('jwt');

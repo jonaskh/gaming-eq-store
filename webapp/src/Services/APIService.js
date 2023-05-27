@@ -5,11 +5,12 @@ const PRODUCT_REST_API_URL = BACKEND_URL + "/products";
 const RANDOM_PRODUCT_REST_API_URL = BACKEND_URL + "/products/random";
 const PRODUCTS_BY_CATEGORY_REST_API_URL = PRODUCT_REST_API_URL + "/category/";
 const CART_BY_EMAIL_REST_API_URL = BACKEND_URL + "/users/cart/";
-const SAVE_CART_TO_USER = BACKEND_URL + "/save/cart/"
-const UPDATE_CART_ITEM_AMOUNT = BACKEND_URL + "/cart/amount/"
-const GET_TOTAL_COST_REST_API_URL = BACKEND_URL + "/users/cart/cost/"
+const SAVE_CART_TO_USER = BACKEND_URL + "/save/cart/";
+const UPDATE_CART_ITEM_AMOUNT = BACKEND_URL + "/cart/amount/";
+const GET_TOTAL_COST_REST_API_URL = BACKEND_URL + "/users/cart/cost/";
 const DELETE_CART_ITEM_REST_API_URL = BACKEND_URL + "/delete/cart/item/";
-const CREATE_ORDER_REST_API_URL = BACKEND_URL + "/order/create/"
+const CREATE_ORDER_REST_API_URL = BACKEND_URL + "/order/create/";
+const DELETE_CART_ALL_REST_API_URL = BACKEND_URL + "/delete/cart/all/"
 
 class APIService {
 
@@ -63,6 +64,10 @@ class APIService {
 
     addOrderFromCartItems(email) {
         return axios.put(CREATE_ORDER_REST_API_URL + email);
+    }
+
+    deleteAllItemsInCart(email) {
+        return axios.delete(DELETE_CART_ALL_REST_API_URL + email);
     }
 }
 

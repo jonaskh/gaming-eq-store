@@ -104,4 +104,10 @@ public class UserService {
         OrderList orderList = new OrderList(cart);
         orderListRepository.save(orderList);
     }
+
+    public void deleteCartProducts(Cart cart) {
+        for (CartProduct cartProduct: cartProductRepository.findByCartId(cart.getCartID())) {
+            cartProductRepository.delete(cartProduct);
+        }
+    }
 }

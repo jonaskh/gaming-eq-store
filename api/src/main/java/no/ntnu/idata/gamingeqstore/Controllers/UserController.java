@@ -99,6 +99,16 @@ public class UserController {
         userService.deleteCartProduct(itemId);
     }
 
+    @DeleteMapping("/delete/cart/all/{email}")
+    public void deleteCartAll(@PathVariable("email") String email) {
+        Optional<User> user = userService.findByEmail(email);
+
+        if (user.isPresent()) {
+            Cart cart =  user.get().getCart();
+            userService.deleteCartProducts(cart);
+        }
+    }
+
     @PutMapping("/order/create/{email}")
     public void saveOrderFromCart(@PathVariable("email") String email) {
         Optional<User> user = userService.findByEmail(email);
@@ -107,7 +117,5 @@ public class UserController {
             Cart cart =  user.get().getCart();
             userService.saveOrderFromCart(cart);
         }
-
-
     }
 }
