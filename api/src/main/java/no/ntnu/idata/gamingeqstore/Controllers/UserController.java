@@ -2,6 +2,7 @@ package no.ntnu.idata.gamingeqstore.Controllers;
 
 import no.ntnu.idata.gamingeqstore.Entities.Cart;
 import no.ntnu.idata.gamingeqstore.Entities.CartProduct;
+import no.ntnu.idata.gamingeqstore.Entities.OrderList;
 import no.ntnu.idata.gamingeqstore.Entities.Product;
 import no.ntnu.idata.gamingeqstore.Entities.User;
 import no.ntnu.idata.gamingeqstore.Repositories.CartProductRepository;
@@ -41,6 +42,11 @@ public class UserController {
 
         List<CartProduct> cart = userService.findCartItemsByEmail(email);
         return cart;
+    }
+
+    @GetMapping("/users/order/{email}")
+    public List<OrderList> getOrdersByUserEmail(@PathVariable("email") String email) {
+        return userService.findOrdersByEmail(email);
     }
 
     @GetMapping("/save/cart/{email}")
@@ -118,4 +124,6 @@ public class UserController {
             userService.saveOrderFromCart(cart);
         }
     }
+
+
 }

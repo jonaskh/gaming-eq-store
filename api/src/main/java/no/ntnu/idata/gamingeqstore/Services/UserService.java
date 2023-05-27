@@ -15,6 +15,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import javax.swing.text.html.Option;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
@@ -109,5 +110,16 @@ public class UserService {
         for (CartProduct cartProduct: cartProductRepository.findByCartId(cart.getCartID())) {
             cartProductRepository.delete(cartProduct);
         }
+    }
+
+    public List<OrderList> findOrdersByEmail(String email) {
+        Optional<User> optionalUser = userRepository.findByEmail(email);
+        List<OrderList> orderLists = new ArrayList<>();
+
+        if (optionalUser.isPresent()) {
+            User user = optionalUser.get();
+            orderLists = orderListRepository.findByUserId(user.getId());
+        }
+        return orderLists;
     }
 }

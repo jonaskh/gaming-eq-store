@@ -4,11 +4,14 @@ import Navbar from '../Components/Navbar';
 import jwt_decode from 'jwt-decode';
 import '../css/SettingsPage.css';
 import Footer from "../Components/Footer";
+import Order from '../Components/Order';
+import APIService from "../Services/APIService";
 
 const SettingsPage = () => {
     const navigate = useNavigate();
     const [userEmail, setUserEmail] = useState('');
     const [userRoles, setUserRoles] = useState([]);
+    const [orderList, setOrderList] = useState([]); // New state variable for orders
     const [error, setError] = useState(null);
 
     useEffect(() => {
@@ -30,6 +33,21 @@ const SettingsPage = () => {
             }
         }
     }, [navigate]);
+
+    useEffect(() => {
+        const fetchOrders = async () => {
+            try {
+                const response = await APIService.getAllOrdersByEmail(userEmail);
+                setOrderList(response.data);
+            } catch (err) {
+                setError(err.message);
+            }
+        };
+
+        if (userEmail) {
+            fetchOrders();
+        }
+    }, [userEmail]);
 
     const handleLogout = () => {
         localStorage.removeItem('jwt');
@@ -54,6 +72,22 @@ const SettingsPage = () => {
                         )}
                     </div>
                 )}
+                <h2>Order history</h2>
+                <div className="order-section">
+                    <div className="order-header">
+                        <h3>ID</h3>
+                        <h3>Date</h3>
+                        <h3>Total Cost</h3>
+                    </div>
+                    {orderList.map(order =>
+                        <Order
+                            key={order.orderId}
+                            id={order.orderId}
+                            date={order.orderDate}
+                            total={order.totalOrderPrice}
+                        />
+                    )}
+                </div>
                 <button onClick={handleLogout} className="logout-button">
                     Logout
                 </button>
