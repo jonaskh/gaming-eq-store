@@ -5,11 +5,16 @@ import {useLocation} from "react-router-dom";
 import Navbar from "../Components/Navbar";
 import ProductCard from "../Components/ProductCard";
 import Footer from "../Components/Footer";
-import jwt_decode from "jwt-decode"; // import the CSS file
+import jwt_decode from "jwt-decode";
+import Popup from "../Components/Popup"; // import the CSS file
 
 const ProductPage = () => {
 
     const [product, setProduct] = useState([]);
+
+    const [showPopup, setShowPopup] = useState(false);
+    const [popupMessage, setPopupMessage] = useState('');
+
     const location = useLocation();
     const [email, setEmail] = useState("");
 
@@ -45,6 +50,16 @@ const ProductPage = () => {
         window.location.reload();
     };
 
+    const handleAddProductToCard = () => {
+        APIService.addProductToCart(email, product.product_id).then(() => {
+            setPopupMessage("Added to cart!");
+            setShowPopup(true);
+            setTimeout(() => {
+                setShowPopup(false);
+            }, 5000);
+        })
+    }
+
     return (
         <>
             <Navbar />
@@ -61,7 +76,7 @@ const ProductPage = () => {
                                 <span className="price-currency">kr</span>
                             </div>
                         </div>
-                        <button className="product-button" onClick={() => APIService.addProductToCart(email, product.product_id)}>Add to Cart</button>
+                        <button className="product-button" onClick={handleAddProductToCard}>Add to Cart</button>
                     </div>
                     <div>
                         <h2>Product info</h2>
@@ -88,6 +103,7 @@ const ProductPage = () => {
                     ))}
                 </section>
                 <Footer/>
+                {showPopup && <Popup message={popupMessage} displayTime={5000} />}
             </div>
         </>
     );
