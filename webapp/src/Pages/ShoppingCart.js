@@ -3,9 +3,9 @@ import Navbar from '../Components/Navbar';
 import Footer from "../Components/Footer";
 import APIService from "../Services/APIService";
 import CartItem from "../Components/CartItem";
-import "../css/Cart.css"
 import jwt_decode from "jwt-decode";
 import { useNavigate } from "react-router-dom";
+import "../css/ShoppingPage.css";
 
 function ShoppingCart() {
     const navigate = useNavigate();
@@ -102,13 +102,15 @@ function ShoppingCart() {
                         )}
                     </section>
                 </div>
-
-                <div className="cart-info">
-                    Grand total: {totalCost}
+                <div className="cart-info-section">
+                    <h2 className="section-title">Cart Summary</h2>
+                    <div className="cart-info">
+                        <p>Grand Total: {totalCost}</p>
+                    </div>
+                    <button className={`checkout-btn ${products.length === 0 || checkoutButtonTempDisabled ? 'disabled' : ''}`} onClick={handleCheckout}>
+                        Checkout
+                    </button>
                 </div>
-                <button disabled={products.length === 0 || checkoutButtonTempDisabled} onClick={handleCheckout}>
-                    Checkout
-                </button>
             </div>
 
             <Footer />
