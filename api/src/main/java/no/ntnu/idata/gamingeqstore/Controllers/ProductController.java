@@ -71,4 +71,15 @@ public class ProductController {
     public void deleteSelectedProduct(@PathVariable("productID") Integer productID) throws ProductNotFoundException {
         productService.delete(productID);
     }
+
+
+    @PutMapping("/products/update/{productID}/{productName}/{productPrice}")
+    public void updateSelectedProduct(@PathVariable("productID") Integer productID, @PathVariable("productName") String productName, @PathVariable("productPrice") Integer productPrice) throws ProductNotFoundException {
+        Product updatedProduct = productService.get(productID);
+        System.out.println(updatedProduct.toString());
+        updatedProduct.setProductName(productName);
+        updatedProduct.setPrice(productPrice);
+        productService.save(updatedProduct);
+        System.out.println(productService.get(updatedProduct.getId()).toString());
+    }
 }
