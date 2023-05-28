@@ -66,6 +66,19 @@ public class AuthController {
         }
     }
 
+    @PostMapping("/registerAdmin")
+    public ResponseEntity<?> registerAdmin(@RequestBody User user) {
+        try {
+            Role adminRole = roleService.findByName("ADMIN");
+            user.addRole(adminRole);
+            User newUser = userService.saveUser(user);
+            return ResponseEntity.ok(newUser);
+        } catch (Exception e) {
+            logger.severe("Error occurred during user registration: " + e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Admin registration failed. Please try again.");
+        }
+    }
+
     public static class JwtResponse {
         private final String jwt;
 

@@ -1,13 +1,31 @@
 // Importing necessary modules
 import React, { useState } from 'react';
 import '../css/CartItem.css';
+import APIService from "../Services/APIService";
 
 const CartItem = (props) => {
-    const { image, title, price, itemQuantity } = props;
+    const { id, image, title, price, itemQuantity, onQuantityChange } = props;
     const [quantity, setQuantity] = useState(itemQuantity);
 
     const updateQuantity = (event) => {
         setQuantity(event.target.value);
+        if (quantity) {
+            APIService.setProductAmount(id, quantity).then();
+            onQuantityChange(id, event.target.value);
+        }
+    };
+
+    const deleteItem = () => {
+        APIService.deleteCartItem(id).then(
+            () => {handleProductsClick()}
+        );
+    }
+
+    /**
+     * Relaods the page when a product is clicked.
+     */
+    const handleProductsClick = () => {
+        window.location.reload();
     };
 
     return (
@@ -24,6 +42,7 @@ const CartItem = (props) => {
                     className='item-quantity'
                 />
                 <p className='item-total'>{(price * quantity).toFixed(2)} kr</p>
+                <button onClick={deleteItem}>Delete</button>
             </div>
         </div>
     );

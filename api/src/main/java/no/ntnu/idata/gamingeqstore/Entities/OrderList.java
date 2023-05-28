@@ -7,15 +7,16 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.*;
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
 @Entity
 @Table(name = "orderlist")
 public class OrderList {
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "order_id")
     private Integer orderId;
 
     @ManyToOne()
@@ -28,14 +29,26 @@ public class OrderList {
     @OneToMany(mappedBy = "orderList", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<OrderProduct> orderItems = new LinkedHashSet<>();
 
-    @Column(nullable = true, name = "total_order_price")
-    private BigDecimal totalOrderPrice;
+    @Column(name = "total_order_price")
+    private double totalOrderPrice;
 
-    @Column(nullable = false, name = "order_status")
+    @Column(nullable = true, name = "order_status")
     private OrderStatus orderStatus;
 
+    @Column(nullable = false, name = "order_date")
+    private LocalDate orderDate;
 
-
+    public OrderList(Cart cart) {
+        double cost = 0.0;
+        this.user = cart.getUser();
+        for (CartProduct cartProduct: cart.getProducts()) {
+            cost += (cartProduct.getPrice() * cartProduct.getProductAmount());
+            OrderProduct orderProduct = new OrderProduct(this, cartProduct);
+            orderItems.add(orderProduct);
+        }
+        this.totalOrderPrice = cost;
+        orderDate = LocalDate.now();
+    }
 
 
 
@@ -45,15 +58,6 @@ public class OrderList {
 
     public void addOrderItem(OrderProduct orderProduct) {
         orderItems.add(orderProduct);
-    }
-
-
-    //Calculates the sum total of the products added to the order.
-
-    public void setTotalOrderPrice() {
-        this.totalOrderPrice = user.getCart().getProducts().stream().map(item ->
-                new BigDecimal(item.getPrice()).multiply(new BigDecimal(item.getProductAmount())))
-                .reduce(BigDecimal::add).orElse(new BigDecimal((0)));
     }
 
 
@@ -84,6 +88,39 @@ public class OrderList {
         SENT,
 
         CANCELED
+    }
+
+
+    public Integer getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(Integer orderId) {
+        this.orderId = orderId;
+    }
+
+    public Set<OrderProduct> getOrderItems() {
+        return orderItems;
+    }
+
+    public void setOrderItems(Set<OrderProduct> orderItems) {
+        this.orderItems = orderItems;
+    }
+
+    public double getTotalOrderPrice() {
+        return totalOrderPrice;
+    }
+
+    public void setTotalOrderPrice(double totalOrderPrice) {
+        this.totalOrderPrice = totalOrderPrice;
+    }
+
+    public LocalDate getOrderDate() {
+        return orderDate;
+    }
+
+    public void setOrderDate(LocalDate orderDate) {
+        this.orderDate = orderDate;
     }
 }
 

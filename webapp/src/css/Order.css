@@ -1,0 +1,13 @@
+.order {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid black;
+    padding: 10px;
+    color: white;
+    background-color: transparent;
+}
+
+.order p {
+    margin: 0;
+}

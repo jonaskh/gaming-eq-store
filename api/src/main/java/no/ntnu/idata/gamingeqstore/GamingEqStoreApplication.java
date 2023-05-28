@@ -35,6 +35,5 @@ public class GamingEqStoreApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		roleService.initializeRoles();
-
 	}
 }

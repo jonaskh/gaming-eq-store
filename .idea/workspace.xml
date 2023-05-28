@@ -7,6 +7,15 @@
     <list default="true" id="58710b36-4c39-4b23-91b6-69e16c51e6f1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.env.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api/pom.xml" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/no/ntnu/idata/gamingeqstore/Controllers/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/no/ntnu/idata/gamingeqstore/Controllers/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/no/ntnu/idata/gamingeqstore/Services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/no/ntnu/idata/gamingeqstore/Services/UserService.java" afterDir="false" />
+>>>>>>> admin
+>>>>>>> 2660ab31e3e13041130a32fb4e109c814673003f
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,21 +39,11 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/api/src/main/resources/application.properties" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="JpbToolWindowState">
-    <option name="myId2FirstActivated">
-      <map>
-        <entry key="com.haulmont.jpb.jpaInspector" value="true" />
-        <entry key="com.haulmont.jpb.jpaPalette" value="true" />
-        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
-      </map>
-    </option>
-    <option name="myId2Visible">
-      <map>
-        <entry key="com.haulmont.jpb.jpaInspector" value="false" />
-        <entry key="com.haulmont.jpb.jpaPalette" value="false" />
-        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
-      </map>
-    </option>
+    <option name="isToolWindowVisible" value="false" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -52,18 +51,24 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="mavenHome" value="Use Maven wrapper" />
         <option name="useMavenConfig" value="true" />
       </MavenGeneralSettings>
     </option>
   </component>
   <component name="ProjectId" id="2N2yaGUTxcU66hFnpAWhr8WfRPr" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+<<<<<<< HEAD
+=======
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+>>>>>>> admin
     &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
     &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
     &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
@@ -71,7 +76,11 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+<<<<<<< HEAD
     &quot;git-widget-placeholder&quot;: &quot;cart&quot;,
+=======
+<<<<<<< HEAD
+>>>>>>> 2660ab31e3e13041130a32fb4e109c814673003f
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;18&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/Sbk98/OneDrive/Skrivebord/Gruppe 3 gaming-eq/gaming-eq-store/webapp&quot;,
@@ -86,6 +95,26 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;5819ad453194b7d6ca43abe04a382f3a&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+=======
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;18&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/daniellundquist/Documents/gaming-eq-store&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;5819ad453194b7d6ca43abe04a382f3a&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;,
+      &quot;h2&quot;
+    ]
+>>>>>>> admin
   }
 }</component>
   <component name="RecentsManager">
@@ -96,6 +125,7 @@
       <recent name="C:\Users\Sbk98\OneDrive\Skrivebord\Gruppe 3 gaming-eq\gaming-eq-store\api" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/api" />
       <recent name="C:\Users\Sbk98\OneDrive\Skrivebord\Gruppe 3 gaming-eq\gaming-eq-store\api" />
       <recent name="C:\Users\Sbk98\OneDrive\Skrivebord\Gruppe 3 gaming-eq\gaming-eq-store\webapp\src" />
       <recent name="C:\Users\Sbk98\OneDrive\Skrivebord\Gruppe 3 gaming-eq\gaming-eq-store\webapp" />
@@ -130,12 +160,20 @@
       <method v="2" />
     </configuration>
     <configuration name="GamingEqStoreApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <option name="ALTERNATIVE_JRE_PATH" value="19" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <module name="gaming-eq-store" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="no.ntnu.idata.gamingeqstore.GamingEqStoreApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="JUnit.AddProductTest" />
+      <item itemvalue="Node.js.App.js" />
+      <item itemvalue="Node.js.Home.js" />
+      <item itemvalue="Spring Boot.GamingEqStoreApplication" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.AddProductTest" />
@@ -164,11 +202,30 @@
       <workItem from="1681976851089" duration="1279000" />
       <workItem from="1683144410939" duration="3479000" />
       <workItem from="1683458914118" duration="20275000" />
+<<<<<<< HEAD
       <workItem from="1684918052498" duration="247000" />
       <workItem from="1684918304167" duration="101000" />
       <workItem from="1684918429210" duration="148000" />
+<<<<<<< HEAD
       <workItem from="1685092162932" duration="446000" />
       <workItem from="1685092631067" duration="412000" />
+=======
+=======
+      <workItem from="1683530615466" duration="1796000" />
+      <workItem from="1683532836350" duration="598000" />
+      <workItem from="1683544219379" duration="19000" />
+      <workItem from="1683557699088" duration="2185000" />
+      <workItem from="1683718251214" duration="1497000" />
+      <workItem from="1683884731906" duration="343000" />
+      <workItem from="1683886133142" duration="17063000" />
+      <workItem from="1683970837265" duration="605000" />
+      <workItem from="1683990740477" duration="116000" />
+      <workItem from="1683990997502" duration="32000" />
+      <workItem from="1684895845904" duration="7770000" />
+      <workItem from="1684994664118" duration="763000" />
+      <workItem from="1684995437065" duration="3407000" />
+>>>>>>> admin
+>>>>>>> 2660ab31e3e13041130a32fb4e109c814673003f
     </task>
     <servers />
   </component>
@@ -185,5 +242,8 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>
