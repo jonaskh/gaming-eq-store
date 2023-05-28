@@ -6,39 +6,43 @@
 }
 
 .login-form {
-    width: 300px;
+    width: 450px;
     padding: 20px;
-    background-color: #f2f2f2;
+    background-color: #ffffff;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-.form-input {
+.login-form .form-input {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
-    border: none;
+    border: 1px solid black;
     border-radius: 5px;
     box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
     color: black;
+    font-size: 12px;
 }
 
 #registerText {
     color: black;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 14px;
 }
 
-label {
+.login-form label {
     display: block;
     font-weight: bold;
     margin-bottom: 5px;
     color: black;
 }
 
-button[type="submit"] {
-    background-color: #FF0000;
+.login-form button[type="submit"] {
+    background-color: rgba(230,87,40,255);
     color: white;
     padding: 10px;
-    border: none;
+    border: 1px solid black;
     border-radius: 5px;
     cursor: pointer;
     width: 100%;
@@ -46,12 +50,23 @@ button[type="submit"] {
     font-size: 16px;
 }
 
-button[type="submit"]:hover {
-    background-color: #DC143C;
+
+.login-form h2 {
+    color: black;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-h2 {
-    color: black; /* Set the color of the "Login" text to black */
-    text-align: center; /* Center the "Login" text */
-    margin-bottom: 20px; /* Add some space between the "Login" text and the input fields */
+.login-form .input-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: relative; /* Add position relative to the input container */
+  }
+  
+.login-form .input-container .icon {
+  margin-right: 10px;
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
 }
