@@ -6,14 +6,18 @@ import CartItem from "../Components/CartItem";
 import jwt_decode from "jwt-decode";
 import { useNavigate } from "react-router-dom";
 import "../css/ShoppingPage.css";
+import Popup from "../Components/Popup";
 
 function ShoppingCart() {
     const navigate = useNavigate();
     const [products, setProducts] = useState([]);
     const [error, setError] = useState(null);
     const [totalCost, setTotalCost] = useState(0);
+    const [showPopup, setShowPopup] = useState(false);
+    const [popupMessage, setPopupMessage] = useState('');
     const token = localStorage.getItem('jwt');
     let checkoutButtonTempDisabled = false;
+    const isButtonDisabled = products.length === 0 || checkoutButtonTempDisabled;
 
     useEffect(() => {
         if (!token) {
@@ -66,7 +70,12 @@ function ShoppingCart() {
                 .then(response => {
                     APIService.deleteAllItemsInCart(email)
                         .then(() => {
-                            window.location.reload();
+                            setPopupMessage("Thank you for your purchase!");
+                            setShowPopup(true);
+                            setTimeout(() => {
+                                setShowPopup(false);
+                                window.location.reload();
+                            }, 5000);
                         })
                         .catch(error => console.log(error));
                 })
@@ -107,13 +116,14 @@ function ShoppingCart() {
                     <div className="cart-info">
                         <p>Grand Total: {totalCost}</p>
                     </div>
-                    <button className={`checkout-btn ${products.length === 0 || checkoutButtonTempDisabled ? 'disabled' : ''}`} onClick={handleCheckout}>
+                    <button className={`checkout-btn ${isButtonDisabled ? 'disabled' : ''}`} onClick={handleCheckout} disabled={isButtonDisabled}>
                         Checkout
                     </button>
                 </div>
             </div>
 
             <Footer />
+            {showPopup && <Popup message={popupMessage} displayTime={5000} />}
         </div>
     );
 }

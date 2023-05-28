@@ -1,0 +1,23 @@
+.popup {
+    position: fixed;
+    bottom: 100px;
+    text-align: center;
+    padding: 20px;
+    color: #000000;
+    border-radius: 5px;
+    left: calc(50% - 100px);
+    font-size: 18px;
+    z-index: 10000;
+    animation: slide-up 0.5s ease;
+    background-color: #ffbd03;
+
+}
+
+@keyframes slide-up {
+    from {
+        bottom: -60px;
+    }
+    to {
+        bottom: 100px;
+    }
+}
