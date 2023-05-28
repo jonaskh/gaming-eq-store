@@ -58,16 +58,15 @@ function ShoppingCart() {
     };
 
     const handleCheckout = () => {
+        checkoutButtonTempDisabled = true;
         try {
             const decodedToken = jwt_decode(token);
             const email = decodedToken.sub;
-            checkoutButtonTempDisabled = true;
             APIService.addOrderFromCartItems(email)
                 .then(response => {
                     APIService.deleteAllItemsInCart(email)
                         .then(() => {
                             window.location.reload();
-                            checkoutButtonTempDisabled = false;
                         })
                         .catch(error => console.log(error));
                 })
@@ -76,6 +75,7 @@ function ShoppingCart() {
             setError('Invalid token');
             localStorage.removeItem('jwt');
         }
+        checkoutButtonTempDisabled = false;
     }
 
     return (
