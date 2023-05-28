@@ -62,7 +62,7 @@ const SettingsPage = () => {
         <div className="settings-container">
             <Navbar />
             <div className="settings-content">
-                <h2>Settings</h2>
+                <h2>Profile</h2>
                 {userEmail && <p>Email: {userEmail}</p>}
                 {userRoles.length > 0 && (
                     <div>
