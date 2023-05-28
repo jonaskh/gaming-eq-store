@@ -9,8 +9,10 @@ const CartItem = (props) => {
 
     const updateQuantity = (event) => {
         setQuantity(event.target.value);
-        APIService.setProductAmount(id, quantity).then();
-        onQuantityChange(id, event.target.value); // Pass the changes to parent component
+        if (quantity) {
+            APIService.setProductAmount(id, quantity).then();
+            onQuantityChange(id, event.target.value);
+        }
     };
 
     const deleteItem = () => {
