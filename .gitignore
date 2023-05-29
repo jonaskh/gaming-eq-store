@@ -19,6 +19,7 @@ webapp/.idea
 ### IntelliJ IDEA ###
 
 .idea
+.env
 
 *.iws
 *.iml
