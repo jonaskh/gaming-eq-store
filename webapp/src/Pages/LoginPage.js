@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Navbar from '../Components/Navbar';
 import '../css/LoginPage.css'; // import the CSS file
 import { Link, useNavigate } from 'react-router-dom';
+import Footer from "../Components/Footer";
 
 const LoginPage = () => {
     const [email, setEmail] = useState('');
@@ -77,6 +78,7 @@ const LoginPage = () => {
                     </p>
                 </div>
             </div>
+            <Footer/>
         </div>
     );
 };

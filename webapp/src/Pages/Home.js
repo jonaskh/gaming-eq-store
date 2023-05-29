@@ -5,6 +5,7 @@ import '../css/Home.css';
 import Testimonial from '../Components/Testimonial';
 import Hero from '../Components/Hero';
 import APIService from "../Services/APIService";
+import Footer from "../Components/Footer";
 
 
 function Home() {
@@ -37,10 +38,10 @@ function Home() {
   return (
     <div className="Home">
       <Navbar />
-      <section className="hero">
+      <section className="hero-section">
         <Hero
           title="Welcome to Cyberpunk Gaming Gear"
-          subtitle="Get the best gaming gear for your e-sports needs."
+          subtitle="Upgrade your game with cutting-edge gear from Cyberpunk Gaming Gear!"
           buttonText="Shop now"
         />
       </section>
@@ -51,8 +52,8 @@ function Home() {
 
         {products.map((product) => (
           <ProductCard
-            key={product.id}
-            id={product.id}
+            key={product.product_id}
+            id={product.product_id}
             image={product.productImage}
             title={product.productName}
             price={product.price}
@@ -67,10 +68,7 @@ function Home() {
           <Testimonial key={index} name={testimonial.name} age={testimonial.age} text={testimonial.text} />
         ))}
       </section>
-
-      <footer>
-        <p>© 2023 All Rights Reserved</p>
-      </footer>
+        <Footer/>
     </div>
   );
 }

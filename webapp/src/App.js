@@ -7,6 +7,7 @@ import SettingsPage from "./Pages/SettingsPage";
 import ProductPage from "./Pages/ProductPage";
 import AdminRegPage from "./Pages/AdminRegPage";
 import AdminPanelPage from "./Pages/AdminPanelPage";
+import ShoppingCart from "./Pages/ShoppingCart";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/settings" element={<SettingsPage />} />
         <Route path="/product" element={<ProductPage />} />
+        <Route path="/cart" element={<ShoppingCart />} />
         <Route path="/registerAdmin" element={<AdminRegPage />} />
         <Route path="/admin-panel" element={<AdminPanelPage />} />
       </Routes>

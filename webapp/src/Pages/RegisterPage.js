@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Navbar from '../Components/Navbar';
 import '../css/RegisterPage.css';
 import { useNavigate } from 'react-router-dom';
+import Footer from "../Components/Footer";
+import APIService from "../Services/APIService";
 
 const RegisterPage = () => {
     const [email, setEmail] = useState('');
@@ -100,6 +102,7 @@ const RegisterPage = () => {
                     </form>
                 </div>
             </div>
+            <Footer/>
         </div>
     );
 };

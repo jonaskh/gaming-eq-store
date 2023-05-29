@@ -3,6 +3,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import Navbar from '../Components/Navbar';
 import jwt_decode from 'jwt-decode';
 import '../css/SettingsPage.css';
+import Footer from "../Components/Footer";
 
 const SettingsPage = () => {
     const navigate = useNavigate();
@@ -57,6 +58,7 @@ const SettingsPage = () => {
                     Logout
                 </button>
             </div>
+            <Footer/>
         </div>
     );
 };

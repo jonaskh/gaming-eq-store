@@ -73,7 +73,7 @@ public class SecurityConfig {
                         .allowedMethods("GET", "POST", "PUT", "DELETE")
                         .allowedHeaders("*")
                         .allowCredentials(true)
-                        .maxAge(3600);
+                        .maxAge(3600*24*31*365);
             }
         };
     }

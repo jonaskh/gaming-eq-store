@@ -1,5 +1,6 @@
 package no.ntnu.idata.gamingeqstore.Controllers;
 
+import io.swagger.v3.oas.annotations.Operation;
 import no.ntnu.idata.gamingeqstore.Entities.Product;
 import no.ntnu.idata.gamingeqstore.Exceptions.ProductNotFoundException;
 import no.ntnu.idata.gamingeqstore.Repositories.ProductRepository;
@@ -22,8 +23,13 @@ public class ProductController {
 
     @Autowired
     private ProductService productService;
+<<<<<<< HEAD
+
+=======
+>>>>>>> swagger
 
 
+    @Operation(summary = "Returns a list of all products", description = "Returns a list of all the products in the database. Can be sorted into categories and search by name")
     @GetMapping("/products")
     public List<Product> getAllProducts() {
 
@@ -34,6 +40,7 @@ public class ProductController {
         return productList;
     }
 
+    @Operation(summary = "Return a list of random products", description = "Return a list of 'featured' products taken randomly from the database")
     @GetMapping("/products/random")
     public List<Product> getRandomProducts() {
         Iterable<Product> products = productRepository.findAll();
@@ -49,6 +56,7 @@ public class ProductController {
      * @param productID The ID of the currently shown product on the productPage
      * @return List of 3 random products.
      */
+    @Operation(summary = "Return a list of random products to use in single product page", description = "Return a list of similar products taken  from the database on the single product page")
     @GetMapping("/products/random/{productID}")
     public List<Product> getMoreRandomProducts(@PathVariable("productID") Integer productID) {
         Iterable<Product> products = productRepository.findAll();
@@ -59,7 +67,7 @@ public class ProductController {
         Collections.shuffle(productList);
         return productList.stream().limit(3).collect(Collectors.toList());
     }
-
+    @Operation(summary = "Return one product", description = "Return one product by given product id")
     @GetMapping("/products/{productID}")
     public Optional<Product> getSelectedProduct(@PathVariable("productID") Integer productID){
 
@@ -67,6 +75,7 @@ public class ProductController {
         return product;
     }
 
+<<<<<<< HEAD
     @DeleteMapping ("/products/delete/{productID}")
     public void deleteSelectedProduct(@PathVariable("productID") Integer productID) throws ProductNotFoundException {
         productService.delete(productID);
@@ -81,5 +90,13 @@ public class ProductController {
         updatedProduct.setPrice(productPrice);
         productService.save(updatedProduct);
         System.out.println(productService.get(updatedProduct.getId()).toString());
+=======
+    @Operation(summary = "Return a list of products by category", description = "Return all products with the given category")
+    @GetMapping("/products/category/{category}")
+    public List<Product> getProductsByCategory(@PathVariable("category") String category){
+
+        List<Product> products = productService.findProductsByCategory(category);
+        return products;
+>>>>>>> swagger
     }
 }

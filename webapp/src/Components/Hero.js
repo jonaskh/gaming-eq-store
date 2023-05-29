@@ -9,7 +9,9 @@ function Hero(props) {
       <div className="hero-text">
         <h1>{title}</h1>
         <p>{subtitle}</p>
-        <button>{buttonText}</button>
+          <a href="/shop">
+              <button>Shop now</button>
+          </a>
       </div>
     </div>
   );
