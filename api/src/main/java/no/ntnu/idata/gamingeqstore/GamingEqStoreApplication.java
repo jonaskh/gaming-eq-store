@@ -27,9 +27,9 @@ public class GamingEqStoreApplication implements CommandLineRunner {
 
 	public static void main(String[] args) {
 		Dotenv dotenv = Dotenv.configure().directory("../").load();
-
 		System.setProperty("jwt_secret", dotenv.get("jwt_secret"));
 		System.setProperty("DB_PASSWORD", dotenv.get("DB_PASSWORD"));
+
 		SpringApplication.run(GamingEqStoreApplication.class, args);
 	}
 
