@@ -8,7 +8,7 @@ import jakarta.persistence.*;
 /**
  *
  */
-@Schema(description = "This takes in aproduct from the database and copies the data into a new entity used in carts. This is essentially one product object.")
+@Schema(description = "This takes in a product from the database and copies the data into a new entity used in carts. This is essentially one product object.")
 @Entity
 @Table(name = "product_in_cart")
 public class CartProduct {
