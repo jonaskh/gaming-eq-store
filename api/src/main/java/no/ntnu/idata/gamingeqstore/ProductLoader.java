@@ -67,11 +67,11 @@ public class ProductLoader implements CommandLineRunner {
         productService.addCategory(p9, "Office");
         productService.addCategory(p9, "Keyboards");
         productService.addCategory(p10, "Gaming");
-        productService.addCategory(p10, "Keyboard");
+        productService.addCategory(p10, "Keyboards");
         productService.addCategory(p11, "Monitors");
         productService.addCategory(p11, "Office");
         productService.addCategory(p11, "Gaming");
-        productService.addCategory(p12, "Keyboard");
+        productService.addCategory(p12, "Keyboards");
         productService.addCategory(p12, "Office");
 
 
@@ -96,9 +96,6 @@ public class ProductLoader implements CommandLineRunner {
 
         // Insert the products into the database
         productService.saveAll(products);
-        System.out.println(productService.count());
 
-        System.out.println(productService.findProductsByCategory("Mice"));
-        System.out.println(productService.findByName("Gaming mouse"));
     }
 }
