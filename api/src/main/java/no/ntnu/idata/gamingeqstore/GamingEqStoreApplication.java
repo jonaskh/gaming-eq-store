@@ -1,5 +1,6 @@
 package no.ntnu.idata.gamingeqstore;
 
+import io.github.cdimascio.dotenv.Dotenv;
 import no.ntnu.idata.gamingeqstore.Entities.Product;
 import no.ntnu.idata.gamingeqstore.Entities.ProductCategory;
 import no.ntnu.idata.gamingeqstore.Services.CategoryService;
@@ -25,6 +26,10 @@ public class GamingEqStoreApplication implements CommandLineRunner {
 	private CategoryService categoryService;
 
 	public static void main(String[] args) {
+		Dotenv dotenv = Dotenv.configure().directory("../").load();
+
+		System.setProperty("jwt_secret", dotenv.get("jwt_secret"));
+		System.setProperty("DB_PASSWORD", dotenv.get("DB_PASSWORD"));
 		SpringApplication.run(GamingEqStoreApplication.class, args);
 	}
 
