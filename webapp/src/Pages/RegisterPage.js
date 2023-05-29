@@ -74,7 +74,6 @@ const RegisterPage = () => {
 
   return (
     <div>
-      <Navbar />
       <div className="center-container">
         <div className="register-form">
           <h2 className="registerTitle">Sign up</h2>
@@ -145,7 +144,6 @@ const RegisterPage = () => {
           </form>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };

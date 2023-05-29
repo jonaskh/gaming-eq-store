@@ -81,7 +81,6 @@ const AdminRegPage = () => {
 
   return (
     <div>
-      <Navbar />
       <div className="center-container">
         <div className="register-form">
           <h2 class="registerTitle">Create an Admin Account</h2>

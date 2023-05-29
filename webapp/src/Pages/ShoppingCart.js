@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 import "../css/ShoppingPage.css";
 import Popup from "../Components/Popup";
 
-function ShoppingCart() {
+function ShoppingCart({setCartItemCount}) {
     const navigate = useNavigate();
     const [products, setProducts] = useState([]);
     const [error, setError] = useState(null);
@@ -27,6 +27,7 @@ function ShoppingCart() {
                 APIService.getCartItemsByUserEmail(email)
                     .then(response => {
                         setProducts(response.data);
+                        setCartItemCount(response.data.length);
                         console.log(response.data);
                     })
                     .catch(error => console.log(error));
@@ -68,6 +69,7 @@ function ShoppingCart() {
                 .then(response => {
                     APIService.deleteAllItemsInCart(email)
                         .then(() => {
+                            setCartItemCount(0);
                             setPopupMessage("Thank you for your purchase!");
                             setShowPopup(true);
                             APIService.getCartItemsByUserEmail(email)
@@ -92,7 +94,6 @@ function ShoppingCart() {
 
     return (
         <div>
-            <Navbar />
             <div className="cart-section">
                 <div className="cart-container">
                     <h2 className="section-title">Your Cart</h2>
@@ -125,7 +126,6 @@ function ShoppingCart() {
                 </div>
             </div>
 
-            <Footer />
             {showPopup && <Popup message={popupMessage} displayTime={5000} />}
         </div>
     );

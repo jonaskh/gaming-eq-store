@@ -60,7 +60,6 @@ const SettingsPage = () => {
 
     return (
         <div className="settings-container">
-            <Navbar />
             <div className="settings-content">
                 <h2>Profile</h2>
                 {userEmail && <p>Email: {userEmail}</p>}
@@ -92,7 +91,6 @@ const SettingsPage = () => {
                     Logout
                 </button>
             </div>
-            <Footer/>
         </div>
     );
 };

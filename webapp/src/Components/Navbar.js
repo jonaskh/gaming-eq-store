@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import '../css/Navbar.css';
 
 
-function Navbar() {
+function Navbar({cartItemCount}) {
   return (
     <nav className="navbar">
       <Link to="/" className="logo-link">
@@ -19,6 +19,7 @@ function Navbar() {
         <li>
           <a href="/cart">
             <img src={`${process.env.PUBLIC_URL}/icons8-shopping-cart-30.png`} alt="Cart" />
+            <span>{cartItemCount}</span>
           </a>
         </li>
         <li>

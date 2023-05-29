@@ -49,7 +49,6 @@ function Shop() {
 
     return (
         <div>
-            <Navbar/>
             <div className="shop-container">
                 <Search value={search} onChange={handleSearch} placeholder={placeholderText}/>
                 <div className="categories-container">
@@ -74,7 +73,6 @@ function Shop() {
                     ))}
                 </section>
             </div>
-            <Footer/>
         </div>
     );
 }
