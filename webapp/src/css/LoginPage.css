@@ -24,6 +24,13 @@
     font-size: 12px;
 }
 
+.login-form .loginTitle {
+    color: black;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+
 #registerText {
     color: black;
     text-align: center;
@@ -39,8 +46,8 @@
 }
 
 .login-form button[type="submit"] {
-    background-color: rgba(230,87,40,255);
-    color: white;
+    background-color: #ffbd03;
+    color: black;
     padding: 10px;
     border: 1px solid black;
     border-radius: 5px;
