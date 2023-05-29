@@ -3,7 +3,7 @@ import Navbar from '../Components/Navbar';
 import ProductCard from '../Components/ProductCard';
 import Search from '../Components/Search';
 import APIService from "../Services/APIService";
-import '../css/Shop.css'; // New line to import Shop CSS
+import '../css/Shop.css'; 
 import CategoryBox from "../Components/CategoryBox";
 import Footer from "../Components/Footer";
 

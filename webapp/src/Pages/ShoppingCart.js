@@ -17,8 +17,6 @@ function ShoppingCart() {
     const [popupMessage, setPopupMessage] = useState('');
     const token = localStorage.getItem('jwt');
     let checkoutButtonTempDisabled = false;
-    const isButtonDisabled = products.length === 0 || checkoutButtonTempDisabled;
-
     useEffect(() => {
         if (!token) {
             navigate('/login');
@@ -72,9 +70,15 @@ function ShoppingCart() {
                         .then(() => {
                             setPopupMessage("Thank you for your purchase!");
                             setShowPopup(true);
+                            APIService.getCartItemsByUserEmail(email)
+                                .then(response => {
+                                    setProducts(response.data);
+                                    console.log(response.data);
+                                })
+                                .catch(error => console.log(error));
                             setTimeout(() => {
                                 setShowPopup(false);
-                                window.location.reload();
+                                checkoutButtonTempDisabled = false;
                             }, 5000);
                         })
                         .catch(error => console.log(error));
@@ -84,7 +88,6 @@ function ShoppingCart() {
             setError('Invalid token');
             localStorage.removeItem('jwt');
         }
-        checkoutButtonTempDisabled = false;
     }
 
     return (
@@ -116,7 +119,7 @@ function ShoppingCart() {
                     <div className="cart-info">
                         <p>Grand Total: {totalCost}</p>
                     </div>
-                    <button className={`checkout-btn ${isButtonDisabled ? 'disabled' : ''}`} onClick={handleCheckout} disabled={isButtonDisabled}>
+                    <button className={`checkout-btn ${products.length === 0 || checkoutButtonTempDisabled ? 'disabled' : ''}`} onClick={handleCheckout} disabled={products.length === 0 || checkoutButtonTempDisabled}>
                         Checkout
                     </button>
                 </div>

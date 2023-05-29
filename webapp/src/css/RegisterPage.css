@@ -3,51 +3,89 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-}
-
-.register-form {
-    width: 300px;
+  }
+  
+  .register-form {
+    width: 450px;
     padding: 20px;
-    background-color: #f2f2f2;
+    background-color: #ffffff;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-
-.form-input {
+  }
+  
+  .register-form .form-input {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
-    border: none;
+    border: 1px solid black;
     border-radius: 5px;
     box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
     color: black;
-}
-
-label {
+    font-size: 12px;
+  }
+  
+  .register-form label {
     display: block;
     font-weight: bold;
     margin-bottom: 5px;
     color: black;
-}
-
-button[type="submit"] {
-    background-color: #FF0000;
+  }
+  
+  .register-form .registerTitle {
+    color: black;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 30px;
+  }
+  
+  .register-form .button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .register-form button[type="submit"],
+  .register-form button.cancel-button {
+    background-color: rgba(230,87,40,255);
     color: white;
-    padding: 10px;
-    border: none;
+    padding: 8px 15px;
+    border: 1px solid black;
     border-radius: 5px;
     cursor: pointer;
-    width: 100%;
-    margin-top: 10px;
+    margin: 0 5px; /* Add padding between the buttons */
     font-size: 16px;
+    flex: 1; /* Set equal flex to make buttons the same size */
+  }
+  
+  .register-form button.cancel-button {
+    background-color: white;
+    color: black;
+  }
+  
+  .register-form button.cancel-button:hover {
+    background-color: #f2f2f2;
+  }
+  
+  .register-form h2.registerTitle {
+    color: black;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .register-form .input-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: relative; /* Add position relative to the input container */
+  }
+  
+.register-form .input-container .icon {
+  margin-right: 10px;
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
 }
 
-button[type="submit"]:hover {
-    background-color: #DC143C;
-}
 
-h2 {
-    color: black; /* Set the color of the "Register" text to black */
-    text-align: center; /* Center the "Register" text */
-    margin-bottom: 20px; /* Add some space between the "Register" text and the input fields */
-}
+  
