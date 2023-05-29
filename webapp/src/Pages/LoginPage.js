@@ -20,7 +20,7 @@ const LoginPage = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await fetch('http://localhost:8080/api/authenticate', {
+      const response = await fetch('http://group09.web-tek.ninja:8080/api/authenticate', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

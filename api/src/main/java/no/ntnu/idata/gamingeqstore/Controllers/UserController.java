@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 import java.util.Optional;
 
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://group09.web-tek.ninja")
 @RestController
 public class UserController {
     @Autowired
@@ -37,19 +37,19 @@ public class UserController {
 
 
 
-    @GetMapping("/users/cart/{email}")
+    @GetMapping("/api/users/cart/{email}")
     public List<CartProduct> getCartItemsByUserEmail(@PathVariable("email") String email) {
 
         List<CartProduct> cart = userService.findCartItemsByEmail(email);
         return cart;
     }
 
-    @GetMapping("/users/order/{email}")
+    @GetMapping("/api/users/order/{email}")
     public List<OrderList> getOrdersByUserEmail(@PathVariable("email") String email) {
         return userService.findOrdersByEmail(email);
     }
 
-    @GetMapping("/save/cart/{email}")
+    @GetMapping("/api/save/cart/{email}")
     public void saveCartToUser(@PathVariable("email") String email) {
         Optional<User> user = userService.findByEmail(email);
         if (!user.isPresent()) {
@@ -59,7 +59,7 @@ public class UserController {
         cartRepository.save(cart);
     }
 
-    @GetMapping("/users/cart/{email}/{productId}")
+    @GetMapping("/api/users/cart/{email}/{productId}")
     public void saveCartItem(@PathVariable("email") String email, @PathVariable("productId") Integer productId) {
         Optional<User> user = userService.findByEmail(email);
         if (!user.isPresent()) {
@@ -76,7 +76,7 @@ public class UserController {
         userService.saveCartProduct(cartProduct);
     }
 
-    @GetMapping("/cart/amount/{productInCart}/{productAmount}")
+    @GetMapping("/api/cart/amount/{productInCart}/{productAmount}")
     public void updateCartItemAmount(@PathVariable("productInCart") Integer id, @PathVariable("productAmount") Integer productAmount) {
         CartProduct cartProduct = cartProductRepository.findById(id).get();
         cartProduct.setProductAmount(productAmount);
@@ -84,7 +84,7 @@ public class UserController {
 
     }
 
-    @GetMapping("/users/cart/cost/{email}")
+    @GetMapping("/api/users/cart/cost/{email}")
     public double getTotalCost(@PathVariable("email") String email) {
         double totalCost = 0;
         Optional<User> user = userService.findByEmail(email);
@@ -100,12 +100,12 @@ public class UserController {
         return totalCost;
     }
 
-    @DeleteMapping("/delete/cart/item/{itemId}")
+    @DeleteMapping("/api/delete/cart/item/{itemId}")
     public void deleteCartItem(@PathVariable("itemId") Integer itemId) {
         userService.deleteCartProduct(itemId);
     }
 
-    @DeleteMapping("/delete/cart/all/{email}")
+    @DeleteMapping("/api/delete/cart/all/{email}")
     public void deleteCartAll(@PathVariable("email") String email) {
         Optional<User> user = userService.findByEmail(email);
 
@@ -115,7 +115,7 @@ public class UserController {
         }
     }
 
-    @PutMapping("/order/create/{email}")
+    @PutMapping("/api/order/create/{email}")
     public void saveOrderFromCart(@PathVariable("email") String email) {
         Optional<User> user = userService.findByEmail(email);
 

@@ -20,8 +20,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.logging.Logger;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
-@RequestMapping("/api")
+@CrossOrigin(origins = "http://group09.web-tek.ninja")
 public class AuthController {
 
     @Autowired
@@ -39,7 +38,7 @@ public class AuthController {
     private static final Logger logger = Logger.getLogger(AuthController.class.getName());
 
     @Operation (summary = "create jwt token and validate",description = "generates a jwt token from the user")
-    @PostMapping("/authenticate")
+    @PostMapping("/api/authenticate")
     public ResponseEntity<?> createAuthenticationToken(@RequestBody AuthenticationRequest authenticationRequest) {
         try {
             Authentication authentication = authenticationManager.authenticate(
@@ -57,7 +56,7 @@ public class AuthController {
     }
 
     @Operation(summary = "Register a new user to the database", description = "Creates a new user from the given input and then saves to the database")
-    @PostMapping("/register")
+    @PostMapping("/api/register")
     public ResponseEntity<?> registerUser(@RequestBody User user) {
         try {
             Role defaultRole = roleService.findByName("USER");
@@ -70,7 +69,7 @@ public class AuthController {
         }
     }
 
-    @PostMapping("/registerAdmin")
+    @PostMapping("/api/registerAdmin")
     public ResponseEntity<?> registerAdmin(@RequestBody User user) {
         try {
             Role adminRole = roleService.findByName("ADMIN");

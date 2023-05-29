@@ -48,7 +48,7 @@ const RegisterPage = () => {
       return;
     }
     try {
-      const response = await fetch('http://localhost:8080/api/register', {
+      const response = await fetch('http://group09.web-tek.ninja:8080/api/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

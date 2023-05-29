@@ -55,7 +55,7 @@ const AdminRegPage = () => {
       return;
     }
     try {
-      const response = await fetch('http://localhost:8080/api/registerAdmin', {
+      const response = await fetch('http://group09.web-tek.ninja:8080/api/registerAdmin', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
