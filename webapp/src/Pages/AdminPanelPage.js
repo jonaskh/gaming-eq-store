@@ -15,6 +15,13 @@ const AdminPanelPage = () => {
     const [editingProductId, setEditingProductId] = useState(null);
     const [editedProducts, setEditedProducts] = useState({});
     const [error, setError] = useState(null);
+    const [showForm, setShowForm] = useState(false);
+    const [newProduct, setNewProduct] = useState({
+        productName: '',
+        price: '',
+        productDescription: '',
+        category: 'Gaming'
+    });
 
     useEffect(() => {
         const token = localStorage.getItem('jwt');
@@ -83,6 +90,39 @@ const AdminPanelPage = () => {
         setEditingProductId(null);
     };
 
+    const handleShowForm = () => {
+        setShowForm(!showForm);
+    };
+
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setNewProduct({ ...newProduct, [name]: value });
+    };
+
+    const resetFormInput = () => {
+        setNewProduct({
+            productName: '',
+            price: '',
+            productDescription: '',
+            category: ''
+        });
+        setShowForm(false);
+    }
+
+    const handleSubmitForm = () => {
+        console.log(newProduct);
+        APIService.createNewProduct(
+            newProduct.productName,
+            newProduct.price,
+            newProduct.productDescription,
+            newProduct.category).then(handleReloadClick);
+        resetFormInput();
+    };
+
+    const handleCancelForm = () => {
+        resetFormInput();
+    };
+
 
     return (
         <div className="admin-panel-container">
@@ -90,6 +130,59 @@ const AdminPanelPage = () => {
             <div className="admin-panel-content">
                 <h2>Admin Panel</h2>
                 <p>Legg til noe kult her</p>
+
+
+                <button onClick={handleShowForm}>Add Product</button>
+                <p></p>
+                {showForm && (
+                    <div className="overlay">
+                        <form className="form-container" onSubmit={handleSubmitForm}>
+                            <h2>Add a product</h2>
+                            <input
+                                type="text"
+                                name="productName"
+                                value={newProduct.productName}
+                                onChange={handleInputChange}
+                                placeholder="Product Name"
+                            />
+                            <input
+                                type="number"
+                                name="price"
+                                value={newProduct.price}
+                                onChange={handleInputChange}
+                                placeholder="Price"
+                            />
+                            <input
+                                type="text"
+                                name="productDescription"
+                                value={newProduct.productDescription}
+                                onChange={handleInputChange}
+                                placeholder="Product Description"
+                            />
+                            <label for={"category"}>Choose a category:</label>
+                            <select
+                                id={"category"}
+                                name="category"
+                                value={newProduct.category}
+                                onChange={handleInputChange}
+                            >
+                                <option value="Gaming">Gaming</option>
+                                <option value="Office">Office</option>
+                                <option value="Headsets">Headsets</option>
+                                <option value="Mouse">Mouse</option>
+                                <option value="Keyboards">Keyboards</option>
+                                <option value="Consoles">Consoles</option>
+                                <option value="Controllers">Controllers</option>
+                            </select>
+                            <div className="form-buttons">
+                                <button type="submit">Submit</button>
+                                <button type="button" onClick={handleCancelForm}>Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                )}
+
+
 
                 <section className="products">
                     {products.map((product) => (

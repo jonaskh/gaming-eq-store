@@ -9,7 +9,7 @@
     overflow: hidden;
     font-size: 32px;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.3);
-
+    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
 }
 
 .category-box:hover {
@@ -37,4 +37,5 @@
 
 .category-text {
     position: relative;
+
 }

@@ -54,6 +54,7 @@ public class Product {
     }
 
     public Product() {
+        this.product_id = counter++;
     }
 
     public Integer getProduct_id() {
