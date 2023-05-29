@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import Navbar from '../Components/Navbar';
 import jwt_decode from 'jwt-decode';
 import '../css/AdminPanel.css';
-import ProductCard from "../Components/ProductCard";
 import APIService from "../Services/APIService";
 
 const AdminPanelPage = () => {
@@ -129,7 +128,6 @@ const AdminPanelPage = () => {
             <Navbar />
             <div className="admin-panel-content">
                 <h2>Admin Panel</h2>
-                <p>Legg til noe kult her</p>
 
 
                 <button onClick={handleShowForm}>Add Product</button>
@@ -186,7 +184,7 @@ const AdminPanelPage = () => {
 
                 <section className="products">
                     {products.map((product) => (
-                        <div className="product-card" id={product.product_id} key={product.product_id}>
+                        <div className="admin-product-card" id={product.product_id} key={product.product_id}>
                             <div className="delete-wrapper">
                                 <button className="delete-button" onClick={() => {
                                     console.log(product.product_id)

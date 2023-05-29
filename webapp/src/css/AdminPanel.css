@@ -1,5 +1,5 @@
 .admin-panel-content {
-    max-width: 800px;
+    max-width: 1600px;
     margin: auto;
     padding: 20px;
     text-align: center;
@@ -9,6 +9,23 @@
     color: #fff;
     margin-top: 5rem;
     margin-bottom: 5rem;
+}
+
+.admin-product-card {
+    display: flex;
+    padding: 0px;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.admin-product-card img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    background-size: cover;
+    margin-bottom: 20px;
 }
 
 .error {
@@ -32,9 +49,9 @@
 }
 
 .logout-button:hover {
-    background-color: white;
+    background-color: rgba(244, 67, 54, 0.6);
     color: black;
-    border: 2px solid #f44336;
+    border: 2px solid rgba(244, 67, 54, 0.6);
 }
 
 .product-card {
@@ -49,10 +66,13 @@
 
 .delete-button {
     background-color: red;
-    color: white;
     padding: 5px 10px;
     border: none;
     cursor: pointer;
+}
+
+.delete-button:hover {
+    background-color: rgba(244, 67, 54, 0.8);
 }
 
 
@@ -68,8 +88,7 @@
 }
 
 .confirm-delete {
-    background-color: red;
-    color: white;
+    background-color: #ffbd03;
     padding: 5px 10px;
     border: none;
     cursor: pointer;
@@ -77,11 +96,23 @@
 }
 
 .cancel-delete {
-    background-color: gray;
-    color: white;
+    background-color: red;
     padding: 5px 10px;
     border: none;
     cursor: pointer;
+}
+
+.cancel-delete:hover {
+    background-color: rgba(244, 67, 54, 0.8);
+}
+
+.cancel-button {
+    background-color: red;
+    margin-left: 5px;
+}
+
+.cancel-button:hover {
+    background-color: rgba(244, 67, 54, 0.8);
 }
 
 .overlay {
@@ -98,7 +129,7 @@
 }
 
 .form-container {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.75);
     width: 750px;
     padding: 20px;
     display: flex;
@@ -147,34 +178,14 @@ input[type="number"] {
     margin-top: 10px;
 }
 
-.form-buttons button {
-    margin-left: 10px;
-    width: 100px;
-    height: 40px;
-    border: none;
-    border-radius: 0;
-    background-color: #ccc;
-    color: #fff;
-    cursor: pointer;
-}
-
-.form-buttons button {
-    margin-left: 10px;
-    width: 100px;
-    height: 40px;
-    border: none;
-    border-radius: 0;
-    background-color: #ccc;
-    color: #fff;
-    cursor: pointer;
-}
 
 .form-buttons button[type="submit"] {
-    background-color: blue;
+    background-color: #ffbd03;
 }
 
 .form-buttons button[type="button"] {
     background-color: red;
+    margin-left: 5px;
 }
 
 
