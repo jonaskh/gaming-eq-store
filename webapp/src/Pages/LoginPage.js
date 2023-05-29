@@ -46,7 +46,7 @@ const LoginPage = () => {
       <Navbar />
       <div className="center-container">
         <div className="login-form">
-          <h2>Login</h2>
+          <h2 className='loginTitle'>Sign in</h2>
           <form onSubmit={handleSubmit}>
             <div className="input-container">
               <img src={process.env.PUBLIC_URL + '/email.png'} className="icon" alt="Email Icon" />

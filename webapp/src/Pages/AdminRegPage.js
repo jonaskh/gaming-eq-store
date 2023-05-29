@@ -38,12 +38,20 @@ const AdminRegPage = () => {
 
   const handleSubmit = async event => {
     event.preventDefault();
-    if (verificationCode !== 'admin') {
-      alert('Invalid verification code. Please try again.');
-      return;
-    }
     if (password !== repeatPassword) {
       alert('Passwords do not match. Please try again.');
+      return;
+    }
+    if (password.length < 6 || password.length > 50) {
+      alert('Password must be at least 6 characters long.');
+      return;
+    }
+    if (zipcode.length < 4) {
+      alert('Zip code must be at least 4 characters long.');
+      return;
+    }
+    if (verificationCode !== 'admin') {
+      alert('Invalid verification code. Please try again.');
       return;
     }
     try {
@@ -90,28 +98,6 @@ const AdminRegPage = () => {
               />
             </div>
             <div className="input-container">
-              <img src={process.env.PUBLIC_URL + '/password.png'} className="icon" alt="Password Icon" />
-              <input
-                type="password"
-                id="password"
-                value={password}
-                onChange={handlePasswordChange}
-                className="form-input"
-                placeholder="Password"
-              />
-            </div>
-            <div className="input-container">
-              <img src={process.env.PUBLIC_URL + '/password.png'} className="icon" alt="Password Icon" />
-              <input
-                type="password"
-                id="repeatPassword"
-                value={repeatPassword}
-                onChange={handleRepeatPasswordChange}
-                className="form-input"
-                placeholder="Repeat Password"
-              />
-            </div>
-            <div className="input-container">
               <img src={process.env.PUBLIC_URL + '/Zip.png'} className="icon" alt="Zipcode Icon" />
               <input
                 type="text"
@@ -131,6 +117,28 @@ const AdminRegPage = () => {
                 onChange={handleAddressChange}
                 className="form-input"
                 placeholder="Address"
+              />
+            </div>
+            <div className="input-container">
+              <img src={process.env.PUBLIC_URL + '/password.png'} className="icon" alt="Password Icon" />
+              <input
+                type="password"
+                id="password"
+                value={password}
+                onChange={handlePasswordChange}
+                className="form-input"
+                placeholder="Password"
+              />
+            </div>
+            <div className="input-container">
+              <img src={process.env.PUBLIC_URL + '/password.png'} className="icon" alt="Password Icon" />
+              <input
+                type="password"
+                id="repeatPassword"
+                value={repeatPassword}
+                onChange={handleRepeatPasswordChange}
+                className="form-input"
+                placeholder="Repeat Password"
               />
             </div>
             <div className="input-container">

@@ -39,6 +39,14 @@ const RegisterPage = () => {
       alert('Passwords do not match. Please try again.');
       return;
     }
+    if (password.length < 6 || password.length > 50) {
+      alert('Password must be at least 6 characters long.');
+      return;
+    }
+    if (zipcode.length < 4) {
+      alert('Zip code must be at least 4 characters long.');
+      return;
+    }
     try {
       const response = await fetch('http://localhost:8080/api/register', {
         method: 'POST',

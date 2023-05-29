@@ -17,8 +17,7 @@ public class CartProduct {
     private Integer id;
 
     @Schema(description = "Which cart it belongs to")
-    @ManyToOne(fetch = FetchType.LAZY,
-            cascade = CascadeType.REMOVE)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "cart_id", referencedColumnName = "id")
     @JsonIgnore
     private Cart cart;

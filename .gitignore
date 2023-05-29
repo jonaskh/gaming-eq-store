@@ -5,6 +5,7 @@ api/target/
 !**/src/test/**/target/
 api/.env
 api/.idea
+webapp/.idea
 
 ### STS ###
 .apt_generated

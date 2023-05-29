@@ -47,8 +47,8 @@
   
   .register-form button[type="submit"],
   .register-form button.cancel-button {
-    background-color: rgba(230,87,40,255);
-    color: white;
+    background-color: #ffbd03;
+    color: black;
     padding: 8px 15px;
     border: 1px solid black;
     border-radius: 5px;
