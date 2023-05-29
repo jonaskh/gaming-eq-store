@@ -2,6 +2,7 @@
 package no.ntnu.idata.gamingeqstore.Entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 
 import java.util.HashSet;
@@ -13,15 +14,17 @@ import java.util.Set;
  */
 @Entity
 public class Cart {
-
+    @Schema(description = "Unique incrementing cart id")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false, name = "id")
     private Integer cartID;
 
+    @Schema(description = "Which user the cart belongs to")
     @OneToOne(fetch = FetchType.LAZY, mappedBy = "cart")
     private User user;
 
+    @Schema(description = "List of products in the cart")
     @OneToMany(cascade = CascadeType.ALL,
             fetch = FetchType.EAGER, mappedBy = "cart")
     @Column(name = "product_id_in_cart")

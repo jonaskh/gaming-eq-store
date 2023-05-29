@@ -8,6 +8,7 @@
       <change beforePath="$PROJECT_DIR$/.env.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api/pom.xml" afterDir="false" />
@@ -16,6 +17,13 @@
       <change beforePath="$PROJECT_DIR$/api/src/main/java/no/ntnu/idata/gamingeqstore/Services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/no/ntnu/idata/gamingeqstore/Services/UserService.java" afterDir="false" />
 >>>>>>> admin
 >>>>>>> 2660ab31e3e13041130a32fb4e109c814673003f
+=======
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/no/ntnu/idata/gamingeqstore/Controllers/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/no/ntnu/idata/gamingeqstore/Controllers/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/no/ntnu/idata/gamingeqstore/Services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/no/ntnu/idata/gamingeqstore/Services/UserService.java" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api/pom.xml" afterDir="false" />
+>>>>>>> swagger
+>>>>>>> admin
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,8 +74,14 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+>>>>>>> admin
+=======
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+=======
+>>>>>>> swagger
 >>>>>>> admin
     &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
     &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
@@ -76,6 +90,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+<<<<<<< HEAD
 <<<<<<< HEAD
     &quot;git-widget-placeholder&quot;: &quot;cart&quot;,
 =======
@@ -96,6 +111,8 @@
     &quot;spring.configuration.checksum&quot;: &quot;5819ad453194b7d6ca43abe04a382f3a&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
 =======
+=======
+>>>>>>> admin
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;18&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/daniellundquist/Documents/gaming-eq-store&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
@@ -114,6 +131,21 @@
       &quot;postgresql&quot;,
       &quot;h2&quot;
     ]
+<<<<<<< HEAD
+>>>>>>> admin
+=======
+=======
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;18&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Sbk98/OneDrive/Skrivebord/Gruppe 3 gaming-eq/gaming-eq-store/webapp&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;5819ad453194b7d6ca43abe04a382f3a&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+>>>>>>> swagger
 >>>>>>> admin
   }
 }</component>
@@ -203,6 +235,7 @@
       <workItem from="1683144410939" duration="3479000" />
       <workItem from="1683458914118" duration="20275000" />
 <<<<<<< HEAD
+<<<<<<< HEAD
       <workItem from="1684918052498" duration="247000" />
       <workItem from="1684918304167" duration="101000" />
       <workItem from="1684918429210" duration="148000" />
@@ -211,6 +244,8 @@
       <workItem from="1685092631067" duration="412000" />
 =======
 =======
+=======
+>>>>>>> admin
       <workItem from="1683530615466" duration="1796000" />
       <workItem from="1683532836350" duration="598000" />
       <workItem from="1683544219379" duration="19000" />
@@ -224,8 +259,16 @@
       <workItem from="1684895845904" duration="7770000" />
       <workItem from="1684994664118" duration="763000" />
       <workItem from="1684995437065" duration="3407000" />
+<<<<<<< HEAD
 >>>>>>> admin
 >>>>>>> 2660ab31e3e13041130a32fb4e109c814673003f
+=======
+=======
+      <workItem from="1684918052498" duration="247000" />
+      <workItem from="1684918304167" duration="101000" />
+      <workItem from="1684918429210" duration="148000" />
+>>>>>>> swagger
+>>>>>>> admin
     </task>
     <servers />
   </component>

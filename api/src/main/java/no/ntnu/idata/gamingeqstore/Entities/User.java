@@ -2,10 +2,13 @@ package no.ntnu.idata.gamingeqstore.Entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
+
+@Schema(description = "One user registered in the database. Has a list of roles defining what he can do on the website")
 @Entity
 @Table(name = "users")
 public class User {
@@ -14,22 +17,28 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @Schema(description = "Email/username the user registered with")
     @Column(nullable = false, length = 50, unique = true)
     private String email;
 
+    @Schema(description = "Password used. Will be encrypted when stored.")
     @Column(nullable = false, length = 64)
     private String password;
 
+    @Schema(description = "Zip code")
     @Column(nullable = false, length = 4)
     private Integer zipcode;
 
+    @Schema(description = "Home address")
     @Column(nullable = false, length = 100)
     private String address;
 
+    @Schema(description = "Each user has a list of current orders, created each time a new shopping cart is checked out.")
     @OneToMany(mappedBy = "user")
     @JsonIgnore
     private Set<OrderList> orders = new LinkedHashSet<>();
 
+    @Schema(description = "Which roles the user has")
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "users_roles",
             joinColumns = @JoinColumn(name = "user_id"),
@@ -37,6 +46,7 @@ public class User {
     )
     private Set<Role> roles = new LinkedHashSet<>();
 
+    @Schema(description = "Each customer has one cart at all times. Cleared upon checkout.")
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "cart_id", referencedColumnName = "id")
     private Cart cart = new Cart();

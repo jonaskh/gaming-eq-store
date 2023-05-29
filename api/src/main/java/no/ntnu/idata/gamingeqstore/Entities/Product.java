@@ -1,5 +1,6 @@
 package no.ntnu.idata.gamingeqstore.Entities;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 
 import java.util.HashSet;
@@ -10,29 +11,35 @@ import java.util.Set;
 public class Product {
 
     private static int counter = 1; //this static field will increase by one every time an object is made, working as an incremented id.
+    @Schema(description = "Unique incrementing product id")
     @Id
     @Column(nullable = false)
     private Integer product_id;
 
     // Establishing the many-to-many relationship with Category
+    @Schema(description = "Which categories the product belong to")
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "product_categories",
             joinColumns = @JoinColumn(name = "product_id"),
             inverseJoinColumns = @JoinColumn(name = "category_id"))
     private Set<ProductCategory> categories = new HashSet<>();
-
+    @Schema(description = "Name of the product")
     @Column(length = 45, nullable = false, name = "product_name")
     private String productName;
 
+    @Schema(description = "Price of the product")
     @Column(length = 10, nullable = false, name = "price")
     private int price;
 
+    @Schema(description = "Image path of product")
     @Column(length = 1000, nullable = false, name = "product_image")
     private String productImage;
 
+    @Schema(description = "Description of product")
     @Column(length = 1000, nullable = false, name = "product_desc")
     private String productDesc;
 
+    @Schema(description = "How many of this product is in stock")
     @Column(length = 10, nullable = false, name = "productAmount")
     private int productAmount;
 
