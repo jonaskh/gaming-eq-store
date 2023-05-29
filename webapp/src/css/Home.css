@@ -1,17 +1,17 @@
- nav {
+nav {
     background-color: #1a1a1a;
-  }
-  
-  nav ul li {
+}
+
+nav ul li {
     display: inline-block;
     padding: 10px;
-  }
-  
-  nav ul li a {
+}
+
+nav ul li a {
     color: #ffffff;
-  }
-  
-  .hero {
+}
+
+.hero {
     background-size: cover;
     height: 500px;
     display: flex;
@@ -19,34 +19,78 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 6rem;
-  }
-  
-  .hero h1 {
+}
+
+.hero h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
-  }
-  
-  .hero p {
+}
+
+.hero p {
     font-size: 1.5rem;
     margin-bottom: 2rem;
-  }
-  
-  .btn {
-    background-color: #ffffff;
-    color: #333333;
-    padding: 1rem 2rem;
-    text-decoration: none;
-    border-radius: 20px;
-  }
-  
-  .testimonials {
+}
+
+.testimonials {
 
     padding: 2rem 0;
     justify-content: center;
     max-width: 33%;
     margin: 0 auto;
-  }
+}
 
-  
-  
-  
+
+/* Home.css */
+
+/* Styles for the slider */
+.slick-slider {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 100px;
+    margin-right: 20%;
+    margin-left: 20%;
+}
+
+/* Styles for the dots at the bottom of the slider */
+.slick-dots {
+    bottom: 20px;
+}
+
+.slick-dots li button:before {
+    font-size: 24px !important; /* Increased font size for the dots */
+    color: #999;
+}
+
+.slick-dots li.slick-active button:before {
+    color: #fff;
+}
+
+/* Styles for individual slides */
+.discount-slide {
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+}
+
+.discount-slide h1 {
+    margin-bottom: 20px;
+    font-size: 48px;
+}
+
+.discount-slide-0 {
+    background-image: url('../../public/controller-image.jpg');
+}
+
+/* Add more classes for additional slides */
+.discount-slide-1 {
+    background-image: url('../../public/monitor.jpg');
+}
+
+.slide-section {
+    margin-top: 300px;
+}

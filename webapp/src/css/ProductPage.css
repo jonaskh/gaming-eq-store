@@ -49,21 +49,6 @@
     padding: 40px;
 }
 
-.product-details .product-button {
-    text-align: center;
-    background-color: #ffbd03;
-    color: #333333;
-    font-size: 16px;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    height: 50px;
-}
-
-.product-details .product-button:hover {
-    background-color: rgba(255, 189, 3, 0.8);
-}
-
 .product-container {
     display: flex;
 }
