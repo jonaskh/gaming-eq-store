@@ -51,13 +51,21 @@ const ProductPage = () => {
     };
 
     const handleAddProductToCard = () => {
-        APIService.addProductToCart(email, product.product_id).then(() => {
-            setPopupMessage("Added to cart!");
+        if (email) {
+            APIService.addProductToCart(email, product.product_id).then(() => {
+                setPopupMessage("Added to cart!");
+                setShowPopup(true);
+                setTimeout(() => {
+                    setShowPopup(false);
+                }, 5000);
+            })
+        } else {
+            setPopupMessage("You need to be logged in to add to cart");
             setShowPopup(true);
             setTimeout(() => {
                 setShowPopup(false);
             }, 5000);
-        })
+        }
     }
 
     return (
