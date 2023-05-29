@@ -28,6 +28,11 @@ function Home() {
       age: 22,
       text: "As a serious e-sports player, I need gear that can keep up with me and my intense gaming sessions. Cyberpunk Gaming Gear has been a lifesaver! The products I've purchased are comfortable, durable, and perform amazingly well. I'm so impressed with the quality and value of the products from this company!",
     },
+      {
+      name: 'Freddy',
+        age: 26,
+        text: "As a serious e-sports player, I need gear that can keep up with me and my intense gaming sessions. Cyberpunk Gaming Gear has been a lifesaver! The products I've purchased are comfortable, durable, and perform amazingly well. I'm so impressed with the quality and value of the products from this company!",
+},
     {
       name: 'Sarah',
       age: 37,
