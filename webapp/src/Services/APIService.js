@@ -49,6 +49,14 @@ class APIService {
         return axios.put(PRODUCT_REST_API_URL + "/update/" + productID +
         "/" + productName + "/" + productPrice)
     }
+
+    createNewProduct = (newProductName, newProductPrice, newProductDesc, newProductCategory) => {
+        return axios.post(PRODUCT_REST_API_URL + "/create/" +
+            newProductName + "/" +
+            newProductPrice + "/" +
+            newProductDesc + "/" +
+            newProductCategory)
+}
 }
 
 export default new APIService();
