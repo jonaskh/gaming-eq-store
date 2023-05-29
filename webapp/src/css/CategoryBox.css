@@ -1,5 +1,6 @@
 .category-box {
     position: relative;
+    background-color: rgba(0, 0, 0, 0.3);
     flex: 0 0 calc(100% / 7);
     text-align: center;
     border: 2px solid transparent;
@@ -17,7 +18,8 @@
 }
 
 .category-box.selected {
-    border-color: yellow;
+    border-color: white;
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
 .category-background-image {

@@ -13,7 +13,7 @@ function Shop() {
     const [products, setProducts] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState('All');
 
-    const shopCategories = ['All', 'Gaming', 'Office', 'Headsets', 'Mouse', 'Keyboards', 'Consoles', 'Controllers'];
+    const shopCategories = ['All', 'Gaming', 'Office', 'Headsets', 'Mouse', 'Keyboards', 'Consoles', 'Controllers', 'Monitors'];
 
     const placeholderText = selectedCategory === 'All' ? 'Search products' : `Search ${selectedCategory.toLowerCase()}`;
 
