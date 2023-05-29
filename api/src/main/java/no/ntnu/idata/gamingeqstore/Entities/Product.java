@@ -30,12 +30,15 @@ public class Product {
     @Schema(description = "Price of the product")
     @Column(length = 10, nullable = false, name = "price")
     private int price;
+
     @Schema(description = "Image path of product")
     @Column(length = 1000, nullable = false, name = "product_image")
     private String productImage;
+
     @Schema(description = "Description of product")
     @Column(length = 1000, nullable = false, name = "product_desc")
     private String productDesc;
+
     @Schema(description = "How many of this product is in stock")
     @Column(length = 10, nullable = false, name = "productAmount")
     private int productAmount;

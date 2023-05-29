@@ -23,10 +23,7 @@ public class ProductController {
 
     @Autowired
     private ProductService productService;
-<<<<<<< HEAD
 
-=======
->>>>>>> swagger
 
 
     @Operation(summary = "Returns a list of all products", description = "Returns a list of all the products in the database. Can be sorted into categories and search by name")
@@ -75,13 +72,14 @@ public class ProductController {
         return product;
     }
 
-<<<<<<< HEAD
+
+    @Operation(summary = "Deletes one product", description = "Deletes a product by the given product id")
     @DeleteMapping ("/products/delete/{productID}")
     public void deleteSelectedProduct(@PathVariable("productID") Integer productID) throws ProductNotFoundException {
         productService.delete(productID);
     }
 
-
+    @Operation(summary = "Updates one product", description = "Updates a product price and/or name by the given product id")
     @PutMapping("/products/update/{productID}/{productName}/{productPrice}")
     public void updateSelectedProduct(@PathVariable("productID") Integer productID, @PathVariable("productName") String productName, @PathVariable("productPrice") Integer productPrice) throws ProductNotFoundException {
         Product updatedProduct = productService.get(productID);
@@ -89,14 +87,15 @@ public class ProductController {
         updatedProduct.setProductName(productName);
         updatedProduct.setPrice(productPrice);
         productService.save(updatedProduct);
-        System.out.println(productService.get(updatedProduct.getId()).toString());
-=======
+        System.out.println(productService.get(updatedProduct.getProduct_id()).toString());
+    }
+
     @Operation(summary = "Return a list of products by category", description = "Return all products with the given category")
     @GetMapping("/products/category/{category}")
     public List<Product> getProductsByCategory(@PathVariable("category") String category){
 
         List<Product> products = productService.findProductsByCategory(category);
         return products;
->>>>>>> swagger
+
     }
 }
