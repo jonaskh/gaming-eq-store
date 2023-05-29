@@ -26,7 +26,7 @@ public class GamingEqStoreApplication implements CommandLineRunner {
 	private CategoryService categoryService;
 
 	public static void main(String[] args) {
-		Dotenv dotenv = Dotenv.load();
+		Dotenv dotenv = Dotenv.configure().directory("/home/local/danilu/dockerwebsite").load();
 		System.setProperty("jwt_secret", dotenv.get("jwt_secret"));
 		System.setProperty("DB_PASSWORD", dotenv.get("DB_PASSWORD"));
 
