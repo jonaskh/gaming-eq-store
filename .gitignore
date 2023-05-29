@@ -5,7 +5,9 @@ api/target/
 !**/src/test/**/target/
 api/.idea
 webapp/.idea
-
+.env
+api/.env
+api/src/main/java/no/ntnu/idata/gamingeqstore/.env
 ### STS ###
 .apt_generated
 .classpath
