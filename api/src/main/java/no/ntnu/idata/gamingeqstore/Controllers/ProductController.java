@@ -91,6 +91,28 @@ public class ProductController {
         System.out.println(productService.get(updatedProduct.getProduct_id()).toString());
     }
 
+    @PostMapping("/products/create/{productName}/{productPrice}/{productDesc}/{productCategory}")
+    public void createNewProduct(@PathVariable("productName") String productName,
+                                 @PathVariable("productPrice") Integer productPrice,
+                                 @PathVariable("productDesc") String productDesc,
+                                 @PathVariable("productCategory") String productCategory) {
+        Product newProduct = new Product();
+
+        if (productCategory == "Mouse"){
+            newProduct.setProductImage("Product 2.png");
+        } else if (productCategory == "Headsets") {
+            newProduct.setProductImage("Product 1.png");
+        } else {
+            newProduct.setProductImage("Product 3.png");
+        }
+
+        newProduct.setProductName(productName);
+        newProduct.setPrice(productPrice);
+        newProduct.setProductDesc(productDesc);
+        productService.addCategory(newProduct, productCategory);
+        productService.save(newProduct);
+    }
+
     @Operation(summary = "Return a list of products by category", description = "Return all products with the given category")
     @GetMapping("/products/category/{category}")
     public List<Product> getProductsByCategory(@PathVariable("category") String category) {
