@@ -36,7 +36,7 @@ public class OrderList {
     private OrderStatus orderStatus;
 
     @Column(nullable = false, name = "order_date")
-    private LocalDate orderDate;
+    private String orderDate;
 
     public OrderList(Cart cart) {
         double cost = 0.0;
@@ -47,7 +47,7 @@ public class OrderList {
             orderItems.add(orderProduct);
         }
         this.totalOrderPrice = cost;
-        orderDate = LocalDate.now();
+        orderDate = LocalDate.now().toString();
     }
 
 
@@ -115,11 +115,11 @@ public class OrderList {
         this.totalOrderPrice = totalOrderPrice;
     }
 
-    public LocalDate getOrderDate() {
+    public String getOrderDate() {
         return orderDate;
     }
 
-    public void setOrderDate(LocalDate orderDate) {
+    public void setOrderDate(String orderDate) {
         this.orderDate = orderDate;
     }
 }
