@@ -59,7 +59,6 @@ function Home() {
 
     return (
         <div className="Home">
-            <Navbar/>
             <section className="hero-section">
                 <Hero
                     title="Welcome to Cyberpunk Gaming Gear"
@@ -103,7 +102,6 @@ function Home() {
                     <Testimonial key={index} name={testimonial.name} age={testimonial.age} text={testimonial.text}/>
                 ))}
             </section>
-            <Footer/>
         </div>
     );
 }

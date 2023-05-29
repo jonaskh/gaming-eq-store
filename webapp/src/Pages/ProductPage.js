@@ -8,7 +8,7 @@ import Footer from "../Components/Footer";
 import jwt_decode from "jwt-decode";
 import Popup from "../Components/Popup"; // import the CSS file
 
-const ProductPage = () => {
+const ProductPage = ({setCartItemCount}) => {
 
     const [product, setProduct] = useState([]);
 
@@ -55,6 +55,11 @@ const ProductPage = () => {
             APIService.addProductToCart(email, product.product_id).then(() => {
                 setPopupMessage("Added to cart!");
                 setShowPopup(true);
+                APIService.getCartItemsByUserEmail(email)
+                    .then(response => {
+                        setCartItemCount(response.data.length);
+                    })
+                    .catch(error => console.log(error));
                 setTimeout(() => {
                     setShowPopup(false);
                 }, 5000);
@@ -70,7 +75,6 @@ const ProductPage = () => {
 
     return (
         <>
-            <Navbar />
             <div className="product-page">
                 <h1 className="product-title">{product.productName}</h1>
                 <div className="product-container">
@@ -111,7 +115,6 @@ const ProductPage = () => {
 
                 {showPopup && <Popup message={popupMessage} displayTime={5000} />}
             </div>
-            <Footer/>
         </>
     );
 };

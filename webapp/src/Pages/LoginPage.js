@@ -43,7 +43,6 @@ const LoginPage = () => {
 
   return (
     <div>
-      <Navbar />
       <div className="center-container">
         <div className="login-form">
           <h2 className='loginTitle'>Sign in</h2>
@@ -82,7 +81,6 @@ const LoginPage = () => {
           </p>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };

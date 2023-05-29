@@ -125,7 +125,6 @@ const AdminPanelPage = () => {
 
     return (
         <div className="admin-panel-container">
-            <Navbar />
             <div className="admin-panel-content">
                 <h2>Admin Panel</h2>
 
