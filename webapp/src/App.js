@@ -6,7 +6,6 @@ import RegisterPage from "./Pages/RegisterPage";
 import SettingsPage from "./Pages/SettingsPage";
 import ProductPage from "./Pages/ProductPage";
 import ShoppingCart from "./Pages/ShoppingCart";
-
 import AdminRegPage from "./Pages/AdminRegPage";
 import AdminPanelPage from "./Pages/AdminPanelPage";
 
@@ -20,6 +19,7 @@ function App() {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/settings" element={<SettingsPage />} />
         <Route path="/product" element={<ProductPage />} />
+        <Route path="/cart" element={<ShoppingCart />} />
         <Route path="/registerAdmin" element={<AdminRegPage />} />
         <Route path="/admin-panel" element={<AdminPanelPage />} />
         <Route path="/cart" element={<ShoppingCart />} />

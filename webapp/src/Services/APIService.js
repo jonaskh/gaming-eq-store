@@ -63,6 +63,7 @@ class APIService {
         return axios.delete(PRODUCT_REST_API_URL + "/delete/" + productID)
     }
 
+
     addOrderFromCartItems(email) {
         return axios.put(CREATE_ORDER_REST_API_URL + email);
     }
@@ -73,6 +74,11 @@ class APIService {
 
     getAllOrdersByEmail(email) {
         return axios.get(GET_ORDERS_REST_API_URL + email);
+    }
+
+    updateSelectedProduct = (productID, productName, productPrice) => {
+        return axios.put(PRODUCT_REST_API_URL + "/update/" + productID +
+        "/" + productName + "/" + productPrice)
     }
 }
 

@@ -5,12 +5,14 @@ package no.ntnu.idata.gamingeqstore.Entities;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
+@Schema(description = "When a cart is checked out, the contents is cleared and copied into an active order, shown in this class")
 @Entity
 @Table(name = "orderlist")
 public class OrderList {
