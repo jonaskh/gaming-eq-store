@@ -28,7 +28,7 @@ public class ProductController {
 
     @Operation(summary = "Returns a list of all products", description = "Returns a list of all the products in the database. Can be sorted into categories and search by name")
     @CrossOrigin(origins = "http://group09.web-tek.ninja")
-    @GetMapping("/products")
+    @GetMapping("/api/products")
     public List<Product> getAllProducts() {
 
         Iterable<Product> products = productRepository.findAll();
