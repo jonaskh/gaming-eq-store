@@ -64,12 +64,16 @@ const ProductPage = () => {
         <>
             <Navbar />
             <div className="product-page">
+                <h1 className="product-title">{product.productName}</h1>
                 <div className="product-container">
                     <div className="product-image">
-                        <h1>{product.productName}</h1>
                         <img src={`${process.env.PUBLIC_URL}/${product.productImage}`} alt={product.productName} />
                     </div>
                     <div className="product-details">
+                        <h2>Product info</h2>
+                        <p className="product-description">
+                            {product.productDesc}
+                        </p>
                         <div className="product-info">
                             <div className="product-price">
                                 <span className="price-amount">{product.price}</span>
@@ -77,12 +81,6 @@ const ProductPage = () => {
                             </div>
                         </div>
                         <button className="product-button" onClick={handleAddProductToCard}>Add to Cart</button>
-                    </div>
-                    <div>
-                        <h2>Product info</h2>
-                        <p className="product-description">
-                            {product.productDesc}
-                        </p>
                     </div>
                 </div>
 
@@ -102,9 +100,10 @@ const ProductPage = () => {
                         />
                     ))}
                 </section>
-                <Footer/>
+
                 {showPopup && <Popup message={popupMessage} displayTime={5000} />}
             </div>
+            <Footer/>
         </>
     );
 };
