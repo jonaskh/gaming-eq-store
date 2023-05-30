@@ -6,8 +6,12 @@ import '../css/SettingsPage.css';
 import Footer from "../Components/Footer";
 import Order from '../Components/Order';
 import APIService from "../Services/APIService";
+import { useDispatch } from 'react-redux';
+import { setCartCount, setLoggedIn} from "../Services/Store";
+
 
 const SettingsPage = () => {
+    const dispatch = useDispatch();
     const navigate = useNavigate();
     const [userEmail, setUserEmail] = useState('');
     const [userRoles, setUserRoles] = useState([]);
@@ -26,6 +30,13 @@ const SettingsPage = () => {
                 const roles = decodedToken.roles.split(',');
                 setUserEmail(email);
                 setUserRoles(roles);
+                dispatch(setLoggedIn(true));
+                APIService.getCartItemsByUserEmail(email)
+                    .then(response => {
+                        dispatch(setCartCount(response.data.length));
+                        console.log(response.data);
+                    })
+                    .catch(error => console.log(error));
             } catch (err) {
                 setError('Invalid token');
                 localStorage.removeItem('jwt');
@@ -50,6 +61,8 @@ const SettingsPage = () => {
     }, [userEmail]);
 
     const handleLogout = () => {
+        dispatch(setLoggedIn(false));
+        dispatch(setCartCount(0));
         localStorage.removeItem('jwt');
         navigate('/login');
     };

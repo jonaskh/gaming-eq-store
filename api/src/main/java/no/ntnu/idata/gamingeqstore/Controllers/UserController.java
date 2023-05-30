@@ -1,5 +1,6 @@
 package no.ntnu.idata.gamingeqstore.Controllers;
 
+import io.swagger.v3.oas.annotations.Operation;
 import no.ntnu.idata.gamingeqstore.Entities.Cart;
 import no.ntnu.idata.gamingeqstore.Entities.CartProduct;
 import no.ntnu.idata.gamingeqstore.Entities.OrderList;
@@ -35,9 +36,8 @@ public class UserController {
     @Autowired
     private CartProductRepository cartProductRepository;
 
-
-
     @GetMapping("/api/users/cart/{email}")
+    @Operation(summary = "Return items in cart", description = "Returns current items in the cart belonging to email")
     public List<CartProduct> getCartItemsByUserEmail(@PathVariable("email") String email) {
 
         List<CartProduct> cart = userService.findCartItemsByEmail(email);
@@ -45,11 +45,13 @@ public class UserController {
     }
 
     @GetMapping("/api/users/order/{email}")
+    @Operation(summary = "Return all orders to a customer", description = "All customers can have several orders, display these")
     public List<OrderList> getOrdersByUserEmail(@PathVariable("email") String email) {
         return userService.findOrdersByEmail(email);
     }
 
     @GetMapping("/api/save/cart/{email}")
+    @Operation(summary = "Create the cart to a user", description = "Saves one cart to each user")
     public void saveCartToUser(@PathVariable("email") String email) {
         Optional<User> user = userService.findByEmail(email);
         if (!user.isPresent()) {
@@ -60,6 +62,7 @@ public class UserController {
     }
 
     @GetMapping("/api/users/cart/{email}/{productId}")
+    @Operation(summary = "Save one item to the cart", description = "When clicking add to cart on product page save to users cart")
     public void saveCartItem(@PathVariable("email") String email, @PathVariable("productId") Integer productId) {
         Optional<User> user = userService.findByEmail(email);
         if (!user.isPresent()) {
@@ -77,6 +80,7 @@ public class UserController {
     }
 
     @GetMapping("/api/cart/amount/{productInCart}/{productAmount}")
+    @Operation(summary = "Each several objects of one product", description = "Each product can be added multiple times, do this here")
     public void updateCartItemAmount(@PathVariable("productInCart") Integer id, @PathVariable("productAmount") Integer productAmount) {
         CartProduct cartProduct = cartProductRepository.findById(id).get();
         cartProduct.setProductAmount(productAmount);
@@ -85,6 +89,7 @@ public class UserController {
     }
 
     @GetMapping("/api/users/cart/cost/{email}")
+    @Operation(summary = "Sum of all product prices in cart", description = "Returns the total sum to all products in each cart")
     public double getTotalCost(@PathVariable("email") String email) {
         double totalCost = 0;
         Optional<User> user = userService.findByEmail(email);
@@ -101,11 +106,13 @@ public class UserController {
     }
 
     @DeleteMapping("/api/delete/cart/item/{itemId}")
+    @Operation(summary = "Delete one product from cart", description = "Removes one product from cart")
     public void deleteCartItem(@PathVariable("itemId") Integer itemId) {
         userService.deleteCartProduct(itemId);
     }
 
     @DeleteMapping("/api/delete/cart/all/{email}")
+    @Operation(summary = "Delete all products in cart", description = "Deletes all products from the cart, for example upon checkout")
     public void deleteCartAll(@PathVariable("email") String email) {
         Optional<User> user = userService.findByEmail(email);
 
@@ -116,6 +123,7 @@ public class UserController {
     }
 
     @PutMapping("/api/order/create/{email}")
+    @Operation(summary = "Create an order from a cart", description = "Upon check out, an order with same products as cart is made")
     public void saveOrderFromCart(@PathVariable("email") String email) {
         Optional<User> user = userService.findByEmail(email);
 

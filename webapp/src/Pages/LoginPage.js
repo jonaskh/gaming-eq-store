@@ -2,9 +2,12 @@ import React, { useState } from 'react';
 import Navbar from '../Components/Navbar';
 import '../css/LoginPage.css'; // import the CSS file
 import { Link, useNavigate } from 'react-router-dom';
-import Footer from '../Components/Footer';
+import { setCartCount, setLoggedIn} from "../Services/Store";
+import { useDispatch } from 'react-redux';
+import APIService from "../Services/APIService";
 
 const LoginPage = () => {
+  const dispatch = useDispatch();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
@@ -34,6 +37,12 @@ const LoginPage = () => {
 
       const data = await response.json();
       localStorage.setItem('jwt', data.jwt);
+      dispatch(setLoggedIn(true));
+      APIService.getCartItemsByUserEmail(email)
+          .then(response => {
+            dispatch(setCartCount(response.data.length));
+          })
+          .catch(error => console.log(error));
       navigate('/');
     } catch (error) {
       console.error('Error:', error);
