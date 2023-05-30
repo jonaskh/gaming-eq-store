@@ -1,11 +1,9 @@
 import React, {useEffect, useState} from 'react';
-import Navbar from '../Components/Navbar';
 import ProductCard from '../Components/ProductCard';
 import '../css/Home.css';
 import Testimonial from '../Components/Testimonial';
 import Hero from '../Components/Hero';
 import APIService from "../Services/APIService";
-import Footer from "../Components/Footer";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -88,7 +86,9 @@ function Home() {
                         <div key={index} className={`discount-slide discount-slide-${index}`}>
                             <div className="slide-section">
                                 <h1 className="slider-text">{discount.text}</h1>
-                                <button>{discount.buttonText}</button>
+                                <a href="/shop">
+                                    <button>{discount.buttonText}</button>
+                                </a>
                             </div>
                         </div>
                     ))}

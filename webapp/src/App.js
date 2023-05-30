@@ -15,19 +15,17 @@ import Footer from "./Components/Footer";
 
 
 function App() {
-    const [cartItemCount, setCartItemCount] = useState(0);
-
     return (
         <BrowserRouter>
-            <Navbar cartItemCount={cartItemCount}/>
+            <Navbar/>
             <Routes>
                 <Route path="/" element={<Home/>}/>
                 <Route path="/shop" element={<Shop/>}/>
                 <Route path="/login" element={<LoginPage/>}/>
                 <Route path="/register" element={<RegisterPage/>}/>
                 <Route path="/settings" element={<SettingsPage/>}/>
-                <Route path="/product" element={<ProductPage setCartItemCount={setCartItemCount} />}/>
-                <Route path="/cart" element={<ShoppingCart setCartItemCount={setCartItemCount}/>}/>
+                <Route path="/product" element={<ProductPage/>}/>
+                <Route path="/cart" element={<ShoppingCart/>}/>
                 <Route path="/registerAdmin" element={<AdminRegPage/>}/>
                 <Route path="/admin-panel" element={<AdminPanelPage/>}/>
                 <Route path="/cart" element={<ShoppingCart/>}/>

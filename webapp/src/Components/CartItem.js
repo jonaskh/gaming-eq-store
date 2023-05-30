@@ -42,7 +42,8 @@ const CartItem = (props) => {
                     className='item-quantity'
                 />
                 <p className='item-total'>{(price * quantity).toFixed(2)} kr</p>
-                <button onClick={deleteItem}>Delete</button>
+                <button className="delete-button" onClick={deleteItem}>Delete</button>
+
             </div>
         </div>
     );
