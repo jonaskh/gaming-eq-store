@@ -7,6 +7,7 @@ import APIService from "../Services/APIService";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import {Link} from "react-router-dom";
 
 
 function Home() {
@@ -86,9 +87,9 @@ function Home() {
                         <div key={index} className={`discount-slide discount-slide-${index}`}>
                             <div className="slide-section">
                                 <h1 className="slider-text">{discount.text}</h1>
-                                <a href="/shop">
+                                <Link to="/shop">
                                     <button>{discount.buttonText}</button>
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     ))}

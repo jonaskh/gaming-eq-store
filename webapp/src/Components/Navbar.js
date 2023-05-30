@@ -20,10 +20,10 @@ function Navbar() {
             <Link to="/shop">Shop</Link>
           </li>
           <li>
-            <a href="/cart">
+            <Link to="/cart">
               <img src={`${process.env.PUBLIC_URL}/icons8-shopping-cart-30.png`} alt="Cart" />
               <span>{shoppingCartCount}</span>
-            </a>
+            </Link>
           </li>
           <li>
             <Link to="/settings">
