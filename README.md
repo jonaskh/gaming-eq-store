@@ -1,6 +1,7 @@
 # Welcome to Cyberpunk Gaming Gadgets!
 
 ![img.png](img.png)
+
 Github repo: https://github.com/jonaskh/gaming-eq-store
 
 This application was designed as a project in NTNU Ålesunds classes WebTechonology and Application Development.
@@ -25,8 +26,10 @@ examination period, after which it will only be available locally. The URL is al
 In order to run the project locally, Docker must be installed on your computer. Then perform the following steps:
 
 1. Clone the main branch of the repository listed above.
-2. In the root of the project (where the docker-compose.yml file is located), write in the terminal
-   "docker-compose up --build"
-3. Navigate to localhost:3000 in your browser.
+2. Navigate to the api directory and run the backend, either through a IDEA or through terminal.
+3. Navigate to the webapp directory and run "npm install" and "npm start" in the terminal.
+4. The website will now be available at localhost:3000
 
-This will create a Docker container containing all the micro-services, and all features are available locally.
+All services are now available, as the database Docker image is launched with the back end.
+
+On the server this is done automatically using docker-compose.
