@@ -1,11 +1,9 @@
 import React, {useEffect, useState} from 'react';
-import Navbar from '../Components/Navbar';
 import ProductCard from '../Components/ProductCard';
 import '../css/Home.css';
 import Testimonial from '../Components/Testimonial';
 import Hero from '../Components/Hero';
 import APIService from "../Services/APIService";
-import Footer from "../Components/Footer";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";

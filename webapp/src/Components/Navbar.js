@@ -1,9 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../css/Navbar.css';
+import { useSelector } from 'react-redux';
 
 
-function Navbar({cartItemCount}) {
+function Navbar() {
+  const cartItemCount = useSelector(state => state);
+
   return (
     <nav className="navbar">
       <Link to="/" className="logo-link">

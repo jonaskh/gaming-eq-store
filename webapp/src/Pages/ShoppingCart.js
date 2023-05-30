@@ -7,8 +7,11 @@ import jwt_decode from "jwt-decode";
 import { useNavigate } from "react-router-dom";
 import "../css/ShoppingPage.css";
 import Popup from "../Components/Popup";
+import { useDispatch } from 'react-redux';
 
-function ShoppingCart({setCartItemCount}) {
+
+function ShoppingCart() {
+    const dispatch = useDispatch();
     const navigate = useNavigate();
     const [products, setProducts] = useState([]);
     const [error, setError] = useState(null);
@@ -27,7 +30,7 @@ function ShoppingCart({setCartItemCount}) {
                 APIService.getCartItemsByUserEmail(email)
                     .then(response => {
                         setProducts(response.data);
-                        setCartItemCount(response.data.length);
+                        dispatch({ type: 'SET', payload: response.data.length });
                         console.log(response.data);
                     })
                     .catch(error => console.log(error));
@@ -69,7 +72,8 @@ function ShoppingCart({setCartItemCount}) {
                 .then(response => {
                     APIService.deleteAllItemsInCart(email)
                         .then(() => {
-                            setCartItemCount(0);
+                            dispatch({ type: 'SET', payload: 0 });
+
                             setPopupMessage("Thank you for your purchase!");
                             setShowPopup(true);
                             APIService.getCartItemsByUserEmail(email)
