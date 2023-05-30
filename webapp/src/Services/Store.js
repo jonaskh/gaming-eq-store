@@ -1,20 +1,40 @@
+// store.js
 import { createStore } from 'redux';
 
-// This is a reducer - a function that takes a current state value and an action object, and returns a new state
-const cartItemCountReducer = (state = 0, action) => {
+// Action Types
+const SET_CART_COUNT = 'SET_CART_COUNT';
+const SET_LOGGED_IN = 'SET_LOGGED_IN';
+
+// Action Creators
+const setCartCount = (count) => ({
+    type: SET_CART_COUNT,
+    payload: count,
+});
+
+const setLoggedIn = (isLoggedIn) => ({
+    type: SET_LOGGED_IN,
+    payload: isLoggedIn,
+});
+
+// Initial State
+const initialState = {
+    shoppingCartCount: 0,
+    isLoggedIn: false,
+};
+
+// Reducer
+const rootReducer = (state = initialState, action) => {
     switch (action.type) {
-        case 'INCREMENT':
-            return state + 1;
-        case 'DECREMENT':
-            return state - 1;
-        case 'SET':
-            return action.payload;
+        case SET_CART_COUNT:
+            return { ...state, shoppingCartCount: action.payload };
+        case SET_LOGGED_IN:
+            return { ...state, isLoggedIn: action.payload };
         default:
             return state;
     }
 };
 
-// Create a Redux store holding the state of your app.
-const store = createStore(cartItemCountReducer);
+// Store
+const store = createStore(rootReducer);
 
-export default store;
+export { store, setCartCount, setLoggedIn };

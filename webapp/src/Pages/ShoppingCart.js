@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Navbar from '../Components/Navbar';
-import Footer from "../Components/Footer";
+
 import APIService from "../Services/APIService";
 import CartItem from "../Components/CartItem";
 import jwt_decode from "jwt-decode";
@@ -8,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 import "../css/ShoppingPage.css";
 import Popup from "../Components/Popup";
 import { useDispatch } from 'react-redux';
-
+import { setCartCount, setLoggedIn } from '../Services/Store';
 
 function ShoppingCart() {
     const dispatch = useDispatch();
@@ -23,14 +22,16 @@ function ShoppingCart() {
     useEffect(() => {
         if (!token) {
             navigate('/login');
+            dispatch(setLoggedIn(false));
         } else {
             try {
+                dispatch(setLoggedIn(true));
                 const decodedToken = jwt_decode(token);
                 const email = decodedToken.sub;
                 APIService.getCartItemsByUserEmail(email)
                     .then(response => {
                         setProducts(response.data);
-                        dispatch({ type: 'SET', payload: response.data.length });
+                        dispatch(setCartCount(response.data.length));
                         console.log(response.data);
                     })
                     .catch(error => console.log(error));
@@ -72,7 +73,7 @@ function ShoppingCart() {
                 .then(response => {
                     APIService.deleteAllItemsInCart(email)
                         .then(() => {
-                            dispatch({ type: 'SET', payload: 0 });
+                            dispatch(setCartCount(0));
 
                             setPopupMessage("Thank you for your purchase!");
                             setShowPopup(true);

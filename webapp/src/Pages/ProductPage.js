@@ -8,7 +8,8 @@ import Footer from "../Components/Footer";
 import jwt_decode from "jwt-decode";
 import Popup from "../Components/Popup"; // import the CSS file
 import { useDispatch } from 'react-redux';
-
+import {setCartCount, setLoggedIn} from "../Services/Store";
+import { useSelector } from 'react-redux';
 
 const ProductPage = () => {
     const dispatch = useDispatch();
@@ -60,7 +61,7 @@ const ProductPage = () => {
                 setShowPopup(true);
                 APIService.getCartItemsByUserEmail(email)
                     .then(response => {
-                        dispatch({ type: 'SET', payload: response.data.length });
+                        dispatch(setCartCount(response.data.length));
                     })
                     .catch(error => console.log(error));
                 setTimeout(() => {
