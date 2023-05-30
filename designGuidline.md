@@ -67,7 +67,7 @@ Group 3
     - Bold or thin font?
       - Both will be used. 
     - Rounded or sharp edges?
-      - Rounded edges
+      - Sharp edges
 7. Border rounding:
     - How rounded should be the edges, according to the theme?
       - We will mainly use sharp borders
