@@ -8,7 +8,7 @@
 .login-form {
     width: 450px;
     padding: 20px;
-    background-color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.5);
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
@@ -25,14 +25,14 @@
 }
 
 .login-form .loginTitle {
-    color: black;
+    color: white;
     text-align: center;
     margin-bottom: 20px;
     font-size: 30px;
 }
 
 #registerText {
-    color: black;
+    color: white;
     text-align: center;
     margin-top: 10px;
     font-size: 14px;
@@ -42,7 +42,7 @@
     display: block;
     font-weight: bold;
     margin-bottom: 5px;
-    color: black;
+    color: white;
 }
 
 .login-form button[type="submit"] {
@@ -59,7 +59,7 @@
 
 
 .login-form h2 {
-    color: black;
+    color: white;
     text-align: center;
     margin-bottom: 20px;
 }
