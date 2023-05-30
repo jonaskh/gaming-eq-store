@@ -88,7 +88,9 @@ function Home() {
                         <div key={index} className={`discount-slide discount-slide-${index}`}>
                             <div className="slide-section">
                                 <h1 className="slider-text">{discount.text}</h1>
-                                <button>{discount.buttonText}</button>
+                                <a href="/shop">
+                                    <button>{discount.buttonText}</button>
+                                </a>
                             </div>
                         </div>
                     ))}
