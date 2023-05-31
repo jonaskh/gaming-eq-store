@@ -15,3 +15,8 @@ The ER-diagram of all entities used in the project is shown below.
 
 For authentication JWT is used. Upon registering a user a JWT token is created, containing the user name and which roles the user has.
 Each time a user attempts a restricted function (such as accessing admin page or adding item to cart), the front-end verifies the JWT token has the required role and username.
+
+## Installation
+
+In order to run the backend, a Docker Image with a database must also be running and configured in application.properties. 
+Assuming a database is running, simply run the main method in an IDEA or through the terminal.

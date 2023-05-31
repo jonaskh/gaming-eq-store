@@ -19,13 +19,14 @@ The services used are:
 4. Webserver (Nginx)
 
 
-The website is hosted on https://www.group09.web-tek.ninja for the remainder of the
+The website is hosted on http://www.group09.web-tek.ninja for the remainder of the
 examination period, after which it will only be available locally. The URL is also only accessible while on NTNUs internal network.
 
 ## Installation
 In order to run the project locally, Docker must be installed on your computer. Then perform the following steps:
 
 1. Clone the main branch of the repository listed above.
+2. Run a Postgres Docker image on port 5432 with a database called Postgres, define username and password to match .env file. The application supports other databases but require configuration.
 2. Edit the name of the .envTEMPLATE file in the root directory to ".env", and input some random variable in each value in the file
 2. Navigate to the api directory and run the backend, either through a IDEA or through terminal.
 3. Navigate to the webapp directory and run "npm install" and "npm start" in the terminal.
