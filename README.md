@@ -34,4 +34,21 @@ In order to run the project locally, Docker must be installed on your computer. 
 
 All services are now available, as the database Docker image is launched with the back end.
 
-On the server this is done automatically using docker-compose.
+## Installation on server
+1. Connect to the server using SSH mac (terminal) / Or Putty on Windows
+2. Create a directory in your users root (/home/local/username) to store the application files
+3. CD into the new directory
+4. Clone the Server branch into this directory using "sudo git clone --branch Server https://github.com/jonaskh/gaming-eq-store.git ."
+5. Move into /api directory using "cd api"
+6. Run "sudo mvn clean package" inside the /api directory
+7. Move into /webapp directory using "cd webapp"
+8. Run "sudo npm run build" inside the /webapp directory
+9. Move back into the directory you created holding the application files
+10. Run "sudo docker-compose up --build
+11. Run "sudo docker cp webapp/build nginx:/usr/share/nginx/html" to copy the build files from the webapp directory into the nginx docker container
+
+
+Keep in mind that the backend is now setup to only accecpt requests from group09.web-tek.ninja and you would need to change the endpoints and the CORS configuration to run on your specific server.
+PS! The .env file should never be commited in your version control. The .env file is only present for demonstration and should only be created on the server.
+
+
